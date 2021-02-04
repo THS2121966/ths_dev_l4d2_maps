@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8755"
-	"mapversion" "45"
+	"mapversion" "46"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "45"
+	"mapversion" "46"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -355,6 +355,24 @@ entity
 	"classname" "point_servercommand"
 	"targetname" "con_commander"
 	"origin" "-32 -32 16"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "155"
+	"classname" "info_director"
+	"targetname" "@Director"
+	connections
+	{
+		"OnGameplayStart" "!selfBeginScriptC1m1_reserved_wanderers0-1"
+	}
+	"origin" "-56 0 16"
 	editor
 	{
 		"color" "220 30 220"
