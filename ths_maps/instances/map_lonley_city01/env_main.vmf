@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8755"
-	"mapversion" "46"
+	"mapversion" "48"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "46"
+	"mapversion" "48"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -76,7 +76,7 @@ entity
 	"id" "91"
 	"classname" "env_fog_controller"
 	"angles" "0 0 0"
-	"farz" "3000"
+	"farz" "$SetVisFarZ"
 	"fogblend" "0"
 	"fogcolor" "18 29 33"
 	"fogcolor2" "255 255 255"
@@ -316,7 +316,7 @@ entity
 	"id" "114"
 	"classname" "env_fog_controller"
 	"angles" "0 0 0"
-	"farz" "3000"
+	"farz" "$SetVisFarZ"
 	"fogblend" "0"
 	"fogcolor" "18 29 33"
 	"fogcolor2" "255 255 255"
@@ -371,8 +371,24 @@ entity
 	connections
 	{
 		"OnGameplayStart" "!selfBeginScriptC1m1_reserved_wanderers0-1"
+		"OnGameplayStart" "$RelaySTNameTrigger0-1"
 	}
 	"origin" "-56 0 16"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "224"
+	"classname" "func_instance_parms"
+	"parm1" "$RelaySTName target_source"
+	"parm2" "$SetVisFarZ string"
+	"origin" "-56 0 32"
 	editor
 	{
 		"color" "220 30 220"
