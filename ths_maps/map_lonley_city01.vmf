@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8755"
-	"mapversion" "308"
+	"mapversion" "314"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,13 +20,13 @@ viewsettings
 	"bSnapToGrid" "1"
 	"bShowGrid" "1"
 	"bShowLogicalGrid" "0"
-	"nGridSpacing" "32"
+	"nGridSpacing" "8"
 	"bShow3DGrid" "0"
 }
 world
 {
 	"id" "1"
-	"mapversion" "308"
+	"mapversion" "314"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -96972,7 +96972,7 @@ entity
 		"OnTrigger" "temp_flyby_sky_vehicle_03ForceSpawn2-1"
 		"OnTrigger" "relay_flyby_sky_vehicle_group_01_hordedEnable41"
 		"OnTrigger" "relay_flyby_sky_vehicle_group_01_hordedTrigger3-1"
-		"OnTrigger" "chor_gambler_warning_f18Start31"
+		"OnTrigger" "script_f18_voice_choice_01RunScriptCodeActor_Scene_Set()31"
 	}
 	"origin" "-96 -48 -672"
 	editor
@@ -97237,6 +97237,78 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "65457"
+	"classname" "logic_choreographed_scene"
+	"angles" "0 0 0"
+	"busyactor" "1"
+	"scenefile" "scenes/producer/worldc5m2b01.vcd"
+	"targetname" "chor_producer_warning_f18"
+	"origin" "-96 -16 -656"
+	editor
+	{
+		"color" "240 180 250"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "65487"
+	"classname" "logic_choreographed_scene"
+	"angles" "0 0 0"
+	"busyactor" "1"
+	"scenefile" "scenes/mechanic/worldc5m2b11.vcd"
+	"targetname" "chor_mechanic_warning_f18"
+	"origin" "-96 0 -656"
+	editor
+	{
+		"color" "240 180 250"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "65497"
+	"classname" "logic_choreographed_scene"
+	"angles" "0 0 0"
+	"busyactor" "1"
+	"scenefile" "scenes/coach/worldc4m404.vcd"
+	"targetname" "chor_coach_warning_f18"
+	"origin" "-96 16 -656"
+	editor
+	{
+		"color" "240 180 250"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "65697"
+	"classname" "logic_script"
+	"angles" "0 0 0"
+	"group00" "chor_gambler_warning_f18"
+	"group01" "chor_producer_warning_f18"
+	"group02" "chor_mechanic_warning_f18"
+	"group03" "chor_coach_warning_f18"
+	"targetname" "script_f18_voice_choice_01"
+	"vscript_init_code" "debug_enable(1)"
+	"vscripts" "map_lonley_city01/reaction_f18_voice_select_01_rooftop"
+	"origin" "-96 -8 -640"
+	editor
+	{
+		"color" "200 200 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
 	}
 }
 cameras
