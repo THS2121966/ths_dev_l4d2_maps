@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8755"
-	"mapversion" "314"
+	"mapversion" "325"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -26,7 +26,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "314"
+	"mapversion" "325"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -96972,7 +96972,7 @@ entity
 		"OnTrigger" "temp_flyby_sky_vehicle_03ForceSpawn2-1"
 		"OnTrigger" "relay_flyby_sky_vehicle_group_01_hordedEnable41"
 		"OnTrigger" "relay_flyby_sky_vehicle_group_01_hordedTrigger3-1"
-		"OnTrigger" "script_f18_voice_choice_01RunScriptCodeActor_Scene_Set()31"
+		"OnTrigger" "script_f18_voice_choice_01CallScriptFunctionReleaseSceneF18RoofTop31"
 	}
 	"origin" "-96 -48 -672"
 	editor
@@ -97154,6 +97154,7 @@ entity
 	connections
 	{
 		"OnTrigger" "@MapRelayDZNextTrigger0-1"
+		"OnTrigger" "script_f18_voice_choice_01CallScriptFunctionPreLoadSceneF18RoofTop0-1"
 	}
 	solid
 	{
@@ -97299,13 +97300,34 @@ entity
 	"group01" "chor_producer_warning_f18"
 	"group02" "chor_mechanic_warning_f18"
 	"group03" "chor_coach_warning_f18"
+	"group04" "s_f18_voice_choice_01_script_warning"
 	"targetname" "script_f18_voice_choice_01"
-	"vscript_init_code" "debug_enable(1)"
 	"vscripts" "map_lonley_city01/reaction_f18_voice_select_01_rooftop"
 	"origin" "-96 -8 -640"
 	editor
 	{
 		"color" "200 200 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "68657"
+	"classname" "ambient_generic"
+	"angles" "0 0 0"
+	"health" "10"
+	"message" "ui/beep22.wav"
+	"pitch" "100"
+	"pitchstart" "100"
+	"radius" "1250"
+	"spawnflags" "49"
+	"targetname" "s_f18_voice_choice_01_script_warning"
+	"origin" "-96 -8 -616"
+	editor
+	{
+		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 0]"
