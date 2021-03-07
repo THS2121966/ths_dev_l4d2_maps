@@ -1,15 +1,15 @@
-Msg("Initiating LonleyM1Main\n");
+Msg("[THS_Script] Initiating LonleyM1Main\n");
 
 DirectorOptions <-
 {
 	// This turns off tanks and witches (when true).
-	ProhibitBosses = true
+	ProhibitBosses = false
 	
 	//LockTempo = true
 
 	// Sets the time between mob spawns. Mobs can only spawn when the pacing is in the BUILD_UP state.
-	MobSpawnMinTime = 999999
-	MobSpawnMaxTime = 999999
+	MobSpawnMinTime = 120
+	MobSpawnMaxTime = 180
 
 	// How many zombies are in each mob.
 	MobMinSize = 15
@@ -20,15 +20,15 @@ DirectorOptions <-
 	SustainPeakMinTime = 5
 	SustainPeakMaxTime = 10
 	IntensityRelaxThreshold = 0.99
-	RelaxMinInterval = 1
-	RelaxMaxInterval = 5
+	RelaxMinInterval = 15
+	RelaxMaxInterval = 30
 	RelaxMaxFlowTravel = 50
 
 	//Special infected options
 	SpecialRespawnInterval = 1.0
         SmokerLimit = 1
         JockeyLimit = 2
-        BoomerLimit = 0
+        BoomerLimit = 1
         HunterLimit = 3
         ChargerLimit = 1
 

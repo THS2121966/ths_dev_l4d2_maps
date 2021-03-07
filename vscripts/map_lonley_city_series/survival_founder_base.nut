@@ -44,6 +44,7 @@ function FindSurvivors()
       printl(s+" found: "+survivor);
       survivors[s] = survivor
       survivors_found++
+      ReloadSurvivorList()
     }
     else
     {
@@ -51,4 +52,18 @@ function FindSurvivors()
       survivors[s] = null
     }
    }
+}
+
+function ReloadSurvivorList()
+{
+nick_counter <- Entities.FindByName(null, "!nick")
+coach_counter <- Entities.FindByName(null, "!coach")
+ellis_counter <- Entities.FindByName(null, "!ellis")
+rochelle_counter <- Entities.FindByName(null, "!rochelle")
+}
+
+function ResetSurvivorsList()
+{
+survivors_found <- 0 // flag set to true once survivors are found
+ReloadSurvivorList()
 }

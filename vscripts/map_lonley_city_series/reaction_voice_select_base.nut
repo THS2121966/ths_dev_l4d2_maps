@@ -24,13 +24,14 @@ if(debug_enable)
 {
     printl("Reseting to Default...")
 }
+ResetSurvivorsList()
 }
 
 function Priority (debug_enable)
 {
     if( nick_counter )
     {
-        SceneThis <- NickScene
+        SceneThis <- NickScene;
     if (debug_enable)
       {
           msg_warning <- "[THS_Script] Actor Scene For Nick - Initialised!!!"
@@ -40,7 +41,7 @@ function Priority (debug_enable)
     }
     else if ( coach_counter )
     {
-        SceneThis <- CoachScene
+        SceneThis <- CoachScene;
     if (debug_enable)
       {
           msg_warning <- "[THS_Script] Actor Scene For Coach - Initialised!!!"
@@ -50,7 +51,7 @@ function Priority (debug_enable)
     }
     else if ( ellis_counter )
     {
-        SceneThis <- EllisScene
+        SceneThis <- EllisScene;
     if (debug_enable)
       {
           msg_warning <- "[THS_Script] Actor Scene For Ellis - Initialised!!!"
@@ -60,7 +61,7 @@ function Priority (debug_enable)
     }
     else if ( rochelle_counter )
     {
-        SceneThis <- RochelleScene
+        SceneThis <- RochelleScene;
     if (debug_enable)
       {
           msg_warning <- "[THS_Script] Actor Scene For Rochelle - Initialised!!!"
@@ -86,8 +87,8 @@ function StartUp(debug_enable)
     FindSurvivors()
     if(survivors_found == 0 || ellis_counter == 0 && nick_counter == 0 && rochelle_counter == 0 && coach_counter == 0)
     {
-    Warning(WarningS_MSG_Number, 5)
     msg_warning <- "[THS_Script] Error!!! No Survivors!!!"
+    Warning(WarningS_MSG_Number, 5)
         if(debug_enable)
         {
             printl("[THS_Script] Error!!! No Survivors!!!")
@@ -108,8 +109,8 @@ function Release(debug_enable)
     {
         printl("Scene not Found!!! -")
         printl(SceneThis)
+        msg_warning <- "[THS_Script] Scene not Found!!!"
         Warning(WarningS_MSG_Number, 5)
-        msg_warning <- "Scene not Found!!!"
     }
     else
     {
