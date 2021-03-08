@@ -84,7 +84,7 @@ if (debug_enable)
 
 function StartUp(debug_enable)
 {
-    FindSurvivors()
+    CallSurvivorsBy(0)
     if(survivors_found == 0 || ellis_counter == 0 && nick_counter == 0 && rochelle_counter == 0 && coach_counter == 0)
     {
     msg_warning <- "[THS_Script] Error!!! No Survivors!!!"
