@@ -9085,7 +9085,7 @@
 	output OnForcedInteractionFinished(void) : "NPCs in actbusies can no longer perform dynamic interactions."
 	]
 
-@BaseClass base(BaseEntityPhysics, BreakableProp, SystemLevelChoice, BaseFadeProp) = BasePropPhysics: "For prop_physics-like entities."
+@BaseClass base(BaseEntityPhysics, BreakableProp, SystemLevelChoice, BaseFadeProp, Glow) = BasePropPhysics: "For prop_physics-like entities."
 	[
 	spawnflags(flags)  =
 		[
@@ -11013,7 +11013,7 @@
 	output OnBreak(void) : "Fired when the door changes damage states."
 	]
 
-@BaseClass base(BaseEntityAnimating, SetModel, BreakableProp) = prop_dynamic_base
+@BaseClass base(BaseEntityAnimating, SetModel, BreakableProp, Glow) = prop_dynamic_base
 	[
 	spawnflags(flags)  =
 		[
