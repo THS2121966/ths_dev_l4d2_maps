@@ -8,7 +8,6 @@ time_s <- 0;
 time_m <- 0;
 time_h <- 0;
 
-time_check_every_s <- null;
 time_check_s <- null;
 time_check_m <- null;
 time_Check_h <- null;
@@ -24,13 +23,6 @@ function Release_Timer()
 //thsdev_gametime_function
 function Collect_Time(debug_enable, time_check_every_s, time_check_s, time_check_m, time_Check_h)
 {
-    if(time_s == 0)
-    {
-        if(time_check_s && debug_enable)
-        {
-            DrawTimeAuto()
-        }
-    }
     if(time_s == 60)
     {
         time_s <- 0;
@@ -50,7 +42,7 @@ function Collect_Time(debug_enable, time_check_every_s, time_check_s, time_check
         }
     }
 time_s++
-if(time_check_every_s && debug_enable)
+if(time_check_s && debug_enable)
 {
     DrawTimeAuto()
 }
@@ -61,14 +53,8 @@ function DrawTimeAuto()
     printl("[THS_Script] Currient Game Time -"+time_h+"_H_"+time_m+"_M_"+time_s+"_S")
 }
 
-function debug_check()
-{
-    time_check_every_s <- 1;
-}
-
 function draw_only_seconds_msg()
 {
-time_check_every_s <- null;
 time_check_s <- 1;
 time_check_m <- null;
 time_Check_h <- null;
@@ -76,7 +62,6 @@ time_Check_h <- null;
 
 function draw_only_minutes_msg()
 {
-time_check_every_s <- null;
 time_check_s <- null;
 time_check_m <- 1;
 time_Check_h <- null;
@@ -84,7 +69,6 @@ time_Check_h <- null;
 
 function draw_only_hours_msg()
 {
-time_check_every_s <- null;
 time_check_s <- null;
 time_check_m <- null;
 time_Check_h <- 1;
