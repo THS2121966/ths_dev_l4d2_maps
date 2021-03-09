@@ -8039,6 +8039,7 @@
 
 @PointClass base(BaseEntityPoint) 
 	line(255 255 0, targetname, nozzle)
+	studio("models/editor/cone_helper.mdl")
 = point_prop_use_target: "A use target for carried props. Triggers the prop's use behavior."
 	[
 	spawnflags(flags)  =
@@ -8113,6 +8114,7 @@
 
 @PointClass base(BaseEntityPoint) 
 	line(255 255 0, targetname, model)
+	studio("models/editor/cone_helper.mdl")
 = point_script_use_target: "Makes an entity 'usable' by a player. An attached script determines the display text and use time."
 	[
 	model(target_destination) : "Use Model" : : "The name of the entity the player will be using."

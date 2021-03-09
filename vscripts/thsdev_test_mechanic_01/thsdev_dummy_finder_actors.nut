@@ -15,6 +15,14 @@ function KillDeadPlayerDummys(debug_enable)
         {
             printl(EntityGroup[0].GetName()+"Nick - was Allived!!!")
         }
+        if(nick_health > 100 || nick_health <= 30)
+        {
+            EntFire(EntityGroup[0].GetName(), "SetAnimation", "incap_crawl")
+            if(debug_enable == 1)
+            {
+               printl(EntityGroup[0].GetName()+"Nick - was Damaged!!!") 
+            }
+        }
     }
     else
     {
@@ -25,6 +33,14 @@ function KillDeadPlayerDummys(debug_enable)
         if(debug_enable == 1)
         {
             printl(EntityGroup[1].GetName()+"Coach - was Allived!!!")
+        }
+        if(coach_health > 100 || coach_health <= 30)
+        {
+            EntFire(EntityGroup[1].GetName(), "SetAnimation", "incap_crawl")
+            if(debug_enable == 1)
+            {
+               printl(EntityGroup[1].GetName()+"Coach - was Damaged!!!") 
+            }
         }
     }
     else
@@ -37,6 +53,14 @@ function KillDeadPlayerDummys(debug_enable)
         {
             printl(EntityGroup[2].GetName()+"Ellis - was Allived!!!")
         }
+        if(ellis_health > 100 || ellis_health <= 30)
+        {
+            EntFire(EntityGroup[2].GetName(), "SetAnimation", "incap_crawl")
+            if(debug_enable == 1)
+            {
+               printl(EntityGroup[2].GetName()+"Ellis - was Damaged!!!") 
+            }
+        }
     }
     else
     {
@@ -47,6 +71,14 @@ function KillDeadPlayerDummys(debug_enable)
         if(debug_enable == 1)
         {
             printl(EntityGroup[3].GetName()+"Rochelle - was Allived!!!")
+        }
+        if(rochelle_health > 100 || rochelle_health <= 30)
+        {
+            EntFire(EntityGroup[3].GetName(), "SetAnimation", "incap_crawl")
+            if(debug_enable == 1)
+            {
+               printl(EntityGroup[3].GetName()+"Rochelle - was Damaged!!!") 
+            }
         }
     }
     else

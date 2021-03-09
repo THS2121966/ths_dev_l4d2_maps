@@ -11,10 +11,15 @@ survivors.nick (etc...)
 IncludeScript("ths_script_base/thsdev_warning_system_core.nut", this)
 
 //thsdev_counters
-nick_counter <- Entities.FindByName(null, "!nick")
-coach_counter <- Entities.FindByName(null, "!coach")
-ellis_counter <- Entities.FindByName(null, "!ellis")
-rochelle_counter <- Entities.FindByName(null, "!rochelle")
+nick_counter <- 0;
+coach_counter <- 0;
+ellis_counter <- 0;
+rochelle_counter <- 0;
+
+nick_health <- null;
+coach_health <- null;
+ellis_health <- null;
+rochelle_health <- null;
 
 PriorityReaction <- 1;
 
@@ -99,9 +104,34 @@ else
 function ReloadSurvivorList()
 {
 nick_counter <- Entities.FindByName(null, "!nick")
+if(nick_counter)
+{
+nick_health <- nick_counter.GetHealth()
+}
 coach_counter <- Entities.FindByName(null, "!coach")
+if(coach_counter)
+{
+coach_health <- coach_counter.GetHealth()
+}
 ellis_counter <- Entities.FindByName(null, "!ellis")
+if(ellis_counter)
+{
+ellis_health <- ellis_counter.GetHealth()
+}
 rochelle_counter <- Entities.FindByName(null, "!rochelle")
+if(rochelle_counter)
+{
+rochelle_health <- rochelle_counter.GetHealth()
+}
+if(debug_enable == 1)
+{
+  printl("Nick Health is -"+nick_health)
+  printl("Coach Health is -"+coach_health)
+  printl("Ellis Health is -"+ellis_health)
+  printl("Rochelle Health is -"+rochelle_health)
+  msg_warning <- "[THS_Script] Actors Health - Initialised!!!"
+  Warning(WarningS_MSG_Number, 1)
+}
 }
 
 function ResetSurvivorsList()
