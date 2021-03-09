@@ -4,7 +4,7 @@
 printl("==== calling thsdev_dummy_finder_actors.nut")
 printl("==== [THS] Loading thsdev_dummy_finder_actors Logic...")
 
-IncludeScript("map_lonley_city_series/survival_founder_base.nut", this)
+IncludeScript("ths_script_base/survival_founder_base.nut", this)
 
 
 function KillDeadPlayerDummys(debug_enable)

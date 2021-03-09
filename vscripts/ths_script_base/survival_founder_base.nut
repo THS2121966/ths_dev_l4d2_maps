@@ -8,7 +8,7 @@ To reference a specific survivor, you can say
 survivors.nick (etc...)
 */
 
-IncludeScript("map_lonley_city_series/thsdev_warning_system_core.nut", this)
+IncludeScript("ths_script_base/thsdev_warning_system_core.nut", this)
 
 //thsdev_counters
 nick_counter <- Entities.FindByName(null, "!nick")

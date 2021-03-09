@@ -4,7 +4,7 @@
 printl("==== calling reaction_voice_select_base.nut")
 printl("==== [THS] Loading reaction_voice_select_base Logic...")
 
-IncludeScript("map_lonley_city_series/survival_founder_base.nut", this)
+IncludeScript("ths_script_base/survival_founder_base.nut", this)
 
 //thsdev_senes_variations
 SceneThis <- null;

@@ -6,7 +6,7 @@ printl("==== calling reaction_f18_voice_select_01_rooftop.nut")
 printl("==== [THS] Loading reaction_f18_voice_select_01_rooftop Logic...")
 
 
-IncludeScript("map_lonley_city_series/reaction_voice_select_base.nut", this)
+IncludeScript("ths_script_base/reaction_voice_select_base.nut", this)
 
 function SetSoundChannel()
 {

@@ -4,7 +4,7 @@
 printl("==== calling debug_flyby_spawner.nut")
 printl("==== [THS] Loading debug_flyby_spawner Logic...")
 
-IncludeScript("map_lonley_city_series/thsdev_warning_system_core.nut", this)
+IncludeScript("ths_script_base/thsdev_warning_system_core.nut", this)
 
 //ths_dev_add_outputs
 self.ConnectOutput ("OnEntitySpawned", "debug_create_msg")
