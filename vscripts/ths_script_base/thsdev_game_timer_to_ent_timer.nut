@@ -17,11 +17,11 @@ time_Check_h <- null;
 
 function Release_Timer()
 {
-    Collect_Time(debug_enable, time_check_every_s, time_check_s, time_check_m, time_Check_h)
+    Collect_Time(debug_enable, time_check_s, time_check_m, time_Check_h)
 }
 
 //thsdev_gametime_function
-function Collect_Time(debug_enable, time_check_every_s, time_check_s, time_check_m, time_Check_h)
+function Collect_Time(debug_enable, time_check_s, time_check_m, time_Check_h)
 {
     if(time_s == 60)
     {
