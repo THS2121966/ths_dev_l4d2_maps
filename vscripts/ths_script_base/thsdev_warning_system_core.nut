@@ -42,7 +42,7 @@ if (debug_enable == 1)
     EntFire(EntityGroup[WarningS_MSG_Number].GetName(), "PlaySound", "", 0)
     printl(msg_warning)
 }
-    if(WarningS_MSG_Number == 5)
+    if(WarningLevel == 5)
     {
     debug_enable <- 1;
     EntFire(EntityGroup[WarningS_MSG_Number.GetName()], "PlaySound", "", 1)
