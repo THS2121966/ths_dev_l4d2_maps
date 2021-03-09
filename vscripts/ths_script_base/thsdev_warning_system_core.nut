@@ -6,7 +6,7 @@ printl("==== [THS] Loading thsdev_warning_system_core Logic...")
 
 
 //thsdev_debug_parms
-debug_enable <- 1;
+debug_enable <- 0;
 msg_helper <- 0;
 Crashed <- 0;
 WarningS_MSG_Number <- null;
