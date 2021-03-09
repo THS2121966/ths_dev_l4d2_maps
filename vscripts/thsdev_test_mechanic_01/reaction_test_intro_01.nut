@@ -11,6 +11,7 @@ IncludeScript("ths_script_base/reaction_voice_select_base.nut", this)
 function SetSoundChannel()
 {
   WarningS_MSG_Number <- 0;
+  debug_enable <- 1;
 }
 
 function PreLoadSceneUnnPlace()
