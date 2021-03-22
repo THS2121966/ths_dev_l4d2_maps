@@ -107,21 +107,37 @@ nick_counter <- Entities.FindByName(null, "!nick")
 if(nick_counter)
 {
 nick_health <- nick_counter.GetHealth()
+if(nick_health == -1)
+{
+  nick_counter <- 0
+}
 }
 coach_counter <- Entities.FindByName(null, "!coach")
 if(coach_counter)
 {
 coach_health <- coach_counter.GetHealth()
+if(coach_health == -1)
+{
+  coach_counter <- 0
+}
 }
 ellis_counter <- Entities.FindByName(null, "!ellis")
 if(ellis_counter)
 {
 ellis_health <- ellis_counter.GetHealth()
+if(ellis_health == -1)
+{
+  ellis_counter <- 0
+}
 }
 rochelle_counter <- Entities.FindByName(null, "!rochelle")
 if(rochelle_counter)
 {
 rochelle_health <- rochelle_counter.GetHealth()
+if(rochelle_health == -1)
+{
+  rochelle_counter <- 0
+}
 }
 if(debug_enable == 1)
 {
