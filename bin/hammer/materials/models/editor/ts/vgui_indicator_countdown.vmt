@@ -1,5 +1,0 @@
-unlitgeneric
-{
-$basetexture "models/editor/ts/vgui_indicator_countdown"
-$model 1 
-}

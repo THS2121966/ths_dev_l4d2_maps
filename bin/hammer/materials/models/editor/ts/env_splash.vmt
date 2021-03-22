@@ -1,6 +1,0 @@
-UnlitGeneric
-{
-	// Texture by Ficcool.
-	$baseTexture "models/editor/ts/env_splash"
-	$translucent 1
-}

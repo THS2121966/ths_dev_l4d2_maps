@@ -1,6 +1,0 @@
-VertexLitGeneric
-{
-$baseTexture "models/editor/ts/portal_purp"
-$translucent 1
-$model 1
-}
