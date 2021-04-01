@@ -748,7 +748,13 @@
 		0: "No"
 		1: "Yes"
 	]
-	
+
+	AttackOnSpawn(choices) : "Attack Survivors on Spawn" : 1 =
+	[
+		0: "No"
+		1: "Yes"
+	]
+
 	input SpawnZombie(void) : "Spawn a zombie now."
 	input StartleZombie(string) : "Startle the zombie (witches only). Optionally pass the name of a survivor to attack."
 	
