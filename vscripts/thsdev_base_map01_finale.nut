@@ -268,7 +268,7 @@ function GasCanPoured()
     if ( GasCansPoured == NumCansNeeded )
     {
         Msg(" needed: " + NumCansNeeded + "\n") 
-        EntFire( "relay_car_ready", "trigger" )
+        EntFire( "relay_f_start_end", "trigger" )
     }
 
     EvalGasCansPouredOrTouched()
