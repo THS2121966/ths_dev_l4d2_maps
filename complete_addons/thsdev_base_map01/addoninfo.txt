@@ -1,0 +1,21 @@
+// The addoninfo.txt file is a metadata file that is required by all Source Engine Add-ons.
+
+"AddonInfo"
+{
+     addonSteamAppID         550                                                     // 500 is the app ID for Left 4 Dead, 550 for Left 4 Dead 2
+     addontitle              "Dead Line 2"                                           // Add-on title that shows up in Add-ons list. ~20 chars max
+     addonversion	     1.0                                                     // Add-on version.
+     addontagline            "Catch the last subway... out of hell... Again!"	     // Add-on tagline or wrap-up- a short description. ~100 chars max
+     addonauthor             "Valve"                                                 // Name/alias of the author
+     addonSteamGroupName     "deadline2add-on"                                       // (Optional) Steam group related to the add-on. We use this to construct a URL to the group page.
+     addonauthorSteamID      "YasserMalaika"                                         // (Optional) Steam ID of author. We use this to construct a URL to the author's page.
+     addonContent_Campaign   1 	                                                     //This addon provides muliple connected maps with a finale
+     addonURL0               "http://media.steampowered.com/apps/513/deadline2.html" //An html home page for the add-on that includes a download link.
+
+     // short description that appears in the Add-on list screen...
+     addonDescription        "Survivors must escape on a subway train in this short tutorial example campaign. Get source files and tools for creating your own campaigns by downloading the Left 4 Dead 2 Authoring tools SDK, which is available under the 'Tools' tab in Steam."
+
+     // Authors can add localized descriptions here. (Not yet supported)
+     addonDescription_FR     "Les survivants doivent s'échapper en métro dans cette carte du tutoriel. Obtenez les fichiers et les outils pour créer vos propres cartes en chargeant les outils de création SDK Left 4 Dead 2 qui sont disponibles sous l'onglet "Outils" sur Steam."	
+ 
+}

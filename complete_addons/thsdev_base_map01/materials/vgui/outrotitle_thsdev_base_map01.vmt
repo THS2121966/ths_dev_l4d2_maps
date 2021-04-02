@@ -1,0 +1,9 @@
+"UnlitGeneric"
+{
+	"$translucent" 1
+	"$basetexture" "VGUI\OutroTitle_thsdev_base_map01"
+	"$vertexcolor" 1
+	"$vertexalpha" 1
+	"$no_fullbright" 1
+	"$ignorez" 1
+}
