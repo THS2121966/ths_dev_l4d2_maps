@@ -18,18 +18,18 @@
 	// Do not change the name when you create a revision, as the matchmaking
         // system will consider it a different campaign. Instead, use "Version" and 
         // "DisplayTitle" below to indicate revisions.
-	"Name"		"THS Base Scavenge map 01"
+	"Name"		"THSBaseScavenge01"
 
 	// The version number is used when finding campaigns on dedicated servers
 	// and in matchmaking. If you try to connect to someone in matchmaking
 	// who has a newer version, you will be directed to download the new
 	// version.  You must increment this to the next integer (whole numbers)every
         // time you release an update. (I.E. 1, 2, 3, 4, etc.)
-	"Version"       "1.25"
+	"Version"       "1"
 
 	// Author is displayed in the UI when people see others playing your
 	// campaign.
-	"Author"	"THS inc 2021"
+	"Author"	"THS"
 
 	// Website is extremely important as people will automatically be sent
 	// to this URL if they try to join a friend running your campaign.  This
@@ -38,7 +38,7 @@
 	"Website"	"https://vk.com/id504177837"
 
 	// This name is used when referring to the campaign in the UI. 
-	"DisplayTitle"	"Dead Line (2.0)"
+	"DisplayTitle"	"Base Scavenge map Series"
 	"Description"  	"Base test scavenge map for company present."
 
 	// Vmt shown behind the end credits when your campaign completes.
