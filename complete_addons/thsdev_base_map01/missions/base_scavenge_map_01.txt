@@ -18,7 +18,7 @@
 	// Do not change the name when you create a revision, as the matchmaking
         // system will consider it a different campaign. Instead, use "Version" and 
         // "DisplayTitle" below to indicate revisions.
-	"Name"		"[THS] Base Scavenge map 01"
+	"Name"		"THS Base Scavenge map 01"
 
 	// The version number is used when finding campaigns on dedicated servers
 	// and in matchmaking. If you try to connect to someone in matchmaking
