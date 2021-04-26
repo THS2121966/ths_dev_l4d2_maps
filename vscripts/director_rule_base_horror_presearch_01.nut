@@ -12,8 +12,8 @@ DirectorOptions <-
 	//LockTempo = true
 
 	// Sets the time between mob spawns. Mobs can only spawn when the pacing is in the BUILD_UP state.
-	MobSpawnMinTime = 120
-	MobSpawnMaxTime = 180
+	MobSpawnMinTime = 1500
+	MobSpawnMaxTime = 1800
 
 	// How many zombies are in each mob.
 	MobMinSize = 30
@@ -31,6 +31,7 @@ DirectorOptions <-
 	//Special infected options
 	SpecialRespawnInterval = 1.0
         SmokerLimit = 0
+		SpitterLimit = 0
         JockeyLimit = 0
         BoomerLimit = 0
         HunterLimit = 0

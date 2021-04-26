@@ -26,7 +26,8 @@ DirectorOptions <-
 
 	//Special infected options
 	SpecialRespawnInterval = 1.0
-        SmokerLimit = 0
+        SmokerLimit = 1
+		SpitterLimit = 0
         JockeyLimit = 0
         BoomerLimit = 1
         HunterLimit = 3
