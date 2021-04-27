@@ -8,7 +8,7 @@ thsdev_logo <- "[IV Script System] "
 thsdev_warning_logo <- "[Warning] "
 thsdev_error_logo <- "[Error!!!] "
 
-debug_enabled <- true
+debug_enabled <- false
 iv_core_error <- false
 iv_warning_to_debug_count <- 5
 iv_warning_to_debug_initial_count <- 0
