@@ -25,7 +25,7 @@ DirectorOptions <-
 	RelaxMaxFlowTravel = 50
 
 	//Special infected options
-	SpecialRespawnInterval = 1.0
+	SpecialRespawnInterval = 15
         SmokerLimit = 1
 		SpitterLimit = 0
         JockeyLimit = 0
@@ -40,4 +40,3 @@ DirectorOptions <-
 }
 
 Director.ResetMobTimer()		// Sets the mob spawn timer to 0.
-Director.PlayMegaMobWarningSounds()	// Plays the incoming mob sound effect.
