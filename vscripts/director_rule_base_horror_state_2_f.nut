@@ -4,13 +4,32 @@ IncludeScript("ths_scripts_base/iv_warning_msg_system.nut", this) //MSG and Core
 
 
 IVCoreStartup(debug_enabled, "director_rule_base_horror_state_2_f.nut")
+msg_sound_channel <- "s_msg_system"
+
+debug_enabled <- true //DISABLE IT WHEN RELEASING MAP!!!
+
+//IV note: Custom Director Parms
+ProhibitBossesCheckSState <- false
+SpecialInfectedCount <- 1
+
+
+if(l4d_s_count >= 3 )
+{
+	ProhibitBossesCheckSState = false
+	SpecialInfectedCount = 5
+}
+else
+{
+	ProhibitBossesCheckSState = true
+	SpecialInfectedCount = 3
+}
 
 
 DirectorOptions <-
 {
 	// This turns off tanks and witches (when true).
-	ProhibitBosses = false
-	
+	ProhibitBosses = ProhibitBossesCheckSState
+
 	//LockTempo = true
 
 	// Sets the time between mob spawns. Mobs can only spawn when the pacing is in the BUILD_UP state.
@@ -41,36 +60,15 @@ DirectorOptions <-
 
 	// Valid spawn locations
 	PreferredMobDirection = SPAWN_NO_PREFERENCE
-    MaxSpecials = 5
+    MaxSpecials = SpecialInfectedCount
 	ZombieSpawnRange = 3000
 }
 
 if(debug_enabled == true)
 {
-	printl(thsdev_logo+thsdev_error_logo+"Debug END Map state info:")
-	printl(thsdev_logo+thsdev_error_logo+"ProhibitBosses parm = "+ProhibitBosses)
-	printl(thsdev_logo+thsdev_error_logo+"MobSpawnMinTime parm = "+MobSpawnMinTime)
-	printl(thsdev_logo+thsdev_error_logo+"MobSpawnMaxTime parm = "+MobSpawnMaxTime)
-	printl(thsdev_logo+thsdev_error_logo+"MobMinSize parm = "+MobMinSize)
-	printl(thsdev_logo+thsdev_error_logo+"MobMaxSize parm = "+MobMaxSize)
-	printl(thsdev_logo+thsdev_error_logo+"MobMaxPending parm = "+MobMaxPending)
-	printl(thsdev_logo+thsdev_error_logo+"SustainPeakMinTime parm = "+SustainPeakMinTime)
-	printl(thsdev_logo+thsdev_error_logo+"SustainPeakMaxTime parm = "+SustainPeakMaxTime)
-	printl(thsdev_logo+thsdev_error_logo+"IntensityRelaxThreshold parm = "+IntensityRelaxThreshold)
-	printl(thsdev_logo+thsdev_error_logo+"RelaxMinInterval parm = "+RelaxMinInterval)
-	printl(thsdev_logo+thsdev_error_logo+"RelaxMaxInterval parm = "+RelaxMaxInterval)
-	printl(thsdev_logo+thsdev_error_logo+"RelaxMaxFlowTravel parm = "+RelaxMaxFlowTravel)
-	printl(thsdev_logo+thsdev_error_logo+"SpecialRespawnInterval parm = "+SpecialRespawnInterval)
-	printl(thsdev_logo+thsdev_error_logo+"PreferredMobDirection parm = "+PreferredMobDirection)
-	printl(thsdev_logo+thsdev_error_logo+"MaxSpecials parm = "+MaxSpecials)
-	printl(thsdev_logo+thsdev_error_logo+"ZombieSpawnRange parm = "+ZombieSpawnRange)
-	printl(thsdev_logo+thsdev_error_logo+"Debug END Special Infected Map state info:")
-	printl(thsdev_logo+thsdev_error_logo+"SmokerLimit parm = "+SmokerLimit)
-	printl(thsdev_logo+thsdev_error_logo+"SpitterLimit parm = "+SpitterLimit)
-	printl(thsdev_logo+thsdev_error_logo+"JockeyLimit parm = "+JockeyLimit)
-	printl(thsdev_logo+thsdev_error_logo+"BoomerLimit parm = "+BoomerLimit)
-	printl(thsdev_logo+thsdev_error_logo+"HunterLimit parm = "+HunterLimit)
-	printl(thsdev_logo+thsdev_error_logo+"ChargerLimit parm = "+ChargerLimit)
+	printl(thsdev_logo+"Debug END Map state info:")
+	printl(thsdev_logo+"ProhibitBosses parm = "+ProhibitBossesCheckSState)
+	printl(thsdev_logo+"MaxSpecials parm = "+SpecialInfectedCount)
 }
 
 TestSurvivorsMSG()

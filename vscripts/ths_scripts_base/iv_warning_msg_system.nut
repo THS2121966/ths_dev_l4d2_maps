@@ -12,7 +12,15 @@ IVCoreStartup(debug_enabled, "iv_warning_msg_system.nut")
 
 
 //IV note: MSG System parms
-msg_sound_channel <- EntityGroup[0].GetName() //this is ambient_generic reserved slot. don't change it!!!
+logic_script_system <- false
+if(logic_script_system == true)
+{
+    msg_sound_channel <- EntityGroup[0].GetName() //this is ambient_generic reserved slot. don't change it!!!
+}
+else
+{
+    msg_sound_channel <- "null name"
+}
 msg_warning_messages <- [
 msg01 <- null
 msg02 <- null
@@ -23,10 +31,18 @@ msg05 <- null
 msg_w_state_count <- 0
 msg_error_message <- null
 
+function SMessageInitAgain()
+{
+if(logic_script_system == true)
+{
+    msg_sound_channel <- EntityGroup[0].GetName()
+}
+}
 
 //IV note: Main functions
 function ReleaseWarnigMessage(debug_enabled, warning_msg)
 {
+    SMessageInitAgain()
     msg_warning_messages[msg_w_state_count] = warning_msg
     msg_w_state_count++
     iv_warning_to_debug_initial_count++
@@ -61,6 +77,7 @@ function ReleaseWarnigMessage(debug_enabled, warning_msg)
 
 function ReleaseErrorMessage(debug_enabled, error_msg)
 {
+    SMessageInitAgain()
     debug_enabled = true
     iv_core_error = true
     EntFire(msg_sound_channel, "PlaySound", "")
@@ -72,6 +89,7 @@ function ReleaseErrorMessage(debug_enabled, error_msg)
 
 function TestSurvivorsMSG()
 {
+    SMessageInitAgain()
     FindSurvivorAndTakeIT()
     if(l4d_s_mode == 1)
     {

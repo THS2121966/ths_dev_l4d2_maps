@@ -5,7 +5,7 @@
 
 //IV note: Includes presented and added down below
 IncludeScript("ths_scripts_base/iv_warning_msg_system.nut", this) //MSG and Core Script manager (base commands and Start, Shutdow system)
-
+logic_script_system <- true
 
 //IV note: Main Parms
 choreo_scened_nick <- null

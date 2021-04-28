@@ -21,6 +21,7 @@ survivor_rochelle <- null
 ]
 
 l4d_s_mode <- 1 // use 1 for l4d2 survivors or 2 for l4d
+l4d_s_count <- 0 // added more then survivors has spawned
 
 survivor_l4d_list <- [
 survivor_bill <- null
@@ -78,8 +79,11 @@ models/survivors/survivor_manager.mdl
 //taked_from: https://developer.valvesoftware.com/wiki/L4D2_Vscript_Examples
 
 local player = null
+local l4d_s_count_local = 0
 while( player = Entities.FindByClassname(player, "player") )
 {
+    l4d_s_count_local++
+
     if(debug_enabled == true)
     {
         printl( thsdev_logo+"Survivor Named: "+player.GetModelName()+" - Initialised Sucessful!!! Taking order..." )
@@ -154,5 +158,14 @@ while( player = Entities.FindByClassname(player, "player") )
             }
         }
     }
+}
+l4d_s_count = l4d_s_count_local
+if(debug_enabled == true)
+{
+    printl(thsdev_logo+"Total Survivor Count = "+l4d_s_count)
+    printl(thsdev_logo+"Total Survivor Count = "+l4d_s_count)
+    printl(thsdev_logo+"Total Survivor Count = "+l4d_s_count)
+    printl(thsdev_logo+"Total Survivor Count = "+l4d_s_count)
+    printl(thsdev_logo+"Total Survivor Count = "+l4d_s_count)
 }
 }
