@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8755"
-	"mapversion" "310"
+	"mapversion" "317"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -26,7 +26,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "310"
+	"mapversion" "317"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -31230,7 +31230,7 @@ entity
 	"id" "7355"
 	"classname" "logic_choreographed_scene"
 	"busyactor" "1"
-	"SceneFile" "scenes/namvet/playertransitionclose02.vcd"
+	"SceneFile" "scenes/namvet/heardboomer04.vcd"
 	"targetname" "chor_boomer_reaction_bill"
 	"origin" "1088 104 80"
 	editor
@@ -31246,7 +31246,7 @@ entity
 	"id" "7375"
 	"classname" "logic_choreographed_scene"
 	"busyactor" "1"
-	"SceneFile" "scenes/biker/askready06.vcd"
+	"SceneFile" "scenes/biker/heardboomer04.vcd"
 	"targetname" "chor_boomer_reaction_francis"
 	"origin" "1088 104 64"
 	editor
@@ -34768,7 +34768,7 @@ entity
 	"id" "14335"
 	"classname" "logic_choreographed_scene"
 	"busyactor" "1"
-	"SceneFile" "scenes/gambler/worldc1m1b04.vcd"
+	"SceneFile" "scenes/namvet/violenceawe07.vcd"
 	"targetname" "chor_first_z_reaction_bill"
 	connections
 	{
@@ -34788,7 +34788,7 @@ entity
 	"id" "14343"
 	"classname" "logic_choreographed_scene"
 	"busyactor" "1"
-	"SceneFile" "scenes/mechanic/worldc1m1b134.vcd"
+	"SceneFile" "scenes/manager/askready04.vcd"
 	"targetname" "chor_first_z_reaction_louis"
 	connections
 	{
@@ -34808,7 +34808,7 @@ entity
 	"id" "14345"
 	"classname" "logic_choreographed_scene"
 	"busyactor" "1"
-	"SceneFile" "scenes/producer/worldc1m1b21.vcd"
+	"SceneFile" "scenes/teengirl/c6dlc3firstsaferoom06.vcd"
 	"targetname" "chor_first_z_reaction_zoey"
 	connections
 	{
@@ -34828,7 +34828,7 @@ entity
 	"id" "14347"
 	"classname" "logic_choreographed_scene"
 	"busyactor" "1"
-	"SceneFile" "scenes/coach/worldc1m1b23.vcd"
+	"SceneFile" "scenes/biker/c6dlc3firstsaferoom06.vcd"
 	"targetname" "chor_first_z_reaction_francis"
 	connections
 	{
@@ -40219,7 +40219,6 @@ entity
 	connections
 	{
 		"OnBreak" "relay_next_state_opened_01Trigger0-1"
-		"OnBreak" "@oratorSpeakResponseConceptC1M3BrokeWindow whodidit:!activator0-1"
 	}
 	solid
 	{
@@ -40429,6 +40428,7 @@ entity
 		"OnTrigger" "event_glass_break_proxy_01Kill0-1"
 		"OnTrigger" "event_alarm_to_proxy_01GenerateGameEvent2-1"
 		"OnTrigger" "alarm_disable_switch_modelStartGlowing2-1"
+		"OnTrigger" "@DirectorFireConceptToAnyTrainUnhooked WhoDidIt:!Activator0-1"
 	}
 	"origin" "3416 1264 336"
 	editor
@@ -41402,7 +41402,7 @@ entity
 		"OnPressed" "alarm_disable_switch_modelStopGlowing0-1"
 		"OnPressed" "alarm_disable_switch_modelSetAnimationon0-1"
 		"OnPressed" "relay_disable_alarm_01Trigger0-1"
-		"OnPressed" "@oratorSpeakResponseConceptC1M3AlarmOff whodidit:!activator0-1"
+		"OnPressed" "@OratorSpeakResponseConceptplane_radio_button2 WhoDidIt:!Activator0-1"
 	}
 	solid
 	{
@@ -41510,8 +41510,8 @@ entity
 {
 	"id" "25452"
 	"classname" "info_game_event_proxy"
-	"event_name" "explain_perimeter1"
-	"range" "1024"
+	"event_name" "explain_mall_alarm"
+	"range" "1500"
 	"spawnflags" "0"
 	"targetname" "event_alarm_to_proxy_01"
 	"origin" "448 834 320"

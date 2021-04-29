@@ -73,10 +73,10 @@ if(debug_enabled == true)
 
 TestSurvivorsMSG()
 
-if(survivor_l4d2_list[0] == null && survivor_l4d2_list[1] == null && survivor_l4d2_list[2] == null && survivor_l4d2_list[3] == null && survivor_l4d_list[0] == null && survivor_l4d_list[1] == null && survivor_l4d_list[2] == null && survivor_l4d_list[3] == null )
+/*if(survivor_l4d2_list[0] == null && survivor_l4d2_list[1] == null && survivor_l4d2_list[2] == null && survivor_l4d2_list[3] == null && survivor_l4d_list[0] == null && survivor_l4d_list[1] == null && survivor_l4d_list[2] == null && survivor_l4d_list[3] == null )
 {
 ReleaseWarnigMessage(debug_enabled, "No Survivors Founded!!! Aborting...")
-}
+}*/
 
 Director.ResetMobTimer()		// Sets the mob spawn timer to 0.
 Director.PlayMegaMobWarningSounds()	// Plays the incoming mob sound effect.
