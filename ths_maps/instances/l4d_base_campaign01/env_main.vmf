@@ -1,0 +1,248 @@
+versioninfo
+{
+	"editorversion" "400"
+	"editorbuild" "8755"
+	"mapversion" "1"
+	"formatversion" "100"
+	"prefab" "0"
+}
+visgroups
+{
+}
+viewsettings
+{
+	"bSnapToGrid" "1"
+	"bShowGrid" "1"
+	"bShowLogicalGrid" "0"
+	"nGridSpacing" "8"
+	"bShow3DGrid" "0"
+}
+world
+{
+	"id" "1"
+	"mapversion" "1"
+	"classname" "worldspawn"
+	"skyname" "sky_l4d_rural02_hdr"
+	"maxpropscreenwidth" "-1"
+	"detailvbsp" "detail.vbsp"
+	"detailmaterial" "detail/detailsprites"
+	"musicpostfix" "Waterfront"
+}
+entity
+{
+	"id" "2"
+	"classname" "logic_auto"
+	"spawnflags" "1"
+	connections
+	{
+		"OnMapSpawn" "tonemap_mainSetAutoExposureMax4.50-1"
+		"OnMapSpawn" "tonemap_mainSetAutoExposureMin.70-1"
+		"OnMapSpawn" "tonemap_mainSetBloomScale.50-1"
+		"OnMapSpawn" "tonemap_mainSetTonemapRate.250-1"
+	}
+	"origin" "0 64 32"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[500 7000]"
+	}
+}
+entity
+{
+	"id" "4"
+	"classname" "env_tonemap_controller"
+	"spawnflags" "1"
+	"targetname" "tonemap_main"
+	"origin" "0 48 32"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[500 7000]"
+	}
+}
+entity
+{
+	"id" "6"
+	"classname" "shadow_control"
+	"angles" "30 42 0"
+	"color" "72 72 72"
+	"disableallshadows" "0"
+	"distance" "100"
+	"enableshadowsfromlocallights" "1"
+	"targetname" "shadow_main"
+	"origin" "0 48 16"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[500 7000]"
+	}
+}
+entity
+{
+	"id" "8"
+	"classname" "env_fog_controller"
+	"angles" "0 180 0"
+	"disableX360" "0"
+	"farz" "-1"
+	"fogblend" "1"
+	"fogcolor" "85 85 85"
+	"fogcolor2" "68 68 68"
+	"fogdir" "1 0 0"
+	"fogenable" "1"
+	"fogend" "2300"
+	"foglerptime" "3"
+	"fogmaxdensity" "1"
+	"fogstart" "256"
+	"HDRColorScale" "1.0"
+	"maxcpulevel" "0"
+	"maxgpulevel" "0"
+	"mincpulevel" "0"
+	"mingpulevel" "0"
+	"spawnflags" "1"
+	"targetname" "fog_main"
+	"use_angles" "1"
+	"origin" "0 32 16"
+	editor
+	{
+		"color" "255 255 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[500 7000]"
+	}
+}
+entity
+{
+	"id" "10"
+	"classname" "postprocess_controller"
+	"fadetime" "3"
+	"grainstrength" "1"
+	"localcontrastedgestrength" ".32"
+	"localcontraststrength" "1.3"
+	"spawnflags" "1"
+	"targetname" "post_main"
+	"topvignettestrength" "1"
+	"vignetteblurstrength" "0"
+	"vignetteend" "1.5"
+	"vignettestart" "1"
+	"origin" "0 32 32"
+	editor
+	{
+		"color" "255 255 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[500 7000]"
+	}
+}
+entity
+{
+	"id" "12"
+	"classname" "postprocess_controller"
+	"fadetime" "3"
+	"grainstrength" "1"
+	"localcontrastedgestrength" ".1"
+	"localcontraststrength" ".45"
+	"spawnflags" "0"
+	"targetname" "post_checkpoint"
+	"topvignettestrength" "1"
+	"vignetteblurstrength" "0"
+	"vignetteend" "2"
+	"vignettestart" "1"
+	"origin" "0 16 32"
+	editor
+	{
+		"color" "255 255 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[500 7000]"
+	}
+}
+entity
+{
+	"id" "14"
+	"classname" "env_fog_controller"
+	"angles" "0 0 0"
+	"disableX360" "0"
+	"farz" "-1"
+	"fogblend" "0"
+	"fogcolor" "100 106 74"
+	"fogcolor2" "255 255 255"
+	"fogdir" "1 0 0"
+	"fogenable" "1"
+	"fogend" "2500"
+	"foglerptime" "3"
+	"fogmaxdensity" ".9"
+	"fogstart" "512"
+	"HDRColorScale" ".8"
+	"maxcpulevel" "0"
+	"maxgpulevel" "0"
+	"mincpulevel" "0"
+	"mingpulevel" "0"
+	"spawnflags" "0"
+	"targetname" "fog_checkpoint"
+	"use_angles" "0"
+	"origin" "0 16 16"
+	editor
+	{
+		"color" "255 255 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[500 7000]"
+	}
+}
+entity
+{
+	"id" "16"
+	"classname" "color_correction"
+	"fadeInDuration" "2.3"
+	"fadeOutDuration" "2.3"
+	"filename" "materials/correction/cc_checkpoint.raw"
+	"maxfalloff" "0"
+	"maxweight" "1.0"
+	"minfalloff" "0"
+	"spawnflags" "2"
+	"StartDisabled" "0"
+	"targetname" "colorcorrection_checkpoint"
+	"origin" "0 0 16"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "20"
+	"classname" "color_correction"
+	"fadeInDuration" "2.3"
+	"fadeOutDuration" "2.3"
+	"filename" "materials/correction/cc_c3_main.raw"
+	"maxfalloff" "0"
+	"maxweight" "1.0"
+	"minfalloff" "0"
+	"spawnflags" "3"
+	"targetname" "color_correction_main"
+	"origin" "0 0 32"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 -13768]"
+	}
+}
+cameras
+{
+	"activecamera" "-1"
+}
+cordons
+{
+	"active" "0"
+}
