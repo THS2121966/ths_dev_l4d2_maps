@@ -20,11 +20,13 @@
 [ 
 	angles(angle) : "Pitch Yaw Roll (Y Z X)" : "0 0 0" : "This entity's orientation in the world. Pitch is rotation around the Y axis, " +
 		"yaw is the rotation around the Z axis, roll is the rotation around the X axis."
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 ]
 
 @BaseClass = Origin
 [ 
 	origin(origin) : "Origin (X Y Z)" : : "The position of this entity's center in the world. Rotating entities typically rotate around their origin."
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 ]
 
 @BaseClass = Studiomodel
@@ -39,7 +41,9 @@
 		0 : "No"
 		1 : "Yes"
 	]
-
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 	// Inputs
 	input Skin(integer) : "Changes the model skin to the specified number."
 	input DisableShadow(void) : "Turn shadow off."
@@ -63,7 +67,9 @@
 	
 	vscripts(scriptlist) : "Entity Scripts" : "" : "Name(s) of script files that are executed after all entities have spawned."
 	thinkfunction(string) : "Script think function" : "" : "Name of a function in this entity's script scope which will be called automatically."
-
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 	// Inputs
 	input RunScriptFile(script) : "Execute a game script file from disk"
 	input RunScriptCode(string) : "Execute a string of script source code"
@@ -89,7 +95,9 @@
 @BaseClass = Parentname
 [ 
 	parentname(target_destination) : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
-
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 	// Inputs
 	input SetParent(string) : "Changes the entity's parent in the movement hierarchy."
 	input SetParentAttachment(string) : "Change this entity to attach to a specific attachment point on its parent. Entities must be parented before being sent this input. The parameter passed in should be the name of the attachment."
@@ -111,7 +119,9 @@
 		0 : "No"
 		1 : "Yes"
 	]
-
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 	// Inputs
 	input Enable(void) : "Enable this entity."
 	input Disable(void) : "Disable this entity."
@@ -137,6 +147,9 @@
 		8: "Fast Become Solid"
 		14: "Constant Glow"
 	]
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 ]
 
 @BaseClass = Shadow
@@ -146,7 +159,9 @@
 		0 : "No"
 		1 : "Yes"
 	]
-
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 	input DisableShadow(void) : "Turn shadow off."
 	input EnableShadow(void) : "Turn shadow on."
 ]
@@ -163,7 +178,9 @@
 	glowrange(integer) : "Glow Range" : 0 : "Range at which the glow becomes visible. (0 = always visible)"
 	glowrangemin(integer) : "Glow Range Min" : 0 : "Range at which the glow stops being visible. (0 = always visible)"
 	glowcolor(color255) : "Glow Color Override (R G B)" : "0 0 0" : "Change the render color of the glow."
-
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 	input StartGlowing(void) : "Turn on a permanent glow effect for this prop."
 	input StopGlowing(void) : "Turn off this prop's glow effect."
 ]
@@ -208,7 +225,10 @@
 	[
 		0 : "No"
 		1 : "Yes"
-	] 
+	]
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 ]
 
 @BaseClass base(RenderFxChoices, SystemLevelChoice) = RenderFields 
@@ -243,6 +263,9 @@
  												 " then the engine will forcibly fade out props even if fademindist/fademaxdist isn't specified." +
 												 " This scale factor gives you some control over the fade. Using 0 here turns off the forcible fades." +
 												 " Numbers smaller than 1 cause the prop to fade out at further distances, and greater than 1 cause it to fade out at closer distances."
+												 
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+												 
 ]
 
 @BaseClass = Inputfilter
@@ -254,11 +277,17 @@
 		16 : "Ignore Use"
 		32 : "Ignore All"
 	]
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 ]
 
 @BaseClass = Global 
 [ 
 	globalname(string) : "Global Entity Name" : "" : "Name by which this entity is linked to another entity in a different map. When the player transitions to a new map, entities in the new map with globalnames matching entities in the previous map will have the previous map's state copied over their state."
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 ]
 
 // Base class for env_global
@@ -278,7 +307,9 @@
 	[
 		1 : "Set Initial State" : 0
 	]
-
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 	// Inputs
 	input TurnOn(void) : "Set state of global to ON."
 	input TurnOff(void) : "Set state of global to OFF."
@@ -295,6 +326,9 @@
 @BaseClass = DamageFilter
 [ 
 	damagefilter(target_destination) : "Damage Filter" : "" : "Name of the filter entity that controls which entities can damage us."
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 	input SetDamageFilter(string) : "Sets the entity to use as damage filter. Pass in an empty string to clear the damage filter."
 ]
 
@@ -307,6 +341,9 @@
 
 	// Pre-defined contexts at server startup time (set by mapper)
 	ResponseContext(string) : "Response Contexts" : "" : "Response system context(s) for this entity. Format should be: 'key:value,key2:value2,etc'. When this entity speaks, the list of keys & values will be passed to the response rules system."
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 ]
 
 @BaseClass base(Targetname, DamageFilter, Shadow) = Breakable
@@ -320,7 +357,9 @@
 		2 : "Full Gibs on All Platforms"
 		3 : "Reduced gibs"
 	]
-
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 	// Inputs
 	input Break(void) : "Breaks the breakable."
 	input SetHealth(integer) : "Sets a new value for the breakable's health. If the breakable's health reaches zero it will break."
@@ -449,6 +488,9 @@
 	]
 	explodemagnitude(integer) : "Explode Magnitude" : 0 : "If non-zero, when this entity breaks it will create an explosion that causes the specified amount of damage."
 	pressuredelay(float) : "Pressure Delay" : 0 : "Delay, in seconds, after 'broken' by pressure before breaking apart (allows for sound to play before breaking apart)."
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 ]
 
 @BaseClass base(Breakable) = BreakableProp
@@ -459,6 +501,9 @@
 		32 : "Break on Pressure" : 0
 	]
 	pressuredelay(float) : "Pressure Delay" : 0 : "Delay, in seconds, after 'broken' by pressure before breaking apart (allows for sound to play before breaking apart)."
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 ]
 
 @BaseClass base(Targetname, Angles, RenderFields, DamageFilter, ResponseContext, Shadow) color(0 200 200) = BaseNPC
@@ -516,7 +561,9 @@
 	]
 
 	physdamagescale(float) : "Physics Impact Damage Scale" : "1.0" : "Scales damage energy when this character is hit by a physics object. With a value of 0 the NPC will take no damage from physics."
-
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 	// Outputs
 	output OnDamaged(void) : "Fired when this NPC takes damage."
 	output OnDeath(void) : "Fired when this NPC is killed." 
@@ -596,6 +643,8 @@
 	MaxNPCCount(integer) : "Num. of NPCs" : 1 : "Number of NPCs that will spawn before this spawner is exhausted."
 	SpawnFrequency(string) : "Frequency" : "5" : "How often (in seconds) a new NPC will be spawned. If set to -1, a new NPC will be made when the last NPC dies."
 	MaxLiveChildren(integer) : "Max Live NPCs" : 5 : "Maximum number of live children allowed at any one time (new ones will not be made until one dies). If set to -1, no limit is applied."
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 	// Outputs
 	output OnSpawnNPC(string) : "Fired when an NPC is spawned. The activator is the NPC, and the string is the name of the NPC." 
@@ -678,6 +727,9 @@
 		32 : "No Rotorwash" : 0
 		64 : "Await Input" : 0
 	]
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 ]
 
 @BaseClass color(0 255 0) = PlayerClass []
@@ -716,6 +768,8 @@
 	]
 	_shadoworiginoffset(vector) : "Shadow cast offset" : "0 0 0" : "A world-space offset that gets applied to the light origin when casting entity shadows. Useful for dealing with funny-looking shadows from very low lights: Just offset up the z axis."
 	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 	// Inputs
 	input TurnOn(void) : "Turn the light on."
 	input TurnOff(void) : "The the light off."
@@ -727,6 +781,8 @@
 @BaseClass = Node 
 [
 	nodeid(integer) readonly : "Node ID"
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 ]
 
 @BaseClass base(Node) = HintNode 
@@ -828,7 +884,9 @@
 		2 : "Alert"
 		3 : "Combat"
 	]
-
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 	// Inputs
 	input EnableHint(void) : "Enable hint."
 	input DisableHint(void) : "Disable hint."
@@ -851,7 +909,9 @@
 	]
 
 	filtername(filterclass) : "Filter Name" : : "Filter to use to see if activator triggers me. See filter_activator_name for more explanation."
-
+	
+	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	
 	// Inputs
 	input Toggle(void) : "Toggles this trigger between enabled and disabled states."
 
