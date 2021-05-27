@@ -20,13 +20,13 @@
 [ 
 	angles(angle) : "Pitch Yaw Roll (Y Z X)" : "0 0 0" : "This entity's orientation in the world. Pitch is rotation around the Y axis, " +
 		"yaw is the rotation around the Z axis, roll is the rotation around the X axis."
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_angles(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 ]
 
 @BaseClass = Origin
 [ 
 	origin(origin) : "Origin (X Y Z)" : : "The position of this entity's center in the world. Rotating entities typically rotate around their origin."
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_origin(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 ]
 
 @BaseClass = Studiomodel
@@ -42,7 +42,7 @@
 		1 : "Yes"
 	]
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_studiomdl(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 	// Inputs
 	input Skin(integer) : "Changes the model skin to the specified number."
@@ -68,7 +68,7 @@
 	vscripts(scriptlist) : "Entity Scripts" : "" : "Name(s) of script files that are executed after all entities have spawned."
 	thinkfunction(string) : "Script think function" : "" : "Name of a function in this entity's script scope which will be called automatically."
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_targetname(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 	// Inputs
 	input RunScriptFile(script) : "Execute a game script file from disk"
@@ -96,7 +96,7 @@
 [ 
 	parentname(target_destination) : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_parentname(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 	// Inputs
 	input SetParent(string) : "Changes the entity's parent in the movement hierarchy."
@@ -120,7 +120,7 @@
 		1 : "Yes"
 	]
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_enabledisable(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 	// Inputs
 	input Enable(void) : "Enable this entity."
@@ -148,7 +148,7 @@
 		14: "Constant Glow"
 	]
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_renderfx(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 ]
 
@@ -160,7 +160,7 @@
 		1 : "Yes"
 	]
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_shadow(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 	input DisableShadow(void) : "Turn shadow off."
 	input EnableShadow(void) : "Turn shadow on."
@@ -179,7 +179,7 @@
 	glowrangemin(integer) : "Glow Range Min" : 0 : "Range at which the glow stops being visible. (0 = always visible)"
 	glowcolor(color255) : "Glow Color Override (R G B)" : "0 0 0" : "Change the render color of the glow."
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_glow(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 	input StartGlowing(void) : "Turn on a permanent glow effect for this prop."
 	input StopGlowing(void) : "Turn off this prop's glow effect."
@@ -227,7 +227,7 @@
 		1 : "Yes"
 	]
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_syslevelchoice(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 ]
 
@@ -264,7 +264,7 @@
 												 " This scale factor gives you some control over the fade. Using 0 here turns off the forcible fades." +
 												 " Numbers smaller than 1 cause the prop to fade out at further distances, and greater than 1 cause it to fade out at closer distances."
 												 
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_renderfields(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 												 
 ]
 
@@ -278,7 +278,7 @@
 		32 : "Ignore All"
 	]
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_infilter(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 ]
 
@@ -286,7 +286,7 @@
 [ 
 	globalname(string) : "Global Entity Name" : "" : "Name by which this entity is linked to another entity in a different map. When the player transitions to a new map, entities in the new map with globalnames matching entities in the previous map will have the previous map's state copied over their state."
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_global(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 ]
 
@@ -308,7 +308,7 @@
 		1 : "Set Initial State" : 0
 	]
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_envglobal(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 	// Inputs
 	input TurnOn(void) : "Set state of global to ON."
@@ -327,7 +327,7 @@
 [ 
 	damagefilter(target_destination) : "Damage Filter" : "" : "Name of the filter entity that controls which entities can damage us."
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_dmgfilter(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 	input SetDamageFilter(string) : "Sets the entity to use as damage filter. Pass in an empty string to clear the damage filter."
 ]
@@ -342,7 +342,7 @@
 	// Pre-defined contexts at server startup time (set by mapper)
 	ResponseContext(string) : "Response Contexts" : "" : "Response system context(s) for this entity. Format should be: 'key:value,key2:value2,etc'. When this entity speaks, the list of keys & values will be passed to the response rules system."
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_rscontext(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 ]
 
@@ -358,7 +358,7 @@
 		3 : "Reduced gibs"
 	]
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_breakable(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 	// Inputs
 	input Break(void) : "Breaks the breakable."
@@ -489,7 +489,7 @@
 	explodemagnitude(integer) : "Explode Magnitude" : 0 : "If non-zero, when this entity breaks it will create an explosion that causes the specified amount of damage."
 	pressuredelay(float) : "Pressure Delay" : 0 : "Delay, in seconds, after 'broken' by pressure before breaking apart (allows for sound to play before breaking apart)."
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_brbrush(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 ]
 
@@ -502,7 +502,7 @@
 	]
 	pressuredelay(float) : "Pressure Delay" : 0 : "Delay, in seconds, after 'broken' by pressure before breaking apart (allows for sound to play before breaking apart)."
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_brprop(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 ]
 
@@ -562,7 +562,7 @@
 
 	physdamagescale(float) : "Physics Impact Damage Scale" : "1.0" : "Scales damage energy when this character is hit by a physics object. With a value of 0 the NPC will take no damage from physics."
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_basenpc(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 	// Outputs
 	output OnDamaged(void) : "Fired when this NPC takes damage."
@@ -644,7 +644,7 @@
 	SpawnFrequency(string) : "Frequency" : "5" : "How often (in seconds) a new NPC will be spawned. If set to -1, a new NPC will be made when the last NPC dies."
 	MaxLiveChildren(integer) : "Max Live NPCs" : 5 : "Maximum number of live children allowed at any one time (new ones will not be made until one dies). If set to -1, no limit is applied."
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_basenpcmaker(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 	// Outputs
 	output OnSpawnNPC(string) : "Fired when an NPC is spawned. The activator is the NPC, and the string is the name of the NPC." 
@@ -728,7 +728,7 @@
 		64 : "Await Input" : 0
 	]
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_basehlcopter(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 ]
 
@@ -768,7 +768,7 @@
 	]
 	_shadoworiginoffset(vector) : "Shadow cast offset" : "0 0 0" : "A world-space offset that gets applied to the light origin when casting entity shadows. Useful for dealing with funny-looking shadows from very low lights: Just offset up the z axis."
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_light(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 	// Inputs
 	input TurnOn(void) : "Turn the light on."
@@ -782,7 +782,7 @@
 [
 	nodeid(integer) readonly : "Node ID"
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_node(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 ]
 
 @BaseClass base(Node) = HintNode 
@@ -885,7 +885,7 @@
 		3 : "Combat"
 	]
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_ndhint(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 	// Inputs
 	input EnableHint(void) : "Enable hint."
@@ -910,7 +910,7 @@
 
 	filtername(filterclass) : "Filter Name" : : "Filter to use to see if activator triggers me. See filter_activator_name for more explanation."
 	
-	linedivider_base(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
+	linedivider_tgonce(string) readonly : "----------------------------------------------------------------------------------------------------------" : ""
 	
 	// Inputs
 	input Toggle(void) : "Toggles this trigger between enabled and disabled states."
