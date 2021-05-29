@@ -82,8 +82,6 @@ local player = null
 local l4d_s_count_local = 0
 while( player = Entities.FindByClassname(player, "player") )
 {
-    l4d_s_count_local++
-
     if(debug_enabled == true)
     {
         printl( thsdev_logo+"Survivor Named: "+player.GetModelName()+" - Initialised Sucessful!!! Taking order..." )
@@ -97,6 +95,7 @@ while( player = Entities.FindByClassname(player, "player") )
             {
                 printl( thsdev_logo+"Taking order for: "+survivor_l4d2_list[0]+" - Initialised Sucessfull!!!" )
             }
+            l4d_s_count_local = l4d_s_count_local + 1
         }
         else if(player.GetModelName() == "models/survivors/survivor_coach.mdl")
         {
@@ -105,6 +104,7 @@ while( player = Entities.FindByClassname(player, "player") )
             {
                 printl( thsdev_logo+"Taking order for: "+survivor_l4d2_list[1]+" - Initialised Sucessfull!!!" )
             }
+            l4d_s_count_local = l4d_s_count_local + 1
         }
         else if(player.GetModelName() == "models/survivors/survivor_mechanic.mdl")
         {
@@ -113,6 +113,7 @@ while( player = Entities.FindByClassname(player, "player") )
             {
                 printl( thsdev_logo+"Taking order for: "+survivor_l4d2_list[2]+" - Initialised Sucessfull!!!" )
             }
+            l4d_s_count_local = l4d_s_count_local + 1
         }
         else if(player.GetModelName() == "models/survivors/survivor_producer.mdl")
         {
@@ -121,6 +122,7 @@ while( player = Entities.FindByClassname(player, "player") )
             {
                 printl( thsdev_logo+"Taking order for: "+survivor_l4d2_list[3]+" - Initialised Sucessfull!!!" )
             }
+            l4d_s_count_local = l4d_s_count_local + 1
         }
     }
     else if(l4d_s_mode == 2)
@@ -132,6 +134,7 @@ while( player = Entities.FindByClassname(player, "player") )
             {
                 printl( thsdev_logo+"Taking order for: "+survivor_l4d_list[0]+" - Initialised Sucessfull!!!" )
             }
+            l4d_s_count_local = l4d_s_count_local + 1
         }
         else if(player.GetModelName() == "models/survivors/survivor_biker.mdl")
         {
@@ -140,6 +143,7 @@ while( player = Entities.FindByClassname(player, "player") )
             {
                 printl( thsdev_logo+"Taking order for: "+survivor_l4d_list[1]+" - Initialised Sucessfull!!!" )
             }
+            l4d_s_count_local = l4d_s_count_local + 1
         }
         else if(player.GetModelName() == "models/survivors/survivor_manager.mdl")
         {
@@ -148,6 +152,7 @@ while( player = Entities.FindByClassname(player, "player") )
             {
                 printl( thsdev_logo+"Taking order for: "+survivor_l4d_list[2]+" - Initialised Sucessfull!!!" )
             }
+            l4d_s_count_local = l4d_s_count_local + 1
         }
         else if(player.GetModelName() == "models/survivors/survivor_teenangst.mdl")
         {
@@ -156,10 +161,11 @@ while( player = Entities.FindByClassname(player, "player") )
             {
                 printl( thsdev_logo+"Taking order for: "+survivor_l4d_list[3]+" - Initialised Sucessfull!!!" )
             }
+            l4d_s_count_local = l4d_s_count_local + 1
         }
     }
 }
-l4d_s_count = l4d_s_count_local
+l4d_s_count <- l4d_s_count_local
 if(debug_enabled == true)
 {
     printl(thsdev_logo+"Total Survivor Count = "+l4d_s_count)

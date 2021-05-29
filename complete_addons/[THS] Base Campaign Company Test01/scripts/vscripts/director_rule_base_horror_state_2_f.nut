@@ -5,6 +5,7 @@ IncludeScript("ths_scripts_base/iv_warning_msg_system.nut", this) //MSG and Core
 
 IVCoreStartup(debug_enabled, "director_rule_base_horror_state_2_f.nut")
 msg_sound_channel <- "s_msg_system"
+l4d_s_mode <- 2;
 
 debug_enabled <- true //DISABLE IT WHEN RELEASING MAP!!!
 
@@ -12,7 +13,8 @@ debug_enabled <- true //DISABLE IT WHEN RELEASING MAP!!!
 ProhibitBossesCheckSState <- false
 SpecialInfectedCount <- 1
 
-
+function LoadL4DSInfo()
+{
 if(l4d_s_count >= 3 )
 {
 	ProhibitBossesCheckSState = false
@@ -23,8 +25,11 @@ else
 	ProhibitBossesCheckSState = true
 	SpecialInfectedCount = 3
 }
+}
 
 
+function LoadToDirector()
+{
 DirectorOptions <-
 {
 	// This turns off tanks and witches (when true).
@@ -71,12 +76,19 @@ if(debug_enabled == true)
 	printl(thsdev_logo+"MaxSpecials parm = "+SpecialInfectedCount)
 }
 
-TestSurvivorsMSG()
-
-/*if(survivor_l4d2_list[0] == null && survivor_l4d2_list[1] == null && survivor_l4d2_list[2] == null && survivor_l4d2_list[3] == null && survivor_l4d_list[0] == null && survivor_l4d_list[1] == null && survivor_l4d_list[2] == null && survivor_l4d_list[3] == null )
-{
-ReleaseWarnigMessage(debug_enabled, "No Survivors Founded!!! Aborting...")
-}*/
+//TestSurvivorsMSG()
 
 Director.ResetMobTimer()		// Sets the mob spawn timer to 0.
 Director.PlayMegaMobWarningSounds()	// Plays the incoming mob sound effect.
+}
+
+
+function LoadMain()
+{
+	TestSurvivorsMSG()
+	LoadL4DSInfo()
+	LoadToDirector()
+}
+
+
+LoadMain()
