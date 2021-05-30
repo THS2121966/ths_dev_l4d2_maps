@@ -13,14 +13,8 @@ IVCoreStartup(debug_enabled, "iv_warning_msg_system.nut")
 
 //IV note: MSG System parms
 logic_script_system <- false
-if(logic_script_system == true)
-{
-    msg_sound_channel <- EntityGroup[0].GetName() //this is ambient_generic reserved slot. don't change it!!!
-}
-else
-{
-    msg_sound_channel <- "null name"
-}
+msg_sound_channel <- "null name"
+
 msg_warning_messages <- [
 msg01 <- null
 msg02 <- null
@@ -36,7 +30,13 @@ function SMessageInitAgain()
 if(logic_script_system == true)
 {
     msg_sound_channel <- EntityGroup[0].GetName()
+    return logic_script_system
 }
+else
+{
+    msg_sound_channel <- "null name"
+}
+return false
 }
 
 //IV note: Main functions

@@ -55,6 +55,7 @@ function IVCoreStartup(debug_enabled, UsedScriptName)
     if(iv_core_error == true)
     {
         IVCoreErrorShutdown()
+        return false
     }
     else
     {
@@ -63,6 +64,7 @@ function IVCoreStartup(debug_enabled, UsedScriptName)
             printl(thsdev_logo+"Testing Core complete!!!")
         }
     }
+    return true
 }
 
 
@@ -174,4 +176,6 @@ if(debug_enabled == true)
     printl(thsdev_logo+"Total Survivor Count = "+l4d_s_count)
     printl(thsdev_logo+"Total Survivor Count = "+l4d_s_count)
 }
+return l4d_s_count_local
 }
+
