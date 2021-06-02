@@ -11,14 +11,18 @@ logic_script_system <- false
 iv_check <- IVCoreStartup(debug_enabled, "l4d2_cannals_ep1_pre_search_scenario.nut")
 
 
-/*if(iv_check == false)
+if(iv_check == false)
 {
     return false
-}*/
+}
 
 
 class IVDirectorInit
 {
+    iv_pre_release = true
+    local_debug_enabled = false
+    local_ths_dev_logo = "FIXME!!!"
+
     iv_prohibit_bosses = false
     iv_mob_min_max_table = {
     min = 25,
@@ -46,10 +50,26 @@ class IVDirectorInit
         iv_special_infected_table.l_HunterLimit = 3
         iv_special_infected_table.l_ChargerLimit = 0
         iv_special_infected_table.l_SpitterLimit = 0
+        if(local_debug_enabled == true)
+        {
+            ::printl(local_ths_dev_logo+"List of default script parms: \n iv_prohibit_bosses = "+iv_prohibit_bosses+"\n iv_mob_min_max_table = MIN - "
+            +iv_mob_min_max_table.min+"\n MAX - "+iv_mob_min_max_table.max+"\n l_SmokerLimit = "
+            +iv_special_infected_table.l_SmokerLimit+"\n l_JockeyLimit = "+iv_special_infected_table.l_JockeyLimit+"\n l_BoomerLimit = "+iv_special_infected_table.l_BoomerLimit
+            +"\n l_HunterLimit = "+iv_special_infected_table.l_HunterLimit+"\n l_ChargerLimit = "+iv_special_infected_table.l_ChargerLimit+"\n l_SpitterLimit = "
+            +iv_special_infected_table.l_SpitterLimit)
+        }
     }
 }
 
+
 iv_director_main <- IVDirectorInit()
+iv_director_main.local_ths_dev_logo = thsdev_logo
+
+if(iv_director_main.iv_pre_release == true)
+{
+    debug_enabled <- true
+    iv_director_main.local_debug_enabled = debug_enabled
+}
 
 iv_director_main.SetDefaultParms()
 
@@ -86,6 +106,15 @@ function ReleaseDirectorParms()
         iv_director_main.iv_special_infected_table.l_SpitterLimit = 0
     }
     iv_director_main.iv_prohibit_bosses = p_b
+        if(debug_enabled == true)
+        {
+            printl(thsdev_logo+"List of CHANGED script parms: \n iv_prohibit_bosses = "+iv_director_main.iv_prohibit_bosses+"\n iv_mob_min_max_table = MIN - "
+            +iv_director_main.iv_mob_min_max_table.min+"\n MAX - "+iv_director_main.iv_mob_min_max_table.max+"\n l_SmokerLimit = "
+            +iv_director_main.iv_special_infected_table.l_SmokerLimit+"\n l_JockeyLimit = "+iv_director_main.iv_special_infected_table.l_JockeyLimit+"\n l_BoomerLimit = "
+            +iv_director_main.iv_special_infected_table.l_BoomerLimit
+            +"\n l_HunterLimit = "+iv_director_main.iv_special_infected_table.l_HunterLimit+"\n l_ChargerLimit = "+iv_director_main.iv_special_infected_table.l_ChargerLimit+"\n l_SpitterLimit = "
+            +iv_director_main.iv_special_infected_table.l_SpitterLimit)
+        }
 DirectorOptions <-
 {
 	// This turns off tanks and witches (when true).
