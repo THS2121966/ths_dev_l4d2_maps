@@ -1,6 +1,6 @@
 Msg("Initiating Director Horror State 2 Map Final Scenario...\n");
 
-IncludeScript("ths_scripts_base/iv_warning_msg_system.nut", this) //MSG and Core Script manager (base commands and Start, Shutdow system)
+IncludeScript("maps/l4d_base_campaign01/ths_scripts_base/iv_warning_msg_system.nut", this) //MSG and Core Script manager (base commands and Start, Shutdow system)
 
 
 IVCoreStartup(debug_enabled, "director_rule_base_horror_state_2_f.nut")

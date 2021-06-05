@@ -4,7 +4,7 @@
 
 
 //IV note: Includes presented and added down below
-IncludeScript("ths_scripts_base/iv_warning_msg_system.nut", this) //MSG and Core Script manager (base commands and Start, Shutdow system)
+IncludeScript("maps/l4d_base_campaign01/ths_scripts_base/iv_warning_msg_system.nut", this) //MSG and Core Script manager (base commands and Start, Shutdow system)
 logic_script_system <- true
 IVCoreStartup(debug_enabled, "map_seeker.nut")
 
