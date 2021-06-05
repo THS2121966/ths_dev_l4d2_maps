@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8755"
-	"mapversion" "145"
+	"mapversion" "148"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -26,7 +26,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "145"
+	"mapversion" "148"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -11880,9 +11880,11 @@ entity
 	"origin" "128 240 64"
 	"spawnflags" "1"
 	"StartDisabled" "0"
+	"targetname" "trigger_chor_st_01"
+	"vscripts" "maps/l4d2_cannals_ep1/modifed_trigger_01"
 	connections
 	{
-		"OnTrigger" "logic_choreo_st_map_set_01RunScriptCodeReleaseChoreoOrderSpeak(debug_enabled, 1)0-1"
+		"OnTrigger" "logic_choreo_st_map_set_01RunScriptCodeReleaseChoreoOrderSpeak(debug_enabled)0-1"
 	}
 	solid
 	{

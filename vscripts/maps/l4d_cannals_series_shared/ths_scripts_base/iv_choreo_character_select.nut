@@ -60,7 +60,7 @@ function InitChoreoPersons(debug_enabled, persons_from_l4d_or_l4d2)
 
 function TakeChors(debug_enabled, l4d_s_mode)
 {
-    if(order1 == null && order2 == null && order3 == null & order4 == null)
+    if(order1 == null || order2 == null || order3 == null || order4 == null)
     {
         ReleaseWarnigMessage(debug_enabled, "Some chors not released!!! Release all of characters, because all of that will be precached!!!")
     }

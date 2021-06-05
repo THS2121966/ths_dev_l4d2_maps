@@ -23,6 +23,13 @@ choreo_scened_francis <- null
 choreo_scened_louis <- null
 choreo_scened_zoey <- null*/ //Disabled in this script...
 
+priority_table <- {
+scened_nick = false
+scened_coach = false
+scened_ellis = false
+scened_rochelle = false
+}
+
 order1 <- EntityGroup[1].GetName() //Use EntityGroup in hammer logic_script entity info
 order2 <- EntityGroup[2].GetName()
 order3 <- EntityGroup[3].GetName()
@@ -48,11 +55,11 @@ function SafeRelease()
 IVCoreSafeShutdown("iv_choreo_character_select.nut")
 }
 
-function InitChoreoPersons(debug_enabled, persons_from_l4d_or_l4d2)
+function InitChoreoPersons(debug_enabled) //Old InitChoreoPersons(debug_enabled, persons_from_l4d_or_l4d2)
 {
     //IV note: Init Main Core.
     //IVCoreStartup(debug_enabled, "iv_choreo_character_select.nut")
-    local persons_set = persons_from_l4d_or_l4d2
+    local persons_set = 1 //Forced to 1, Because Used ONLY L4D2 Persons
     l4d_s_mode = persons_set
     if(debug_enabled == true)
     {
@@ -64,9 +71,29 @@ function InitChoreoPersons(debug_enabled, persons_from_l4d_or_l4d2)
     }
 }
 
+function AddUserIOConnections() {
+    self.ConnectOutput("OnUser1", "InitChoreoOrderNick")
+    self.ConnectOutput("OnUser2", "InitChoreoOrderCoach")
+    self.ConnectOutput("OnUser3", "InitChoreoOrderEllis")
+    self.ConnectOutput("OnUser4", "InitChoreoOrderRochelle")
+}
+
+function InitChoreoOrderNick() {
+    priority_table.scened_nick == true
+}
+function InitChoreoOrderCoach() {
+    priority_table.scened_coach == true
+}
+function InitChoreoOrderEllis() {
+    priority_table.scened_ellis == true
+}
+function InitChoreoOrderRochelle() {
+    priority_table.scened_rochelle == true
+}
+
 function TakeChors(debug_enabled, l4d_s_mode)
 {
-    if(order1 == null && order2 == null && order3 == null & order4 == null)
+    if(order1 == null || order2 == null || order3 == null || order4 == null)
     {
         ReleaseWarnigMessage(debug_enabled, "Some chors not released!!! Release all of characters, because all of that will be precached!!!")
     }
@@ -85,7 +112,7 @@ function TakeChors(debug_enabled, l4d_s_mode)
             printl("choreo_scened_rochelle - "+choreo_scened_rochelle)
         }
     }
-    else if(l4d_s_mode == 2)
+    /*else if(l4d_s_mode == 2)
     {
         choreo_scened_bill = order1
         choreo_scened_francis = order2
@@ -99,82 +126,34 @@ function TakeChors(debug_enabled, l4d_s_mode)
             printl("choreo_scened_louis - "+choreo_scened_louis)
             printl("choreo_scened_zoey - "+choreo_scened_zoey)
         }
-    }
+    }*/
 }
 
-function ReleaseChoreoOrderSpeak(debug_enabled, persons_from_l4d_or_l4d2_local)
+function ReleaseChoreoOrderSpeak(debug_enabled) //Old ReleaseChoreoOrderSpeak(debug_enabled, persons_from_l4d_or_l4d2_local)
 {
-    InitChoreoPersons(debug_enabled, persons_from_l4d_or_l4d2_local)
+    InitChoreoPersons(debug_enabled)
     TakeChors(debug_enabled, l4d_s_mode)
-    if(l4d_s_mode == 1)
+
+    if(priority_table.scened_nick == true)
     {
-        if(survivor_l4d2_list[0] != null && choreo_scened_nick != null)
-        {
-           EntFire(choreo_scened_nick, "Start")
-           if (debug_enabled == true)
-           {
-               printl(thsdev_logo+"Started Choreo "+choreo_scened_nick+" for Actor "+survivor_l4d2_list[0])
-           }
-        }
-        else if(survivor_l4d2_list[1] != null && choreo_scened_coach != null)
-        {
-           EntFire(choreo_scened_coach, "Start")
-           if (debug_enabled == true)
-           {
-               printl(thsdev_logo+"Started Choreo "+choreo_scened_coach+" for Actor "+survivor_l4d2_list[1])
-           }
-        }
-        else if(survivor_l4d2_list[2] != null && choreo_scened_ellis != null)
-        {
-           EntFire(choreo_scened_ellis, "Start")
-           if (debug_enabled == true)
-           {
-               printl(thsdev_logo+"Started Choreo "+choreo_scened_ellis+" for Actor "+survivor_l4d2_list[2])
-           }
-        }
-        else if(survivor_l4d2_list[3] != null && choreo_scened_rochelle != null)
-        {
-           EntFire(choreo_scened_rochelle, "Start")
-           if (debug_enabled == true)
-           {
-               printl(thsdev_logo+"Started Choreo "+choreo_scened_rochelle+" for Actor "+survivor_l4d2_list[3])
-           }
-        }
+        EntFire(choreo_scened_nick, "Start")
     }
-    else if(l4d_s_mode == 2)
+    else if(priority_table.scened_coach == true)
     {
-        if(survivor_l4d_list[0] != null && choreo_scened_bill != null)
-        {
-           EntFire(choreo_scened_bill, "Start")
-           if (debug_enabled == true)
-           {
-               printl(thsdev_logo+"Started Choreo "+choreo_scened_bill+" for Actor "+survivor_l4d_list[0])
-           }
-        }
-        else if(survivor_l4d_list[1] != null && choreo_scened_francis != null)
-        {
-           EntFire(choreo_scened_francis, "Start")
-           if (debug_enabled == true)
-           {
-               printl(thsdev_logo+"Started Choreo "+choreo_scened_francis+" for Actor "+survivor_l4d_list[1])
-           }
-        }
-        else if(survivor_l4d_list[2] != null && choreo_scened_louis != null)
-        {
-           EntFire(choreo_scened_louis, "Start")
-           if (debug_enabled == true)
-           {
-               printl(thsdev_logo+"Started Choreo "+choreo_scened_louis+" for Actor "+survivor_l4d_list[2])
-           }
-        }
-        else if(survivor_l4d_list[3] != null && choreo_scened_zoey != null)
-        {
-           EntFire(choreo_scened_zoey, "Start")
-           if (debug_enabled == true)
-           {
-               printl(thsdev_logo+"Started Choreo "+choreo_scened_zoey+" for Actor "+survivor_l4d_list[3])
-           }
-        }
+        EntFire(choreo_scened_coach, "Start")
+    }
+    else if(priority_table.scened_ellis == true)
+    {
+        EntFire(choreo_scened_ellis, "Start")
+    }
+    else if(priority_table.scened_rochelle == true)
+    {
+        EntFire(choreo_scened_rochelle, "Start")
+    }
+    else if(priority_table.scened_nick == false && priority_table.scened_coach == false && priority_table.scened_ellis == false && priority_table.scened_rochelle == false)
+    {
+        ReleaseWarnigMessage(1, "Persons not founded... Tell a programmer!!!")
+        assert("Persons not founded... Tell a programmer!!!")
     }
 SafeRelease()
 }
