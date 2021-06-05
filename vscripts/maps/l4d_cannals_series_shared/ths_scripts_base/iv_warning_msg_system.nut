@@ -32,7 +32,7 @@ if(logic_script_system == true)
     msg_sound_channel <- EntityGroup[0].GetName()
     return logic_script_system
 }
-else
+else if(msg_sound_channel == null)
 {
     msg_sound_channel <- "null name"
 }
@@ -42,7 +42,11 @@ return false
 //IV note: Main functions
 function ReleaseWarnigMessage(debug_enabled, warning_msg)
 {
-    SMessageInitAgain()
+    local s_message_channel = SMessageInitAgain()
+    if(debug_enabled == true)
+    {
+        printl("s_message_channel State = "+s_message_channel+"; Means EntityGroup[0] Used state = "+s_message_channel)
+    }
     msg_warning_messages[msg_w_state_count] = warning_msg
     msg_w_state_count++
     iv_warning_to_debug_initial_count++
@@ -77,7 +81,11 @@ function ReleaseWarnigMessage(debug_enabled, warning_msg)
 
 function ReleaseErrorMessage(debug_enabled, error_msg)
 {
-    SMessageInitAgain()
+    local s_message_channel = SMessageInitAgain()
+    if(debug_enabled == true)
+    {
+        printl("s_message_channel State = "+s_message_channel+"; Means EntityGroup[0] Used state = "+s_message_channel)
+    }
     debug_enabled = true
     iv_core_error = true
     EntFire(msg_sound_channel, "PlaySound", "")
@@ -89,7 +97,11 @@ function ReleaseErrorMessage(debug_enabled, error_msg)
 
 function TestSurvivorsMSG()
 {
-    SMessageInitAgain()
+    local s_message_channel = SMessageInitAgain()
+    if(debug_enabled == true)
+    {
+        printl("s_message_channel State = "+s_message_channel+"; Means EntityGroup[0] Used state = "+s_message_channel)
+    }
     FindSurvivorAndTakeIT()
     if(l4d_s_mode == 1)
     {
@@ -142,3 +154,4 @@ function TestSurvivorsMSG()
         }
     }
 }
+

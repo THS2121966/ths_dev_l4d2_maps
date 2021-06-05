@@ -8,7 +8,7 @@ IncludeScript("maps/l4d_cannals_series_shared/ths_scripts_base/iv_warning_msg_sy
 logic_script_system <- true
 iv_core <- IVCoreStartup(debug_enabled, "map_seeker.nut")
 
-map_ver <- 108;
+map_ver <- 129;
 debug_enabled <- true //Disable before RELEASE!!!
 
 //IV Note: Class "MapSeekerMain" Created for main stability check functions... And Calculator.
