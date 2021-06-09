@@ -1,0 +1,13 @@
+"thsdev_simple"
+{
+	"base"		"thsdev_simple"
+
+	"maxplayers"	"4"
+	"hasdifficulty"	"1"
+	"singlechapter"	"1"
+
+	"DisplayTitle"	"[THS] Company Simple Test"
+	"Description"	"Game mode for testing..."
+	"Image"		"maps/c1m4_atrium"
+	"Author"	"THS and Ivan Suvorov"
+}

@@ -1,0 +1,234 @@
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "thsdev_simple_playerstart_001"
+	"filename" ""
+	"origin" "3361.412109375 -1769.9324951172 21.5106773376"
+	"angles" "0 0 0"
+	"group" 0
+	"rarity" 0
+	"nameindex" 1
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "thsdev_simple_playerstart_002"
+	"filename" ""
+	"origin" "3357.3532714844 -1581.60546875 16.774974823"
+	"angles" "0 0 0"
+	"group" 0
+	"rarity" 0
+	"nameindex" 2
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "thsdev_simple_playerstart_003"
+	"filename" ""
+	"origin" "3489.0065917969 -1764.4240722656 16.9266242981"
+	"angles" "0 0 0"
+	"group" 0
+	"rarity" 0
+	"nameindex" 3
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "thsdev_simple_playerstart_004"
+	"filename" ""
+	"origin" "3483.7180175781 -1562.4968261719 17.9413375854"
+	"angles" "0 0 0"
+	"group" 0
+	"rarity" 0
+	"nameindex" 4
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "3568.0300292969 -570.6400146484 12.3400001526"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "4548.3500976563 -579.6099853516 16.0300006866"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "775.6500244141 -1438.7399902344 16.0300006866"
+	"angles" "-0 0 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "3478.75 -580.2199707031 12.7600002289"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "3379.6999511719 -585.1799926758 14.3599996567"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "3282.8798828125 -589.7100219727 16.0300006866"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "3200.5500488281 -593.1599731445 16.0300006866"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "3120.7800292969 -596.799987793 16.0300006866"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "3658.7199707031 -575.1199951172 13.9099998474"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "3748.5600585938 -571.0300292969 14.9499998093"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "3797.6398925781 -569.6799926758 64.0299987793"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "3903.8601074219 -568.8499755859 64.0299987793"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "4000.6101074219 -569.4799804688 64.0299987793"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "4053.9099121094 -585.5700073242 11.9600000381"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "4119.3500976563 -584.450012207 12.1899995804"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "4201.919921875 -589.8900146484 13.1199998856"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "4281.330078125 -595.0900268555 14.3100004196"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "wrongway_barrier_spawn"
+	"filename" "scripts\vscripts\entitygroups\wrongway_barrier_group.nut"
+	"origin" "4448.7797851563 -579.8900146484 16.0300006866"
+	"angles" "-0 270 0"
+	"group" 0
+	"rarity" 0
+}
+"entity"
+{
+	"classname" "info_item_position"
+	"targetname" "rescue_helicopter_spawn"
+	"filename" "../../left4dead2_dlc3/maps/instance/entitygroups/rescue_helicopter.vmf"
+	"origin" "3418.1999511719 -1689.3399658203 16.2800006866"
+	"angles" "0 0 0"
+	"group" 0
+	"rarity" 0
+}
