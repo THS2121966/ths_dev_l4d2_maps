@@ -62,6 +62,7 @@ class MapSeekerMain
         else if(zero_to_ten == 10)
         {
             zero_to_ten = 0
+			test_load_first = true
             z_strign = z_strign+" - Done!!!"
             z_string_function = "Nope..."
             printl(z_strign)
