@@ -10,8 +10,6 @@
 	"Image"			"maps/c2"
 	"OuttroImage"	"vgui/outroTitle_DarkCarnival"
 
-	"x360ctx"	"4"
-
 	"meleeweapons"	"electric_guitar;katana;fireaxe;crowbar;baseball_bat;knife"
 
 	// Loading poster data
@@ -52,7 +50,7 @@
 			"1"
 			{
 				"Map" "c2m2_fairgrounds"
-				"DisplayName" "#L4D360UI_LevelName_COOP_C2M2"
+				"DisplayName" "Fairgrounds"
 				"Image" "maps/c2m2_fairgrounds"
 			}
 		}	
