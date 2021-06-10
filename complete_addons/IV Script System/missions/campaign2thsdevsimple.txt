@@ -49,7 +49,7 @@
 	{
 		"thsdev_simple"
 		{
-			"2"
+			"1"
 			{
 				"Map" "c2m2_fairgrounds"
 				"DisplayName" "#L4D360UI_LevelName_COOP_C2M2"
