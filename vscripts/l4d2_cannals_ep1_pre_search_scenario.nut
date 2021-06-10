@@ -15,8 +15,8 @@ if(iv_check == false)
 {
     return false
 }
-
-
+else
+{
 class IVDirectorInit
 {
     iv_pre_release = true
@@ -166,3 +166,5 @@ function ReleaseDScriptScenario() {
 
 
 ReleaseDScriptScenario()
+}
+

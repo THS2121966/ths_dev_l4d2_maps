@@ -167,7 +167,7 @@ while( player = Entities.FindByClassname(player, "player") )
         }
     }
 }
-l4d_s_count <- l4d_s_count_local
+l4d_s_count = l4d_s_count_local
 if(debug_enabled == true)
 {
     printl(thsdev_logo+"Total Survivor Count = "+l4d_s_count)
@@ -176,6 +176,6 @@ if(debug_enabled == true)
     printl(thsdev_logo+"Total Survivor Count = "+l4d_s_count)
     printl(thsdev_logo+"Total Survivor Count = "+l4d_s_count)
 }
-return l4d_s_count_local
+return l4d_s_count
 }
 

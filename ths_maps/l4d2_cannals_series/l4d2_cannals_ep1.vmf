@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8755"
-	"mapversion" "148"
+	"mapversion" "156"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -13,6 +13,12 @@ visgroups
 		"name" "thsdev_st_coop_point"
 		"visgroupid" "6"
 		"color" "109 130 251"
+	}
+	visgroup
+	{
+		"name" "thsdev_optimisation"
+		"visgroupid" "19"
+		"color" "159 140 157"
 	}
 }
 viewsettings
@@ -26,7 +32,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "148"
+	"mapversion" "156"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -5250,7 +5256,7 @@ world
 				}
 				distances
 				{
-					"row0" "6.36337 4.09476 0.189346 0 0.405357 3.90598 4.9898 6.92961 10.7899"
+					"row0" "6.36337 4.09476 0.189345 0 0.405357 3.90598 4.9898 6.92961 10.7899"
 					"row1" "6.30032 4.00992 0.118927 0 0.430504 3.89902 5 6.99051 11.0217"
 					"row2" "6.22969 3.91309 0.0736237 0 0.429939 3.88017 4.9895 7.04227 11.1868"
 					"row3" "6.16909 3.87428 0.0759583 0 0.400898 3.85931 4.95536 7.19097 11.3016"
@@ -5396,7 +5402,7 @@ world
 					"row5" "6.31181 4.18171 0.345062 0 0.18713 3.84254 4.83277 6.55084 9.63708"
 					"row6" "6.33839 4.12457 0.249237 0 0.292122 3.87171 4.91537 6.6424 10.1172"
 					"row7" "6.35146 4.11142 0.204208 0 0.36174 3.8936 4.96347 6.78225 10.4806"
-					"row8" "6.36337 4.09476 0.189346 0 0.405357 3.90598 4.9898 6.92961 10.7899"
+					"row8" "6.36337 4.09476 0.189345 0 0.405357 3.90598 4.9898 6.92961 10.7899"
 				}
 				offsets
 				{
@@ -5488,7 +5494,7 @@ world
 					"row5" "0.343452 0 -0.93917 0.347078 0 -0.937836 0.343619 0 -0.939109 0.364979 0 -0.931016 0.394572 0 -0.918865 0.912361 0 -0.409386 0.953992 0 0.299831 0.80375 0 0.594967 0.727981 0 0.685597"
 					"row6" "0.374157 0 -0.927365 0.342651 0 -0.939463 0.331519 0 -0.943449 0.354581 0 -0.935025 0.378662 0 -0.925535 0.92003 0 -0.391848 0.931063 0 0.364858 0.805604 0 0.592454 0.779627 0 0.626245"
 					"row7" "0.371019 0 -0.928625 0.339669 0 -0.940545 0.323193 0 -0.946333 0.342054 0 -0.93968 0.357933 0 -0.933747 0.93734 0 -0.348416 0.885434 0 0.464765 0.8055 0 0.592596 0.788317 0 0.615269"
-					"row8" "0.29988 0 -0.687439 0.34033 0 -0.940306 0.31692 0 -0.948452 0.326817 0 -0.945088 0.330579 0 -0.943779 0.973062 0 -0.230545 0.840944 0 0.541123 0.804855 0 0.593472 0.642364 0 0.387129"
+					"row8" "0.29988 0 -0.687439 0.34033 0 -0.940306 0.31692 0 -0.948452 0.326817 0 -0.945088 0.330579 0 -0.943778 0.973062 0 -0.230545 0.840944 0 0.541123 0.804855 0 0.593472 0.642364 0 0.387129"
 				}
 				distances
 				{
@@ -5516,7 +5522,7 @@ world
 				}
 				offset_normals
 				{
-					"row0" "-0.408248 -0.816496 0.408248 -0.416964 -0.770459 0.482219 -0.496094 -0.804163 0.327433 -0.620333 -0.747084 0.238858 -0.567868 -0.823119 0 -0.603492 -0.762026 -0.234766 -0.533196 -0.766726 -0.357537 -0.454289 -0.714809 -0.531666 -0.408248 -0.816496 -0.408248"
+					"row0" "-0.408248 -0.816496 0.408248 -0.416964 -0.770459 0.482219 -0.496094 -0.804163 0.327433 -0.620333 -0.747084 0.238858 -0.567868 -0.823119 0 -0.603492 -0.762025 -0.234766 -0.533196 -0.766726 -0.357537 -0.454289 -0.714809 -0.531666 -0.408248 -0.816496 -0.408248"
 					"row1" "-0.37774 -0.639794 0.66931 -0.395097 -0.649048 0.650104 -0.583335 -0.648992 0.488395 -0.76302 -0.551972 0.336345 -0.772557 -0.634927 -0.00488385 -0.748545 -0.575101 -0.33006 -0.639596 -0.534132 -0.55283 -0.459982 -0.465909 -0.755874 -0.401141 -0.588711 -0.701787"
 					"row2" "-0.488501 -0.514947 0.704412 -0.53509 -0.415973 0.735285 -0.617536 -0.522259 0.588129 -0.84598 -0.397209 0.355727 -0.877108 -0.479644 -0.0249753 -0.870044 -0.299445 -0.391607 -0.703922 -0.234641 -0.670402 -0.56831 -0.28107 -0.77332 -0.515102 -0.448356 -0.730511"
 					"row3" "-0.498636 -0.189449 0.845855 -0.526203 0.110225 0.843185 -0.7873 -0.0782458 0.611584 -0.900718 0.0709346 0.428573 -0.99808 -0.0617132 -0.00520151 -0.887794 0.182057 -0.422702 -0.796071 -0.0342349 -0.604234 -0.528481 0.0571438 -0.84702 -0.505798 -0.160462 -0.847597"
@@ -5659,7 +5665,7 @@ world
 					"row2" "-0.496094 -0.804163 0.327433 -0.445546 -0.824079 0.349834 -0.305592 -0.916777 0.257165 -0.169177 -0.974954 0.144372 -0.104303 -0.990279 0.0920242 -0.0417971 -0.998549 0.0339595 0 -1 0 0 -1 0 0 -1 0"
 					"row3" "-0.620333 -0.747084 0.238858 -0.604275 -0.748776 0.272372 -0.350646 -0.923627 0.154791 -0.160811 -0.984657 0.0677594 -0.0775997 -0.99601 0.0440584 -0.044488 -0.998882 0.0159976 -0.0111243 -0.99993 0.00400024 0 -1 0 0 -1 0"
 					"row4" "-0.567868 -0.823119 0 -0.510135 -0.860013 0.0118363 -0.297847 -0.954589 0.00683395 -0.15227 -0.988334 0.00320201 0 -1 0 -0.0177848 -0.99984 0.0017972 0 -1 0 0 -1 0 0 -1 0"
-					"row5" "-0.603492 -0.762026 -0.234766 -0.517148 -0.823543 -0.2331 -0.313693 -0.940316 -0.131921 -0.146294 -0.987304 -0.0618721 -0.067318 -0.996967 -0.0390379 -0.0266355 -0.999606 -0.00881036 -0.00665937 -0.999975 -0.00220275 0 -1 0 0 -1 0"
+					"row5" "-0.603492 -0.762025 -0.234766 -0.517148 -0.823543 -0.2331 -0.313693 -0.940316 -0.131921 -0.146294 -0.987304 -0.0618721 -0.067318 -0.996967 -0.0390379 -0.0266355 -0.999606 -0.00881036 -0.00665937 -0.999975 -0.00220275 0 -1 0 0 -1 0"
 					"row6" "-0.533196 -0.766726 -0.357537 -0.431592 -0.831288 -0.35027 -0.272839 -0.933949 -0.230864 -0.149936 -0.980528 -0.126819 -0.0957214 -0.991763 -0.085109 -0.0333615 -0.999053 -0.0279367 0 -1 0 0 -1 0 0 -1 0"
 					"row7" "-0.454289 -0.714809 -0.531666 -0.373226 -0.743227 -0.555262 -0.240294 -0.922299 -0.302694 -0.0817466 -0.988558 -0.126773 -0.0736519 -0.993743 -0.0839628 -0.0109202 -0.999784 -0.0176861 -0.00935559 -0.999895 -0.0110473 0 -1 0 0 -1 0"
 					"row8" "-0.408248 -0.816496 -0.408248 -0.283558 -0.84728 -0.449122 -0.211432 -0.939288 -0.270249 -0.110455 -0.979329 -0.169456 -0.105766 -0.98875 -0.105766 -0.0376045 -0.998203 -0.046652 -0.0264974 -0.999298 -0.0264974 -0.00662524 -0.999956 -0.00662524 0 -1 0"
@@ -6662,7 +6668,7 @@ world
 				"subdiv" "1"
 				normals
 				{
-					"row0" "0.29988 0 -0.687439 0.34033 0 -0.940306 0.31692 0 -0.948452 0.326817 0 -0.945088 0.330579 0 -0.943779 0.973062 0 -0.230545 0.840944 0 0.541123 0.804855 0 0.593472 0.642364 0 0.387129"
+					"row0" "0.29988 0 -0.687439 0.34033 0 -0.940306 0.31692 0 -0.948452 0.326817 0 -0.945088 0.330579 0 -0.943778 0.973062 0 -0.230545 0.840944 0 0.541123 0.804855 0 0.593472 0.642364 0 0.387129"
 					"row1" "-0.509891 -0.238892 0.826403 -0.481881 -0.613302 0.62582 -0.801796 -0.347308 0.486313 -0.94771 -0.253848 0.19341 -0.991811 -0.127555 -0.00639115 -0.972537 -0.12157 -0.198476 -0.840634 -0.0883817 -0.534344 -0.595612 -0.216587 -0.773522 -0.491531 -0.15836 -0.856341"
 					"row2" "-0.576328 -0.162098 0.800981 -0.569616 -0.383664 0.72687 -0.652124 -0.434749 0.62107 -0.900063 -0.292042 0.323415 -0.99161 -0.127686 -0.0201438 -0.929669 -0.0982518 -0.355053 -0.724138 0 -0.689655 -0.609342 -0.136759 -0.781024 -0.566128 -0.0926874 -0.81909"
 					"row3" "-0.507009 -0.200227 0.838362 -0.522068 -0.293472 0.800824 -0.723538 -0.331859 0.605278 -0.846241 -0.299123 0.44091 -0.989015 -0.147538 -0.0090986 -0.881253 -0.128006 -0.454981 -0.75913 -0.135386 -0.636704 -0.530547 -0.233057 -0.814987 -0.50017 -0.175311 -0.847995"
@@ -6829,7 +6835,7 @@ world
 					"row5" "0.499156 -0.274936 0.821738 0.195792 -0.226131 0.954217 0.147735 -0.189953 0.970614 0.0535694 -0.172085 0.983625 -0.000233832 -0.165808 0.986158 -0.0538639 -0.190189 0.980269 -0.149049 -0.181113 0.972102 -0.196124 -0.199487 0.960073 -0.493936 -0.274805 0.82493"
 					"row6" "0.536406 -0.367688 0.759654 0.260518 -0.298766 0.918079 0.100318 -0.200636 0.974516 0.0569192 -0.262126 0.963354 -0.000632043 -0.296619 0.954996 -0.0573751 -0.264021 0.962809 -0.102739 -0.226027 0.968688 -0.265184 -0.300504 0.916174 -0.549748 -0.368379 0.749716"
 					"row7" "0.442843 -0.470302 0.763352 0.187869 -0.375737 0.907484 0.149894 -0.408993 0.900142 0.0734696 -0.374788 0.924195 0.00029529 -0.438459 0.898751 -0.0716787 -0.34058 0.937479 -0.149669 -0.407332 0.900933 -0.188602 -0.381469 0.904937 -0.448138 -0.471496 0.759515"
-					"row8" "0.577351 -0.577351 0.57735 0.313123 -0.605192 0.731913 0.22608 -0.652507 0.723272 0.0934241 -0.639566 0.763038 0 -0.707106 0.707108 -0.0934629 -0.641902 0.76107 -0.224467 -0.650819 0.725292 -0.312446 -0.604899 0.732444 -0.577351 -0.577349 0.577351"
+					"row8" "0.577351 -0.577351 0.57735 0.313123 -0.605192 0.731913 0.22608 -0.652507 0.723272 0.0934241 -0.639566 0.763038 0 -0.707106 0.707108 -0.0934628 -0.641902 0.76107 -0.224467 -0.650819 0.725292 -0.312446 -0.604899 0.732444 -0.577351 -0.577349 0.577351"
 				}
 				distances
 				{
@@ -7035,7 +7041,7 @@ world
 				"subdiv" "1"
 				normals
 				{
-					"row0" "0.577351 -0.577351 0.57735 0.313123 -0.605192 0.731913 0.22608 -0.652507 0.723272 0.0934241 -0.639566 0.763038 0 -0.707106 0.707108 -0.0934629 -0.641902 0.76107 -0.224467 -0.650819 0.725292 -0.312446 -0.604899 0.732444 -0.577351 -0.577349 0.577351"
+					"row0" "0.577351 -0.577351 0.57735 0.313123 -0.605192 0.731913 0.22608 -0.652507 0.723272 0.0934241 -0.639566 0.763038 0 -0.707106 0.707108 -0.0934628 -0.641902 0.76107 -0.224467 -0.650819 0.725292 -0.312446 -0.604899 0.732444 -0.577351 -0.577349 0.577351"
 					"row1" "0.457712 -0.649737 0.606912 0.223543 -0.742413 0.631546 0.169148 -0.779002 0.603775 0.066357 -0.770528 0.633943 -0.000222512 -0.807588 0.589747 -0.0678563 -0.801449 0.594202 -0.167949 -0.780327 0.602397 -0.222624 -0.73882 0.636069 -0.46234 -0.64595 0.607445"
 					"row2" "0.562251 -0.707292 0.4285 0.301986 -0.842141 0.446769 0.151193 -0.907151 0.392706 0.0811606 -0.905694 0.416091 0.000625537 -0.917056 0.398758 -0.0796226 -0.899514 0.429576 -0.148802 -0.89281 0.425146 -0.306653 -0.842748 0.442424 -0.574461 -0.697524 0.428317"
 					"row3" "0.561267 -0.782961 0.268236 0.240445 -0.926589 0.28917 0.193488 -0.95441 0.227297 0.101422 -0.971752 0.213099 0.000639074 -0.973861 0.227145 -0.0995207 -0.953543 0.284345 -0.19431 -0.951679 0.237804 -0.24456 -0.94245 0.227987 -0.55141 -0.788901 0.271259"
@@ -7885,6 +7891,83 @@ world
 			"visgroupautoshown" "1"
 		}
 	}
+	solid
+	{
+		"id" "12714"
+		side
+		{
+			"id" "1623"
+			"plane" "(-320 47 118) (-304 47 118) (-304 -47 118)"
+			"material" "TOOLS/TOOLSSKIP"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1624"
+			"plane" "(-320 -47 0) (-304 -47 0) (-304 47 0)"
+			"material" "TOOLS/TOOLSSKIP"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1625"
+			"plane" "(-320 47 118) (-320 -47 118) (-320 -47 0)"
+			"material" "TOOLS/TOOLSSKIP"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1626"
+			"plane" "(-304 47 0) (-304 -47 0) (-304 -47 118)"
+			"material" "TOOLS/TOOLSHINT"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1627"
+			"plane" "(-304 47 118) (-320 47 118) (-320 47 0)"
+			"material" "TOOLS/TOOLSSKIP"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1628"
+			"plane" "(-304 -47 0) (-320 -47 0) (-320 -47 118)"
+			"material" "TOOLS/TOOLSSKIP"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "0 237 230"
+			"visgroupid" "19"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
 	group
 	{
 		"id" "46"
@@ -8621,6 +8704,7 @@ entity
 	"fadescale" "1"
 	"glowbackfacemult" "1.0"
 	"glowcolor" "0 0 0"
+	"lightingorigin" "tg_elev_light_fix01"
 	"MaxAnimTime" "10"
 	"MinAnimTime" "5"
 	"model" "models/props_mill/elevator01_cage.mdl"
@@ -8650,6 +8734,7 @@ entity
 	"fadescale" "1"
 	"glowbackfacemult" "1.0"
 	"glowcolor" "0 0 0"
+	"lightingorigin" "tg_elev_light_fix01"
 	"MaxAnimTime" "10"
 	"MinAnimTime" "5"
 	"model" "models/props_mill/elevator01_cagedoor.mdl"
@@ -8684,6 +8769,7 @@ entity
 	"fadescale" "1"
 	"glowbackfacemult" "1.0"
 	"glowcolor" "0 0 0"
+	"lightingorigin" "tg_elev_light_fix01"
 	"MaxAnimTime" "10"
 	"MinAnimTime" "5"
 	"model" "models/props_mill/freightelevatorbutton02.mdl"
@@ -10478,7 +10564,7 @@ entity
 	"classname" "light"
 	"_castentityshadow" "0"
 	"_constant_attn" "3500"
-	"_light" "245 253 254 18"
+	"_light" "245 253 254 9"
 	"_lightHDR" "-1 -1 -1 1"
 	"_lightscaleHDR" ".72"
 	"_quadratic_attn" "1"
@@ -10500,7 +10586,7 @@ entity
 	"classname" "light"
 	"_castentityshadow" "0"
 	"_constant_attn" "3500"
-	"_light" "245 253 254 18"
+	"_light" "245 253 254 9"
 	"_lightHDR" "-1 -1 -1 1"
 	"_lightscaleHDR" ".72"
 	"_quadratic_attn" "1"
@@ -10522,7 +10608,7 @@ entity
 	"classname" "light"
 	"_castentityshadow" "0"
 	"_constant_attn" "3500"
-	"_light" "245 253 254 18"
+	"_light" "245 253 254 9"
 	"_lightHDR" "-1 -1 -1 1"
 	"_lightscaleHDR" ".72"
 	"_quadratic_attn" "1"
@@ -10544,7 +10630,7 @@ entity
 	"classname" "light"
 	"_castentityshadow" "0"
 	"_constant_attn" "3500"
-	"_light" "245 253 254 18"
+	"_light" "245 253 254 9"
 	"_lightHDR" "-1 -1 -1 1"
 	"_lightscaleHDR" ".72"
 	"_quadratic_attn" "1"
@@ -11881,10 +11967,9 @@ entity
 	"spawnflags" "1"
 	"StartDisabled" "0"
 	"targetname" "trigger_chor_st_01"
-	"vscripts" "maps/l4d2_cannals_ep1/modifed_trigger_01"
 	connections
 	{
-		"OnTrigger" "logic_choreo_st_map_set_01RunScriptCodeReleaseChoreoOrderSpeak(debug_enabled)0-1"
+		"OnTrigger" "logic_choreo_st_map_set_01RunScriptCodeReleaseChoreoOrderSpeak(debug_enabled, 1, true)0-1"
 	}
 	solid
 	{
@@ -11995,8 +12080,9 @@ entity
 	"Group02" "chor_st_started_chair_coach"
 	"Group03" "chor_st_started_chair_coach_3"
 	"Group04" "chor_st_started_chair_nick_3"
+	"Group05" "trigger_chor_st_01"
 	"targetname" "logic_choreo_st_map_set_01"
-	"vscripts" "maps/l4d2_cannals_ep1/iv_modified_ep1_character_select"
+	"vscripts" "maps/l4d_cannals_series_shared/ths_scripts_base/iv_choreo_character_select"
 	"origin" "80 296 88"
 	editor
 	{
@@ -12149,6 +12235,633 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 2000]"
+	}
+}
+entity
+{
+	"id" "11960"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"parentname" "elevator_next_state_model"
+	"spawnflags" "0"
+	"targetname" "tg_elev_light_fix01"
+	"origin" "1416 0 56"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "12030"
+	"classname" "info_particle_system"
+	"angles" "0 285 0"
+	"effect_name" "extinguisher_spray"
+	"targetname" "psys_water_spray_01"
+	"origin" "-184 328 72"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "12615"
+	"classname" "logic_timer"
+	"LowerRandomBound" "25"
+	"spawnflags" "0"
+	"UpperRandomBound" "32"
+	"UseRandomTime" "1"
+	connections
+	{
+		"OnTimer" "s_w_spray_01PlaySound0-1"
+		"OnTimer" "psys_water_spray_01Start0-1"
+		"OnTimer" "!selfDisable0-1"
+		"OnTimer" "psys_water_spray_01Stop8-1"
+		"OnTimer" "!selfEnable8-1"
+	}
+	"origin" "-232 288 88"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "12621"
+	"classname" "ambient_generic"
+	"health" "10"
+	"message" "ambient/machines/steam_release_2.wav"
+	"pitch" "100"
+	"pitchstart" "100"
+	"radius" "1600"
+	"spawnflags" "48"
+	"targetname" "s_w_spray_01"
+	"origin" "-184 320 72"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "12685"
+	"classname" "env_cubemap"
+	"cubemapsize" "6"
+	"origin" "-128 288 64"
+	editor
+	{
+		"color" "0 0 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "12707"
+	"classname" "func_areaportal"
+	"PortalVersion" "1"
+	"StartOpen" "1"
+	solid
+	{
+		"id" "12705"
+		side
+		{
+			"id" "1622"
+			"plane" "(-224 314 112) (-32 314 112) (-32 310 112)"
+			"material" "TOOLS/TOOLSAREAPORTAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1621"
+			"plane" "(-224 310 24) (-32 310 24) (-32 314 24)"
+			"material" "TOOLS/TOOLSAREAPORTAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1620"
+			"plane" "(-224 314 112) (-224 310 112) (-224 310 24)"
+			"material" "TOOLS/TOOLSAREAPORTAL"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1619"
+			"plane" "(-32 314 24) (-32 310 24) (-32 310 112)"
+			"material" "TOOLS/TOOLSAREAPORTAL"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1618"
+			"plane" "(-32 314 112) (-224 314 112) (-224 314 24)"
+			"material" "TOOLS/TOOLSAREAPORTAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1617"
+			"plane" "(-32 310 24) (-224 310 24) (-224 310 112)"
+			"material" "TOOLS/TOOLSAREAPORTAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "0 255 255"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	editor
+	{
+		"color" "0 255 255"
+		"visgroupid" "19"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 2500]"
+	}
+}
+entity
+{
+	"id" "12717"
+	"classname" "weapon_item_spawn"
+	"angles" "0 -45 0"
+	"glowrange" "0"
+	"item1" "0"
+	"item11" "1"
+	"item12" "1"
+	"item13" "1"
+	"item16" "0"
+	"item17" "0"
+	"item18" "0"
+	"item2" "0"
+	"item3" "1"
+	"item4" "0"
+	"item5" "1"
+	"item6" "0"
+	"item7" "0"
+	"item8" "0"
+	"spawnflags" "1"
+	"targetname" "st_room_items"
+	"weaponskin" "-1"
+	"origin" "88 268 48"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 3500]"
+	}
+}
+entity
+{
+	"id" "12746"
+	"classname" "weapon_item_spawn"
+	"angles" "0 -45 0"
+	"glowrange" "0"
+	"item1" "0"
+	"item11" "1"
+	"item12" "1"
+	"item13" "1"
+	"item16" "0"
+	"item17" "0"
+	"item18" "0"
+	"item2" "0"
+	"item3" "1"
+	"item4" "0"
+	"item5" "1"
+	"item6" "0"
+	"item7" "0"
+	"item8" "0"
+	"spawnflags" "1"
+	"targetname" "st_room_items"
+	"weaponskin" "-1"
+	"origin" "96 248 48"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 3500]"
+	}
+}
+entity
+{
+	"id" "12748"
+	"classname" "weapon_item_spawn"
+	"angles" "0 -45 0"
+	"glowrange" "0"
+	"item1" "0"
+	"item11" "1"
+	"item12" "1"
+	"item13" "1"
+	"item16" "0"
+	"item17" "0"
+	"item18" "0"
+	"item2" "0"
+	"item3" "1"
+	"item4" "0"
+	"item5" "1"
+	"item6" "0"
+	"item7" "0"
+	"item8" "0"
+	"spawnflags" "1"
+	"targetname" "st_room_items"
+	"weaponskin" "-1"
+	"origin" "108 268 48"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 3500]"
+	}
+}
+entity
+{
+	"id" "12758"
+	"classname" "fog_volume"
+	"ColorCorrectionName" "colorcorrection_checkpoint"
+	"PostProcessName" "fx_settings_interior"
+	"StartDisabled" "0"
+	solid
+	{
+		"id" "12756"
+		side
+		{
+			"id" "1640"
+			"plane" "(-304 304 128) (304 304 128) (304 -304 128)"
+			"material" "TOOLS/FOGVOLUME"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1639"
+			"plane" "(-304 -304 0) (304 -304 0) (304 304 0)"
+			"material" "TOOLS/FOGVOLUME"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1638"
+			"plane" "(-304 304 128) (-304 -304 128) (-304 -304 0)"
+			"material" "TOOLS/FOGVOLUME"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1637"
+			"plane" "(304 304 0) (304 -304 0) (304 -304 128)"
+			"material" "TOOLS/FOGVOLUME"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1636"
+			"plane" "(304 304 128) (-304 304 128) (-304 304 0)"
+			"material" "TOOLS/FOGVOLUME"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1635"
+			"plane" "(304 -304 0) (-304 -304 0) (-304 -304 128)"
+			"material" "TOOLS/FOGVOLUME"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "220 30 220"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 4500]"
+	}
+}
+entity
+{
+	"id" "12792"
+	"classname" "func_areaportalwindow"
+	"FadeDist" "512"
+	"FadeStartDist" "256"
+	"PortalVersion" "1"
+	"target" "areaportal_brush_01"
+	"TranslucencyLimit" "0"
+	solid
+	{
+		"id" "12789"
+		side
+		{
+			"id" "1664"
+			"plane" "(311 33 109) (313 33 109) (313 -33 109)"
+			"material" "TOOLS/TOOLSAREAPORTAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1663"
+			"plane" "(311 -33 0) (313 -33 0) (313 33 0)"
+			"material" "TOOLS/TOOLSAREAPORTAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1662"
+			"plane" "(311 33 109) (311 -33 109) (311 -33 0)"
+			"material" "TOOLS/TOOLSAREAPORTAL"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1661"
+			"plane" "(313 33 0) (313 -33 0) (313 -33 109)"
+			"material" "TOOLS/TOOLSAREAPORTAL"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1660"
+			"plane" "(313 33 109) (311 33 109) (311 33 0)"
+			"material" "TOOLS/TOOLSAREAPORTAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1659"
+			"plane" "(313 -33 0) (311 -33 0) (311 -33 109)"
+			"material" "TOOLS/TOOLSAREAPORTAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "0 128 255"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	editor
+	{
+		"color" "0 128 255"
+		"visgroupid" "19"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 6000]"
+	}
+}
+entity
+{
+	"id" "12798"
+	"classname" "func_brush"
+	"disablereceiveshadows" "0"
+	"disableshadows" "1"
+	"disableX360" "0"
+	"fademaxdist" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"InputFilter" "0"
+	"invert_exclusion" "0"
+	"maxcpulevel" "0"
+	"maxgpulevel" "0"
+	"mincpulevel" "0"
+	"mingpulevel" "0"
+	"origin" "305 0 54.5"
+	"renderamt" "255"
+	"rendercolor" "255 255 255"
+	"renderfx" "0"
+	"rendermode" "0"
+	"solidbsp" "0"
+	"Solidity" "1"
+	"spawnflags" "2"
+	"StartDisabled" "0"
+	"targetname" "areaportal_brush_01"
+	"vrad_brush_cast_shadows" "0"
+	solid
+	{
+		"id" "12790"
+		side
+		{
+			"id" "1670"
+			"plane" "(304 33 109) (306 33 109) (306 -33 109)"
+			"material" "DEV/DEV_WINDOWPORTAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1669"
+			"plane" "(304 -33 0) (306 -33 0) (306 33 0)"
+			"material" "DEV/DEV_WINDOWPORTAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1668"
+			"plane" "(304 33 109) (304 -33 109) (304 -33 0)"
+			"material" "DEV/DEV_WINDOWPORTAL"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1667"
+			"plane" "(306 33 0) (306 -33 0) (306 -33 109)"
+			"material" "DEV/DEV_WINDOWPORTAL"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1666"
+			"plane" "(306 33 109) (304 33 109) (304 33 0)"
+			"material" "DEV/DEV_WINDOWPORTAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1665"
+			"plane" "(306 -33 0) (304 -33 0) (304 -33 109)"
+			"material" "DEV/DEV_WINDOWPORTAL"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "220 30 220"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupid" "19"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 6500]"
+	}
+}
+entity
+{
+	"id" "12836"
+	"classname" "env_cubemap"
+	"cubemapsize" "6"
+	"origin" "264 0 64"
+	editor
+	{
+		"color" "0 0 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "12852"
+	"classname" "env_cubemap"
+	"cubemapsize" "6"
+	"sides" ""
+	"origin" "360 0 64"
+	editor
+	{
+		"color" "0 0 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "12872"
+	"classname" "commentary_dummy"
+	"angles" "0 210 0"
+	"EyeHeight" "64"
+	"HeadPitchPoseParam" "Head_Pitch"
+	"HeadYawPoseParam" "Head_Yaw"
+	"model" "models/infected/jockey.mdl"
+	"skin" "0"
+	"StartingAnim" "Standing_Idle"
+	"StartingWeapons" "nope"
+	"targetname" "elevator_jockey_01"
+	"origin" "1392 16 -1"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 7000]"
 	}
 }
 cameras
