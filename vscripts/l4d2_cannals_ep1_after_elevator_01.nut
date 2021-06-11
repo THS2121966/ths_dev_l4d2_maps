@@ -1,5 +1,5 @@
 ////////////////////////////////////////// THS inc 2021. //////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////// This script created for Director pre search scenario state... //////////////////////////////////
+////////////////////////////////////////// This script created for Director after elevator scenario state... //////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -8,7 +8,7 @@ IncludeScript("maps/l4d_cannals_series_shared/ths_scripts_base/iv_warning_msg_sy
 logic_script_system <- false
 
 //IV note: Init Main Core.
-iv_check <- IVCoreStartup(debug_enabled, "l4d2_cannals_ep1_pre_search_scenario.nut")
+iv_check <- IVCoreStartup(debug_enabled, "l4d2_cannals_ep1_after_elevator_01.nut")
 
 
 if(iv_check == false)
@@ -23,34 +23,34 @@ class IVDirectorInit
     local_debug_enabled = false
     local_ths_dev_logo = "FIXME!!!"
 
-    iv_min_scenario_p_c = 3
+    iv_min_scenario_p_c = 2
 
-    iv_prohibit_bosses = true
+    iv_prohibit_bosses = false
     iv_alwaysallowwanderers = true
     iv_mob_min_max_table = {
-    min = 8,
-    max = 12
+    min = 12,
+    max = 15
     }
     iv_special_infected_table = {
-    l_SmokerLimit = 0,
+    l_SmokerLimit = 1,
     l_JockeyLimit = 0,
-    l_BoomerLimit = 0,
+    l_BoomerLimit = 1,
     l_HunterLimit = 0,
     l_ChargerLimit = 0,
     l_SpitterLimit = 0,
     l_TankLimit = -1,
-    l_WitchLimit = -1
+    l_WitchLimit = 2
     }
 
     function SetDefaultParms()
     {
-        iv_prohibit_bosses = true
+        iv_prohibit_bosses = false
         iv_alwaysallowwanderers = true
-        iv_mob_min_max_table.min = 8
-        iv_mob_min_max_table.max = 12
-        iv_special_infected_table.l_SmokerLimit = 0
+        iv_mob_min_max_table.min = 12
+        iv_mob_min_max_table.max = 15
+        iv_special_infected_table.l_SmokerLimit = 1
         iv_special_infected_table.l_JockeyLimit = 0
-        iv_special_infected_table.l_BoomerLimit = 0
+        iv_special_infected_table.l_BoomerLimit = 1
         iv_special_infected_table.l_HunterLimit = 0
         iv_special_infected_table.l_ChargerLimit = 0
         iv_special_infected_table.l_SpitterLimit = 0
@@ -87,22 +87,22 @@ function ReleaseDirectorParms()
     iv_survivor_count <- FindSurvivorAndTakeIT()
     if(iv_survivor_count && iv_survivor_count <= iv_director_main.iv_min_scenario_p_c)
     {
-        iv_director_main.iv_mob_min_max_table.min = 5
-        iv_director_main.iv_mob_min_max_table.max = 8
-        iv_director_main.iv_special_infected_table.l_SmokerLimit = 0
+        iv_director_main.iv_mob_min_max_table.min = 11
+        iv_director_main.iv_mob_min_max_table.max = 12
+        iv_director_main.iv_special_infected_table.l_SmokerLimit = 1
         iv_director_main.iv_special_infected_table.l_JockeyLimit = 0
-        iv_director_main.iv_special_infected_table.l_BoomerLimit = 0
+        iv_director_main.iv_special_infected_table.l_BoomerLimit = 1
         iv_director_main.iv_special_infected_table.l_HunterLimit = 0
         iv_director_main.iv_special_infected_table.l_ChargerLimit = 0
         iv_director_main.iv_special_infected_table.l_SpitterLimit = 0
     }
     else
     {
-        iv_director_main.iv_mob_min_max_table.min = 8
-        iv_director_main.iv_mob_min_max_table.max = 12
-        iv_director_main.iv_special_infected_table.l_SmokerLimit = 0
+        iv_director_main.iv_mob_min_max_table.min = 12
+        iv_director_main.iv_mob_min_max_table.max = 15
+        iv_director_main.iv_special_infected_table.l_SmokerLimit = 2
         iv_director_main.iv_special_infected_table.l_JockeyLimit = 0
-        iv_director_main.iv_special_infected_table.l_BoomerLimit = 0
+        iv_director_main.iv_special_infected_table.l_BoomerLimit = 1
         iv_director_main.iv_special_infected_table.l_HunterLimit = 0
         iv_director_main.iv_special_infected_table.l_ChargerLimit = 0
         iv_director_main.iv_special_infected_table.l_SpitterLimit = 0
@@ -126,13 +126,13 @@ DirectorOptions <-
 
 	NumReservedWanderers = iv_director_main.iv_mob_min_max_table.min
     
-    NoMobSpawns = true
+    NoMobSpawns = false
 
 	//LockTempo = true // Locks the horde spawning to only be at the COMBAT phase.
 
 	// Sets the time between mob spawns. Mobs can only spawn when the pacing is in the BUILD_UP state.
-	MobSpawnMinTime = 320
-	MobSpawnMaxTime = 350
+	MobSpawnMinTime = 120
+	MobSpawnMaxTime = 130
 
 	// How many zombies are in each mob.
 	MobMinSize = iv_director_main.iv_mob_min_max_table.min
@@ -148,7 +148,7 @@ DirectorOptions <-
 	RelaxMaxFlowTravel = 50
 
 	//Special infected options
-	SpecialRespawnInterval = 25
+	SpecialRespawnInterval = 18 - iv_survivor_count
         SmokerLimit = iv_director_main.iv_special_infected_table.l_SmokerLimit
         JockeyLimit = iv_director_main.iv_special_infected_table.l_JockeyLimit
         BoomerLimit = iv_director_main.iv_special_infected_table.l_BoomerLimit
@@ -156,11 +156,11 @@ DirectorOptions <-
         ChargerLimit = iv_director_main.iv_special_infected_table.l_ChargerLimit
         SpitterLimit = iv_director_main.iv_special_infected_table.l_SpitterLimit
         TankLimit = -1
-        WitchLimit = -1
+        WitchLimit = iv_director_main.iv_special_infected_table.l_WitchLimit
 
 	// Valid spawn locations
 	PreferredMobDirection = SPAWN_NO_PREFERENCE
-	ZombieSpawnRange = 2300
+	ZombieSpawnRange = 2850
     CommonLimit = iv_director_main.iv_mob_min_max_table.max + iv_survivor_count
 }
 }

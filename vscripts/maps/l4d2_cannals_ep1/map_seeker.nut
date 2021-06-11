@@ -14,11 +14,7 @@ debug_enabled <- true //Disable before RELEASE!!!
 //IV Note: Class "MapSeekerMain" Created for main stability check functions... And Calculator.
 class MapSeekerMain
 {
-    map_name = "Null... Fix Me!!!";
-    z_strign = "0..."
-    z_string_function = "FIXME!!!"
-    test_load_first = true
-    zero_to_ten = 0
+    map_name = "Null... Fix Me!!!"
     thsdev_logo = "null"
     thsdev_warning_logo = "null"
     thsdev_map_seeker_logo = "[Map Seeker] "
@@ -37,39 +33,6 @@ class MapSeekerMain
        }
        return null;
     }
-    function TestLoad(z_string_function_local)
-    {
-        if(zero_to_ten < 10)
-        {
-            if(test_load_first == true)
-            {
-                test_load_first = false
-                z_string_function = z_string_function_local
-                zero_to_ten++
-                z_strign = z_string_function+": "+z_strign+zero_to_ten+"..."
-            }
-            else
-            {
-                zero_to_ten++
-                z_strign = z_strign+zero_to_ten+"..."
-            }
-            if(iv_debug_enabled = true)
-            {
-                ::printl(z_strign)
-            }
-            TestLoad(z_string_function)
-        }
-        else if(zero_to_ten == 10)
-        {
-            zero_to_ten = 0
-			test_load_first = true
-            z_strign = z_strign+" - Done!!!"
-            z_string_function = "Nope..."
-            printl(z_strign)
-            z_strign = "0..."
-            return true
-        }
-    }
 }
 
 map_seeker_m <- MapSeekerMain()
@@ -84,14 +47,12 @@ function ReleasePostSpawn() {
     if ( ver_init && ver_init != null )
     {
         printl(thsdev_logo+map_seeker_m.thsdev_map_seeker_logo+"Map Seeker Version Check was Done!!!")
-        local check_state_done = map_seeker_m.TestLoad("ReleasePostSpawn()")
+        local check_state_done = TestLoad("ReleasePostSpawn()")
         if(check_state_done = true)
         {
             printl(thsdev_logo+map_seeker_m.thsdev_map_seeker_logo+"Map Seeker Startup was Done!!!")
-            local stupid_jockey = Entities.FindByName(null, "elevator_jockey_01").GetName()
-            EntFire(stupid_jockey, "Kill")
         }
-        if(debug_enabled == true && Director.IsSinglePlayerGame())
+        if(debug_enabled == true)
         {
            local test_button01 = EntityGroup[1]
            EntFire(test_button01.GetName(), "Unlock")
