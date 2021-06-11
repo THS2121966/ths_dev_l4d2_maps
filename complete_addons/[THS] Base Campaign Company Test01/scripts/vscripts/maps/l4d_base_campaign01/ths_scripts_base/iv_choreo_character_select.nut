@@ -99,7 +99,7 @@ function TakeChors(debug_enabled, l4d_s_mode)
     }
 }
 
-function function ReleaseChoreoOrderSpeak(debug_enabled, persons_from_l4d_or_l4d2_local) //ReleaseChoreoOrderSpeak(debug_enabled, persons_from_l4d_or_l4d2_local, priority_trigger_order_enabled)
+function ReleaseChoreoOrderSpeak(debug_enabled, persons_from_l4d_or_l4d2_local) //function ReleaseChoreoOrderSpeak(debug_enabled, persons_from_l4d_or_l4d2_local, priority_trigger_order_enabled)
 {
     InitChoreoPersons(debug_enabled, persons_from_l4d_or_l4d2_local)
     TakeChors(debug_enabled, l4d_s_mode)
