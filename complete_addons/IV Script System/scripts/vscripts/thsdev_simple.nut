@@ -15,20 +15,24 @@ iv_core_init <- IVCoreStartup(debug_enabled, "thsdev_simple.nut")
 if(iv_core_init == true)
 {
     st_spawned_s <- FindSurvivorAndTakeIT()
+	if(st_spawned_s == 0)
+	{
+		st_spawned_s = 2
+	}
     MutationOptions <-
     {
         CommonLimit = 12 * st_spawned_s // Maximum number of common zombies alive in the world at the same time
         MegaMobSize = 15 * st_spawned_s // Total number of common zombies in a mob. (never more than CommonLimit at one time)
-        WanderingZombieDensityModifier = 0 + st_spawned_s // lets get rid of the wandering zombies
-        MaxSpecials  = 3 + st_spawned_s
+        WanderingZombieDensityModifier = 0 // lets get rid of the wandering zombies
+        MaxSpecials  = 0
         TankLimit    = 0
-        WitchLimit   = 5 + st_spawned_s
-        BoomerLimit  = 1 + st_spawned_s
-        ChargerLimit = 0 + st_spawned_s
-        HunterLimit  = 0 + st_spawned_s
-        JockeyLimit  = 0 + st_spawned_s
-        SpitterLimit = 2 + st_spawned_s
-        SmokerLimit  = 0 + st_spawned_s
+        WitchLimit   = 0
+        BoomerLimit  = 0
+        ChargerLimit = 0
+        HunterLimit  = 0
+        JockeyLimit  = 0
+        SpitterLimit = 0
+        SmokerLimit  = 0
     }
     MutationState <-
     {
