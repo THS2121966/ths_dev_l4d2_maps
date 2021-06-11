@@ -13,6 +13,11 @@ iv_core_error <- false
 iv_warning_to_debug_count <- 5
 iv_warning_to_debug_initial_count <- 0
 
+z_strign <- "0..."
+z_string_function <- "FIXME!!!"
+test_load_first <- true
+zero_to_ten <- 0
+
 survivor_l4d2_list <- [
 survivor_nick <- null
 survivor_coach <- null
@@ -30,10 +35,45 @@ survivor_louis <- null
 survivor_zoey <- null
 ]
 
+    function TestLoad(z_string_function_local)
+    {
+        if(zero_to_ten < 10)
+        {
+            if(test_load_first == true)
+            {
+                test_load_first = false
+                z_string_function = z_string_function_local
+                zero_to_ten++
+                z_strign = z_string_function+": "+z_strign+zero_to_ten+"..."
+            }
+            else
+            {
+                zero_to_ten++
+                z_strign = z_strign+zero_to_ten+"..."
+            }
+            if(debug_enabled = true)
+            {
+                printl(z_strign)
+            }
+            TestLoad(z_string_function)
+        }
+        else if(zero_to_ten == 10)
+        {
+            zero_to_ten = 0
+			test_load_first = true
+            z_strign = z_strign+" - Done!!!"
+            z_string_function = "Nope..."
+            printl(z_strign)
+            z_strign = "0..."
+            return true
+        }
+    }
+
 
 function IVCoreErrorShutdown()
 {
     printl(thsdev_logo+thsdev_error_logo+"Core system Sutdown with ERROR!!! State...")
+    TestLoad("IVCoreErrorShutdown()")
     EntFire("!self", "Kill")
 }
 
@@ -43,6 +83,7 @@ function IVCoreSafeShutdown(UsedScriptName)
     {
         printl(thsdev_logo+"Shutdown that Script System... "+UsedScriptName)
     }
+    TestLoad("IVCoreSafeShutdown("+UsedScriptName+")")
     EntFire("!self", "Kill", "", 1)
 }
 
@@ -59,6 +100,7 @@ function IVCoreStartup(debug_enabled, UsedScriptName)
     }
     else
     {
+        TestLoad("IVCoreStartup("+debug_enabled+", "+UsedScriptName+")")
         if(debug_enabled == true)
         {
             printl(thsdev_logo+"Testing Core complete!!!")
@@ -167,7 +209,8 @@ while( player = Entities.FindByClassname(player, "player") )
         }
     }
 }
-l4d_s_count <- l4d_s_count_local
+TestLoad("FindSurvivorAndTakeIT()")
+l4d_s_count = l4d_s_count_local
 if(debug_enabled == true)
 {
     printl(thsdev_logo+"Total Survivor Count = "+l4d_s_count)
@@ -176,6 +219,6 @@ if(debug_enabled == true)
     printl(thsdev_logo+"Total Survivor Count = "+l4d_s_count)
     printl(thsdev_logo+"Total Survivor Count = "+l4d_s_count)
 }
-return l4d_s_count_local
+return l4d_s_count
 }
 

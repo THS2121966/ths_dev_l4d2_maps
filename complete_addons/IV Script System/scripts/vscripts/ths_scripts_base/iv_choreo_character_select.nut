@@ -22,6 +22,9 @@ order2 <- EntityGroup[2].GetName()
 order3 <- EntityGroup[3].GetName()
 order4 <- EntityGroup[4].GetName()
 
+priority_trigger_order_enabled <- false;
+priority_trigger_order <- null;
+
 
 function SafeRelease()
 {
@@ -96,12 +99,22 @@ function TakeChors(debug_enabled, l4d_s_mode)
     }
 }
 
-function ReleaseChoreoOrderSpeak(debug_enabled, persons_from_l4d_or_l4d2_local)
+function ReleaseChoreoOrderSpeak(debug_enabled, persons_from_l4d_or_l4d2_local, priority_trigger_order_enabled)
 {
     InitChoreoPersons(debug_enabled, persons_from_l4d_or_l4d2_local)
     TakeChors(debug_enabled, l4d_s_mode)
+    if(priority_trigger_order_enabled == true)
+    {
+        priority_trigger_order <- EntityGroup[5]
+    }
+    else
+    {
+        priority_trigger_order = null;
+    }
     if(l4d_s_mode == 1)
     {
+        if(priority_trigger_order == null)
+        {
         if(survivor_l4d2_list[0] != null && choreo_scened_nick != null)
         {
            EntFire(choreo_scened_nick, "Start")
@@ -133,6 +146,46 @@ function ReleaseChoreoOrderSpeak(debug_enabled, persons_from_l4d_or_l4d2_local)
            {
                printl(thsdev_logo+"Started Choreo "+choreo_scened_rochelle+" for Actor "+survivor_l4d2_list[3])
            }
+        }
+        }
+        else
+        {
+            local nick = Entities.FindByName(null, "!nick")
+            local coach = Entities.FindByName(null, "!coach")
+            local ellis = Entities.FindByName(null, "!ellis")
+            local rochelle = Entities.FindByName(null, "!rochelle")
+        if(survivor_l4d2_list[0] != null && priority_trigger_order.IsTouching(nick))
+        {
+           EntFire(choreo_scened_nick, "Start")
+           if (debug_enabled == true)
+           {
+               printl(thsdev_logo+"Started Choreo "+choreo_scened_nick+" for Actor "+survivor_l4d2_list[0])
+           }
+        }
+        else if(survivor_l4d2_list[1] != null && priority_trigger_order.IsTouching(coach))
+        {
+           EntFire(choreo_scened_coach, "Start")
+           if (debug_enabled == true)
+           {
+               printl(thsdev_logo+"Started Choreo "+choreo_scened_coach+" for Actor "+survivor_l4d2_list[1])
+           }
+        }
+        else if(survivor_l4d2_list[2] != null && priority_trigger_order.IsTouching(ellis))
+        {
+           EntFire(choreo_scened_ellis, "Start")
+           if (debug_enabled == true)
+           {
+               printl(thsdev_logo+"Started Choreo "+choreo_scened_ellis+" for Actor "+survivor_l4d2_list[2])
+           }
+        }
+        else if(survivor_l4d2_list[3] != null && priority_trigger_order.IsTouching(rochelle))
+        {
+           EntFire(choreo_scened_rochelle, "Start")
+           if (debug_enabled == true)
+           {
+               printl(thsdev_logo+"Started Choreo "+choreo_scened_rochelle+" for Actor "+survivor_l4d2_list[3])
+           }
+        }
         }
     }
     else if(l4d_s_mode == 2)
@@ -170,5 +223,9 @@ function ReleaseChoreoOrderSpeak(debug_enabled, persons_from_l4d_or_l4d2_local)
            }
         }
     }
+if(priority_trigger_order_enabled != true)
+{
 SafeRelease()
 }
+}
+
