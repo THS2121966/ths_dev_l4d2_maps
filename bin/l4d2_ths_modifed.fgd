@@ -609,7 +609,7 @@
 		"francis" : "Francis"
 		"louis" : "Louis"
 	]
-	model(studio) : "models/survivors/survivor_coach.mdl" : "Helper Model"
+	model(studio) : "Helper Model" : "models/survivors/survivor_coach.mdl"
 	SurvivorIntroSequence(string) : "Survivor Intro Sequence" : "" : "Sequence to play when the intro starts"
 	GameMode(string) : "Game Mode" : "" : "Use this position for a particular game mode only (coop,versus,survival,scavenge)"
 	SurvivorConcept(string) : "Survivor Concept" : "" : "Response rule concept to play when survivor is moved here"
