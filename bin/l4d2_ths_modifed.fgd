@@ -595,7 +595,7 @@
 	HealthCount(integer) : "Number of pain pills" : 1 : "Number of pain pills/first aid kits inside (1-4)"
 ]
 
-@PointClass base(Targetname, Angles, Parentname) color(255 100 100) studio("models/survivors/survivor_coach.mdl") = info_survivor_position : "A point where survivors are placed when escaping the finale"
+@PointClass base(Targetname, Angles, Parentname) studioprop() color(255 100 100) = info_survivor_position : "A point where survivors are placed when escaping the finale"
 [
 	Order(integer) : "Order" : 1 : "Index of spot based on order people got on board. (1-4)"
 	SurvivorName(choices) : "Survivor Name" : "" : "Force this survivor to use this position (Zoey, Louis, etc.)" =
@@ -609,6 +609,7 @@
 		"francis" : "Francis"
 		"louis" : "Louis"
 	]
+	model(studio) : "models/survivors/survivor_coach.mdl" : "Helper Model"
 	SurvivorIntroSequence(string) : "Survivor Intro Sequence" : "" : "Sequence to play when the intro starts"
 	GameMode(string) : "Game Mode" : "" : "Use this position for a particular game mode only (coop,versus,survival,scavenge)"
 	SurvivorConcept(string) : "Survivor Concept" : "" : "Response rule concept to play when survivor is moved here"
