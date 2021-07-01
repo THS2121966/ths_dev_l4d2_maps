@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8755"
-	"mapversion" "188"
+	"mapversion" "190"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -32,7 +32,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "188"
+	"mapversion" "190"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -14764,7 +14764,7 @@ entity
 	connections
 	{
 		"OnTrigger" "fd_startFade0-1"
-		"OnTrigger" "relay_st_scene_cam_setupTrigger0-1"
+		"OnTrigger" "relay_st_scene_cam_setupTrigger1-1"
 		"OnTrigger" "relay_st_scene_endTrigger8-1"
 	}
 	"origin" "296 144 96"
@@ -14803,11 +14803,10 @@ entity
 	"targetname" "relay_st_scene_cam_setup"
 	connections
 	{
-		"OnTrigger" "cam_st_view01Enable0-1"
-		"OnTrigger" "st_room_spawn_point_EllisSetViewControlcam_st_main_to_ellis0-1"
-		"OnTrigger" "st_room_spawn_point_RochelleSetViewControlcam_st_main_to_rochelle0-1"
-		"OnTrigger" "st_room_spawn_point_NickSetViewControlcam_st_main_to_nick0-1"
-		"OnTrigger" "st_room_spawn_point_CoachSetViewControlcam_st_main_to_coach0-1"
+		"OnTrigger" "st_room_spawn_point_EllisSetViewControlcam_st_view010-1"
+		"OnTrigger" "st_room_spawn_point_RochelleSetViewControlcam_st_view010-1"
+		"OnTrigger" "st_room_spawn_point_NickSetViewControlcam_st_view010-1"
+		"OnTrigger" "st_room_spawn_point_CoachSetViewControlcam_st_view010-1"
 	}
 	"origin" "296 144 112"
 	editor
@@ -14821,11 +14820,10 @@ entity
 entity
 {
 	"id" "16636"
-	"classname" "point_viewcontrol_multiplayer"
+	"classname" "point_viewcontrol_survivor"
 	"angles" "-15 135 0"
 	"fov" "60"
-	"fov_rate" "1.0"
-	"interp_time" "1.0"
+	"fov_rate" "0"
 	"spawnflags" "1"
 	"targetname" "cam_st_view01"
 	"origin" "288 -192 28"
@@ -14848,14 +14846,13 @@ entity
 		"OnTrigger" "cam_st_main_to_coachStartMovement5-1"
 		"OnTrigger" "@DirectorFinishIntro4.9-1"
 		"OnTrigger" "@DirectorReleaseSurvivorPositions4.9-1"
-		"OnTrigger" "cam_st_main_to_coachEnable0.1-1"
-		"OnTrigger" "cam_st_main_to_nickEnable0.1-1"
-		"OnTrigger" "cam_st_main_to_rochelleEnable0.1-1"
-		"OnTrigger" "cam_st_main_to_ellisEnable0.1-1"
+		"OnTrigger" "st_room_spawn_point_CoachSetViewControlcam_st_main_to_coach0.1-1"
+		"OnTrigger" "st_room_spawn_point_NickSetViewControlcam_st_main_to_nick0.1-1"
+		"OnTrigger" "st_room_spawn_point_RochelleSetViewControlcam_st_main_to_rochelle0.1-1"
+		"OnTrigger" "st_room_spawn_point_EllisSetViewControlcam_st_main_to_ellis0.1-1"
 		"OnTrigger" "cam_st_main_to_nickStartMovement5-1"
 		"OnTrigger" "cam_st_main_to_rochelleStartMovement5-1"
 		"OnTrigger" "cam_st_main_to_ellisStartMovement5-1"
-		"OnTrigger" "cam_st_view01Disable0-1"
 	}
 	"origin" "296 144 80"
 	editor
@@ -14872,7 +14869,7 @@ entity
 	"classname" "point_viewcontrol_survivor"
 	"angles" "-5 345 0"
 	"fov" "72"
-	"fov_rate" "1.0"
+	"fov_rate" "0"
 	"spawnflags" "1"
 	"targetname" "cam_st_main_to_coach"
 	"origin" "-32 16 68"
@@ -14890,7 +14887,7 @@ entity
 	"classname" "point_viewcontrol_survivor"
 	"angles" "-5 345 0"
 	"fov" "72"
-	"fov_rate" "1.0"
+	"fov_rate" "0"
 	"spawnflags" "1"
 	"targetname" "cam_st_main_to_nick"
 	"origin" "-32 12 68"
@@ -14908,7 +14905,7 @@ entity
 	"classname" "point_viewcontrol_survivor"
 	"angles" "-5 345 0"
 	"fov" "72"
-	"fov_rate" "1.0"
+	"fov_rate" "0"
 	"spawnflags" "1"
 	"targetname" "cam_st_main_to_rochelle"
 	"origin" "-32 8 68"
@@ -14926,7 +14923,7 @@ entity
 	"classname" "point_viewcontrol_survivor"
 	"angles" "-5 345 0"
 	"fov" "72"
-	"fov_rate" "1.0"
+	"fov_rate" "0"
 	"spawnflags" "1"
 	"targetname" "cam_st_main_to_ellis"
 	"origin" "-32 4 68"
