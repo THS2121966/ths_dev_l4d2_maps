@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8972"
-	"mapversion" "61"
+	"mapversion" "62"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "61"
+	"mapversion" "62"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -266,90 +266,6 @@ entity
 		"visgroupautoshown" "1"
 		"comments" "106 143 181"
 		"logicalpos" "[5500 -4768]"
-	}
-}
-entity
-{
-	"id" "28"
-	"classname" "info_director"
-	"targetname" "@Director"
-	"origin" "-40 32 16"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 -2268]"
-	}
-}
-entity
-{
-	"id" "30"
-	"classname" "info_map_parameters"
-	"AdrenalineDensity" "1.25"
-	"AmmoDensity" ".5"
-	"AmmoPackDensity" ".5"
-	"angles" "0 0 0"
-	"ChainsawDensity" ".2"
-	"ConfigurableWeaponClusterRange" "100"
-	"ConfigurableWeaponDensity" "-1.0"
-	"DefibrillatorDensity" ".5"
-	"FinaleItemClusterCount" "3"
-	"GasCanDensity" "2"
-	"ItemClusterRange" "50"
-	"MagnumDensity" "-1.0"
-	"MeleeWeaponDensity" "2"
-	"MolotovDensity" "2"
-	"OxygenTankDensity" "0"
-	"PainPillDensity" "1.25"
-	"PipeBombDensity" "1"
-	"PistolDensity" ".5"
-	"PropaneTankDensity" "3"
-	"targetname" "map_parms_main"
-	"UpgradepackDensity" ".5"
-	"VomitJarDensity" ".25"
-	"origin" "-24 32 16"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 -2268]"
-	}
-}
-entity
-{
-	"id" "54"
-	"classname" "info_map_parameters_versus"
-	"AdrenalineDensity" "1.25"
-	"AmmoDensity" ".5"
-	"AmmoPackDensity" "6.48"
-	"angles" "0 0 0"
-	"ChainsawDensity" ".2"
-	"ConfigurableWeaponClusterRange" "100"
-	"ConfigurableWeaponDensity" "-1.0"
-	"DefibrillatorDensity" ".5"
-	"FinaleItemClusterCount" "3"
-	"GasCanDensity" "2"
-	"ItemClusterRange" "50"
-	"MagnumDensity" "-1.0"
-	"MeleeWeaponDensity" "2"
-	"MolotovDensity" "2"
-	"OxygenTankDensity" "0"
-	"PainPillDensity" "1.5"
-	"PipeBombDensity" "1"
-	"PistolDensity" ".5"
-	"PropaneTankDensity" "3"
-	"targetname" "map_parms_vs"
-	"UpgradepackDensity" ".5"
-	"VomitJarDensity" ".25"
-	"origin" "-8 32 16"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 -2268]"
 	}
 }
 entity
