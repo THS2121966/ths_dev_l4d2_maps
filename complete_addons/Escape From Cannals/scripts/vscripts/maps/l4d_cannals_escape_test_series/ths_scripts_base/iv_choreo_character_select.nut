@@ -17,6 +17,8 @@ choreo_scened_francis <- null
 choreo_scened_louis <- null
 choreo_scened_zoey <- null
 
+time_to_destruct <- 5
+
 order1 <- EntityGroup[1].GetName() //Use EntityGroup in hammer logic_script entity info
 order2 <- EntityGroup[2].GetName()
 order3 <- EntityGroup[3].GetName()
@@ -30,17 +32,17 @@ function SafeRelease()
 {
     if(l4d_s_mode == 1)
     {
-    EntFire(choreo_scened_nick, "kill", "", 5)
-    EntFire(choreo_scened_coach, "kill", "", 5)
-    EntFire(choreo_scened_ellis, "kill", "", 5)
-    EntFire(choreo_scened_rochelle, "kill", "", 5)
+    EntFire(choreo_scened_nick, "kill", "", time_to_destruct)
+    EntFire(choreo_scened_coach, "kill", "", time_to_destruct)
+    EntFire(choreo_scened_ellis, "kill", "", time_to_destruct)
+    EntFire(choreo_scened_rochelle, "kill", "", time_to_destruct)
     }
     else if(l4d_s_mode == 2)
     {
-    EntFire(choreo_scened_bill, "kill", "", 5)
-    EntFire(choreo_scened_francis, "kill", "", 5)
-    EntFire(choreo_scened_louis, "kill", "", 5)
-    EntFire(choreo_scened_zoey, "kill", "", 5)
+    EntFire(choreo_scened_bill, "kill", "", time_to_destruct)
+    EntFire(choreo_scened_francis, "kill", "", time_to_destruct)
+    EntFire(choreo_scened_louis, "kill", "", time_to_destruct)
+    EntFire(choreo_scened_zoey, "kill", "", time_to_destruct)
     }
 IVCoreSafeShutdown("iv_choreo_character_select.nut")
 }
@@ -99,10 +101,12 @@ function TakeChors(debug_enabled, l4d_s_mode)
     }
 }
 
-function ReleaseChoreoOrderSpeak(debug_enabled, persons_from_l4d_or_l4d2_local, priority_trigger_order_enabled)
+function ReleaseChoreoOrderSpeak(debug_enabled, persons_from_l4d_or_l4d2_local, priority_trigger_order_enabled, destruct_time)
 {
     InitChoreoPersons(debug_enabled, persons_from_l4d_or_l4d2_local)
     TakeChors(debug_enabled, l4d_s_mode)
+    time_to_destruct = destruct_time
+    
     if(priority_trigger_order_enabled == true)
     {
         priority_trigger_order <- EntityGroup[5]
