@@ -1,0 +1,352 @@
+versioninfo
+{
+	"editorversion" "400"
+	"editorbuild" "9153"
+	"mapversion" "5"
+	"formatversion" "100"
+	"prefab" "0"
+}
+visgroups
+{
+}
+viewsettings
+{
+	"bSnapToGrid" "1"
+	"bShowGrid" "1"
+	"bShowLogicalGrid" "0"
+	"nGridSpacing" "4"
+	"bShow3DGrid" "0"
+}
+world
+{
+	"id" "1"
+	"mapversion" "5"
+	"classname" "worldspawn"
+	"detailmaterial" "detail/detailsprites"
+	"detailvbsp" "detail.vbsp"
+	"maxpropscreenwidth" "-1"
+	"musicpostfix" "Waterfront"
+	"skyname" "sky_l4d_rural02_hdr"
+}
+entity
+{
+	"id" "2"
+	"classname" "prop_dynamic"
+	"angles" "0 270 0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"glowbackfacemult" "1.0"
+	"glowcolor" "0 0 0"
+	"MaxAnimTime" "10"
+	"MinAnimTime" "5"
+	"model" "models/props/cs_militia/table_shed.mdl"
+	"renderamt" "255"
+	"rendercolor" "255 255 255"
+	"skin" "0"
+	"solid" "6"
+	"spawnflags" "0"
+	"targetname" "survivor_mode_furniture"
+	"origin" "0 0 0"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "37"
+	"classname" "weapon_first_aid_kit_spawn"
+	"angles" "90 165 0"
+	"disableshadows" "1"
+	"solid" "6"
+	"spawnflags" "0"
+	"targetname" "$surv_weapons_name"
+	"weaponskin" "-1"
+	"origin" "-33 -14 37"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "67"
+	"classname" "weapon_first_aid_kit_spawn"
+	"angles" "90 165 0"
+	"disableshadows" "1"
+	"solid" "6"
+	"spawnflags" "0"
+	"targetname" "$surv_weapons_name"
+	"weaponskin" "-1"
+	"origin" "-22 -14 37"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "69"
+	"classname" "weapon_first_aid_kit_spawn"
+	"angles" "90 165 0"
+	"disableshadows" "1"
+	"solid" "6"
+	"spawnflags" "0"
+	"targetname" "$surv_weapons_name"
+	"weaponskin" "-1"
+	"origin" "-11 -14 37"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "71"
+	"classname" "weapon_first_aid_kit_spawn"
+	"angles" "90 165 0"
+	"disableshadows" "1"
+	"solid" "6"
+	"spawnflags" "0"
+	"targetname" "$surv_weapons_name"
+	"weaponskin" "-1"
+	"origin" "0 -14 37"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "73"
+	"classname" "weapon_rifle_m60_spawn"
+	"angles" "0 60 90"
+	"count" "1"
+	"disableshadows" "1"
+	"solid" "6"
+	"spawnflags" "0"
+	"targetname" "$surv_weapons_name"
+	"weaponskin" "-1"
+	"origin" "24 -8 36"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "153"
+	"classname" "logic_relay"
+	"spawnflags" "1"
+	"targetname" "$surv_mode_scene_logic_name"
+	connections
+	{
+		"OnTrigger" "temp_sceneForceSpawn0-1"
+	}
+	"origin" "-32 16 48"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "161"
+	"classname" "point_template"
+	"spawnflags" "2"
+	"targetname" "temp_scene"
+	"Template01" "survivor_mode_furniture"
+	"Template02" "$surv_weapons_name"
+	"origin" "0 32 56"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 2000]"
+	}
+}
+entity
+{
+	"id" "188"
+	"classname" "func_instance_parms"
+	"parm1" "$surv_weapons_name target_name_or_class"
+	"parm2" "$surv_mode_scene_logic_name target_name_or_class"
+	"origin" "16 32 56"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "330"
+	"classname" "weapon_ammo_spawn"
+	"angles" "0 45 0"
+	"count" "5"
+	"model" "models/props_unique/spawn_apartment/coffeeammo.mdl"
+	"skin" "0"
+	"solid" "6"
+	"spawnflags" "0"
+	"targetname" "$surv_weapons_name"
+	"weaponskin" "-1"
+	"origin" "56 8 0"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "355"
+	"classname" "weapon_shotgun_spas_spawn"
+	"angles" "-51.3246 19.7639 -78.0484"
+	"count" "5"
+	"solid" "6"
+	"spawnflags" "0"
+	"targetname" "$surv_weapons_name"
+	"weaponskin" "-1"
+	"origin" "-49 -20 0"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "405"
+	"classname" "weapon_rifle_spawn"
+	"angles" "-51.3246 199.764 -78.0484"
+	"count" "5"
+	"skin" "1"
+	"solid" "6"
+	"spawnflags" "0"
+	"targetname" "$surv_weapons_name"
+	"weaponskin" "-1"
+	"origin" "50 -9 7"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "430"
+	"classname" "weapon_vomitjar_spawn"
+	"angles" "0 285 0"
+	"count" "1"
+	"disableshadows" "1"
+	"solid" "6"
+	"spawnflags" "0"
+	"targetname" "$surv_weapons_name"
+	"weaponskin" "-1"
+	"origin" "4 0 40"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "450"
+	"classname" "weapon_vomitjar_spawn"
+	"angles" "0 285 0"
+	"count" "1"
+	"disableshadows" "1"
+	"solid" "6"
+	"spawnflags" "0"
+	"targetname" "$surv_weapons_name"
+	"weaponskin" "-1"
+	"origin" "12 0 40"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "452"
+	"classname" "weapon_vomitjar_spawn"
+	"angles" "0 285 0"
+	"count" "1"
+	"disableshadows" "1"
+	"solid" "6"
+	"spawnflags" "0"
+	"targetname" "$surv_weapons_name"
+	"weaponskin" "-1"
+	"origin" "8 -8 40"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "454"
+	"classname" "weapon_molotov_spawn"
+	"angles" "0 315 0"
+	"count" "1"
+	"disableshadows" "1"
+	"solid" "6"
+	"spawnflags" "0"
+	"targetname" "$surv_weapons_name"
+	"weaponskin" "-1"
+	"origin" "8 4 40"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+cameras
+{
+	"activecamera" "-1"
+}
+cordons
+{
+	"active" "0"
+}
