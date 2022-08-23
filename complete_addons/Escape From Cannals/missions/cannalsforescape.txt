@@ -26,10 +26,10 @@
 		
 		"fullscreen"		"1"
 		
-		"posterTitle"		"#L4D360UI_CampaignTitle_C1"
+		"posterTitle"		"Cannals for Escape"
 		"posterTitle_y"		"320"
 		
-		"posterTagline"		"#L4D360UI_CampaignTagline_C1"
+		"posterTagline"		"Part 1: Under Street"
 		"posterTagline_y"	"380"
 		
 		"l4d2_names"				"1"
@@ -70,6 +70,16 @@
 				"DisplayName" "[Versus] Cannals 4 Escape Alpha Test Map 01."
 				"Image" "maps/c1m1_hotel"
 				"VersusCompletionScore"	"250"
+			}
+		}
+		
+		"survival"
+		{
+			"1"
+			{
+				"Map" "l4d_cannals_escape_test01"
+				"DisplayName" "[Survival] Cannals 4 Escape Alpha Test Map 01."
+				"Image" "maps/c1m1_hotel"
 			}
 		}
 	}
