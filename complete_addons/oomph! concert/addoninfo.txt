@@ -1,0 +1,10 @@
+"AddonInfo"
+{
+addonSteamAppID "550"
+addontitle " Oomph Concert" 
+addonversion "1.17"
+addonauthor " Suvurov Ivan"
+addonauthorSteamID "STEAM_0:0:41057978"
+addonURL0 "https://www.youtube.com/channel/UCZl_MpI3WF6AaG126ozWNbw"
+addonDescription "Oomph! vs Zombies! Stable Release." 
+}
