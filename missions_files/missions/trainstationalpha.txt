@@ -130,23 +130,5 @@
 				}
 			}
 		}
-
-		"survival"
-		{
-			"1"
-			{
-				"Map" "l4d_rails_survival_01"
-				"DisplayName" "Train Station Alpha Map"
-				"Image" "VGUI/infected"
-				"TankVariant" "models/infected/hulk_l4d1.mdl"
-				"HunterVariant" "models/infected/hunter_l4d1.mdl"
-				"SmokerVariant" "models/infected/smoker_l4d1.mdl"
-				"BoomerVariant" "models/infected/boomer_l4d1.mdl"
-				"TankArmsVariant" "models\v_models\weapons\v_claw_hulk_L4D1.mdl"
-				"HunterArmsVariant" "models\v_models\weapons\v_claw_hunter_l4d1.mdl"
-				"SmokerArmsVariant" "models\v_models\weapons\v_claw_smoker_l4d1.mdl"
-				"BoomerArmsVariant" "models\v_models\weapons\v_claw_boomer_l4d1.mdl"
-			}
-		}		
 	}
 }
