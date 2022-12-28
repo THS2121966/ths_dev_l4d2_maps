@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9520"
-	"mapversion" "82"
+	"mapversion" "87"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -14,19 +14,25 @@ visgroups
 		"visgroupid" "18"
 		"color" "182 207 236"
 	}
+	visgroup
+	{
+		"name" "ivdev_temp_barricade_upper_01"
+		"visgroupid" "22"
+		"color" "100 149 186"
+	}
 }
 viewsettings
 {
 	"bSnapToGrid" "1"
 	"bShowGrid" "1"
 	"bShowLogicalGrid" "0"
-	"nGridSpacing" "16"
+	"nGridSpacing" "2"
 	"bShow3DGrid" "0"
 }
 world
 {
 	"id" "1"
-	"mapversion" "82"
+	"mapversion" "87"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -3640,6 +3646,82 @@ world
 			"visgroupautoshown" "1"
 		}
 	}
+	solid
+	{
+		"id" "14114"
+		side
+		{
+			"id" "778"
+			"plane" "(1280 512 1024) (1288 512 1024) (1288 -512 1024)"
+			"material" "TOOLS/TOOLSPLAYERCLIP"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "779"
+			"plane" "(1280 -512 480) (1288 -512 480) (1288 512 480)"
+			"material" "TOOLS/TOOLSPLAYERCLIP"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "780"
+			"plane" "(1280 512 1024) (1280 -512 1024) (1280 -512 480)"
+			"material" "TOOLS/TOOLSPLAYERCLIP"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "781"
+			"plane" "(1288 512 480) (1288 -512 480) (1288 -512 1024)"
+			"material" "TOOLS/TOOLSPLAYERCLIP"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "782"
+			"plane" "(1288 512 1024) (1280 512 1024) (1280 512 480)"
+			"material" "TOOLS/TOOLSPLAYERCLIP"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "783"
+			"plane" "(1288 -512 480) (1280 -512 480) (1280 -512 1024)"
+			"material" "TOOLS/TOOLSPLAYERCLIP"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "0 218 127"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
 	group
 	{
 		"id" "656"
@@ -7200,11 +7282,8 @@ entity
 	{
 		"OnMapSpawn" "nav_st_block_01BlockNav0-1"
 		"OnMapSpawn" "pour_targetDeactivate0-1"
-		"OnMapSpawn" "scavenge_gascan_spawnTurnGlowsOff0-1"
-		"OnMultiNewRound" "scavenge_gascan_spawnTurnGlowsOff0-1"
-		"OnMapSpawn" "gas_nozzleStopGlowing0-1"
-		"OnMultiNewRound" "gas_nozzleStopGlowing0-1"
 		"OnMapSpawn" "actor_next_01SetAnimationIdle_Neutral_100-1"
+		"OnMapSpawn" "weapon_gascanKill1-1"
 	}
 	"origin" "-312 -96 72"
 	editor
@@ -7354,130 +7433,154 @@ entity
 		"logicalpos" "[0 7000]"
 	}
 }
-entity
+hidden
 {
-	"id" "5555"
-	"classname" "prop_static"
-	"angles" "0 0 0"
-	"fademindist" "-1"
-	"fadescale" "1"
-	"model" "models/props_debris/barricade_short04a.mdl"
-	"renderamt" "255"
-	"rendercolor" "255 255 255"
-	"skin" "0"
-	"solid" "6"
-	"origin" "1536 208 504"
-	editor
+	entity
 	{
-		"color" "255 255 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 8000]"
+		"id" "5555"
+		"classname" "prop_static"
+		"angles" "0 0 0"
+		"fademindist" "-1"
+		"fadescale" "1"
+		"model" "models/props_debris/barricade_short04a.mdl"
+		"renderamt" "255"
+		"rendercolor" "255 255 255"
+		"skin" "0"
+		"solid" "6"
+		"origin" "1536 208 504"
+		editor
+		{
+			"color" "255 255 0"
+			"visgroupid" "22"
+			"visgroupshown" "0"
+			"visgroupautoshown" "1"
+			"logicalpos" "[0 8000]"
+		}
 	}
 }
-entity
+hidden
 {
-	"id" "5586"
-	"classname" "prop_static"
-	"angles" "0 0 0"
-	"fademindist" "-1"
-	"fadescale" "1"
-	"model" "models/props_debris/barricade_short04a.mdl"
-	"renderamt" "255"
-	"rendercolor" "255 255 255"
-	"skin" "0"
-	"solid" "6"
-	"origin" "1904 416 504"
-	editor
+	entity
 	{
-		"color" "255 255 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 8000]"
+		"id" "5586"
+		"classname" "prop_static"
+		"angles" "0 0 0"
+		"fademindist" "-1"
+		"fadescale" "1"
+		"model" "models/props_debris/barricade_short04a.mdl"
+		"renderamt" "255"
+		"rendercolor" "255 255 255"
+		"skin" "0"
+		"solid" "6"
+		"origin" "1904 416 504"
+		editor
+		{
+			"color" "255 255 0"
+			"visgroupid" "22"
+			"visgroupshown" "0"
+			"visgroupautoshown" "1"
+			"logicalpos" "[0 8000]"
+		}
 	}
 }
-entity
+hidden
 {
-	"id" "5594"
-	"classname" "prop_static"
-	"angles" "0 0 0"
-	"fademindist" "-1"
-	"fadescale" "1"
-	"model" "models/props_debris/barricade_short04a.mdl"
-	"renderamt" "255"
-	"rendercolor" "255 255 255"
-	"skin" "0"
-	"solid" "6"
-	"origin" "1824 128 504"
-	editor
+	entity
 	{
-		"color" "255 255 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 8000]"
+		"id" "5594"
+		"classname" "prop_static"
+		"angles" "0 0 0"
+		"fademindist" "-1"
+		"fadescale" "1"
+		"model" "models/props_debris/barricade_short04a.mdl"
+		"renderamt" "255"
+		"rendercolor" "255 255 255"
+		"skin" "0"
+		"solid" "6"
+		"origin" "1824 128 504"
+		editor
+		{
+			"color" "255 255 0"
+			"visgroupid" "22"
+			"visgroupshown" "0"
+			"visgroupautoshown" "1"
+			"logicalpos" "[0 8000]"
+		}
 	}
 }
-entity
+hidden
 {
-	"id" "5598"
-	"classname" "prop_static"
-	"angles" "0 0 0"
-	"fademindist" "-1"
-	"fadescale" "1"
-	"model" "models/props_debris/barricade_short04a.mdl"
-	"renderamt" "255"
-	"rendercolor" "255 255 255"
-	"skin" "0"
-	"solid" "6"
-	"origin" "1600 -240 504"
-	editor
+	entity
 	{
-		"color" "255 255 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 8000]"
+		"id" "5598"
+		"classname" "prop_static"
+		"angles" "0 0 0"
+		"fademindist" "-1"
+		"fadescale" "1"
+		"model" "models/props_debris/barricade_short04a.mdl"
+		"renderamt" "255"
+		"rendercolor" "255 255 255"
+		"skin" "0"
+		"solid" "6"
+		"origin" "1600 -240 504"
+		editor
+		{
+			"color" "255 255 0"
+			"visgroupid" "22"
+			"visgroupshown" "0"
+			"visgroupautoshown" "1"
+			"logicalpos" "[0 8000]"
+		}
 	}
 }
-entity
+hidden
 {
-	"id" "5614"
-	"classname" "prop_static"
-	"angles" "0 0 0"
-	"fademindist" "-1"
-	"fadescale" "1"
-	"model" "models/props_debris/barricade_short04a.mdl"
-	"renderamt" "255"
-	"rendercolor" "255 255 255"
-	"skin" "0"
-	"solid" "6"
-	"origin" "1792 -384 504"
-	editor
+	entity
 	{
-		"color" "255 255 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 8000]"
+		"id" "5614"
+		"classname" "prop_static"
+		"angles" "0 0 0"
+		"fademindist" "-1"
+		"fadescale" "1"
+		"model" "models/props_debris/barricade_short04a.mdl"
+		"renderamt" "255"
+		"rendercolor" "255 255 255"
+		"skin" "0"
+		"solid" "6"
+		"origin" "1792 -384 504"
+		editor
+		{
+			"color" "255 255 0"
+			"visgroupid" "22"
+			"visgroupshown" "0"
+			"visgroupautoshown" "1"
+			"logicalpos" "[0 8000]"
+		}
 	}
 }
-entity
+hidden
 {
-	"id" "5642"
-	"classname" "prop_static"
-	"angles" "0 0 0"
-	"fademindist" "-1"
-	"fadescale" "1"
-	"model" "models/props_debris/barricade_short04a.mdl"
-	"renderamt" "255"
-	"rendercolor" "255 255 255"
-	"skin" "0"
-	"solid" "6"
-	"origin" "1488 -384 504"
-	editor
+	entity
 	{
-		"color" "255 255 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 8000]"
+		"id" "5642"
+		"classname" "prop_static"
+		"angles" "0 0 0"
+		"fademindist" "-1"
+		"fadescale" "1"
+		"model" "models/props_debris/barricade_short04a.mdl"
+		"renderamt" "255"
+		"rendercolor" "255 255 255"
+		"skin" "0"
+		"solid" "6"
+		"origin" "1488 -384 504"
+		editor
+		{
+			"color" "255 255 0"
+			"visgroupid" "22"
+			"visgroupshown" "0"
+			"visgroupautoshown" "1"
+			"logicalpos" "[0 8000]"
+		}
 	}
 }
 entity
@@ -7706,6 +7809,7 @@ entity
 	"classname" "point_template"
 	"spawnflags" "2"
 	"targetname" "template_scavenge_generator"
+	"Template01" "scavenge_gascan_spawn_hardmode"
 	"Template02" "scavenge_gascan_spawn"
 	"Template03" "particle_scvng_gen"
 	"Template04" "pour_target"
@@ -8289,6 +8393,7 @@ entity
 		"OnUser2" "gas_nozzleStopGlowing0-1"
 		"OnUser1" "snd_scvng_alarmFireUser10-1"
 		"OnUser2" "snd_scvng_alarmFireUser20-1"
+		"OnUser2" "scavenge_gascan_spawn_hardmodeTurnGlowsOff0-1"
 	}
 	"origin" "1184 224 160"
 	editor
@@ -10911,6 +11016,100 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "14116"
+	"classname" "commentary_zombie_spawner"
+	"angles" "0 345 0"
+	"targetname" "witch_hardmode_spawner"
+	"origin" "-1112 0 160"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "14149"
+	"classname" "info_particle_system"
+	"angles" "0 0 0"
+	"effect_name" "awning_collapse_dust"
+	"targetname" "witch_hardmode_spawner_spawn_fx"
+	"origin" "-1112 0 160"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "14409"
+	"classname" "weapon_scavenge_item_spawn"
+	"angles" "0 270 0"
+	"glowstate" "0"
+	"model" "models/props_junk/gascan001a.mdl"
+	"skin" "3"
+	"solid" "6"
+	"spawnflags" "3"
+	"targetname" "scavenge_gascan_spawn_hardmode"
+	"weaponskin" "-1"
+	"origin" "-1048 8 160"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 8500]"
+	}
+}
+entity
+{
+	"id" "14411"
+	"classname" "weapon_scavenge_item_spawn"
+	"angles" "0 255 0"
+	"glowstate" "0"
+	"model" "models/props_junk/gascan001a.mdl"
+	"skin" "3"
+	"solid" "6"
+	"spawnflags" "3"
+	"targetname" "scavenge_gascan_spawn_hardmode"
+	"weaponskin" "-1"
+	"origin" "-1048 0 160"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 8500]"
+	}
+}
+entity
+{
+	"id" "14413"
+	"classname" "weapon_scavenge_item_spawn"
+	"angles" "0 285 0"
+	"glowstate" "0"
+	"model" "models/props_junk/gascan001a.mdl"
+	"skin" "3"
+	"solid" "6"
+	"spawnflags" "3"
+	"targetname" "scavenge_gascan_spawn_hardmode"
+	"weaponskin" "-1"
+	"origin" "-1048 16 160"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 8500]"
 	}
 }
 cameras

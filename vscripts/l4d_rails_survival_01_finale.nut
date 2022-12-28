@@ -31,6 +31,7 @@ function IV_Check_Survivors_Count()
 }
 
 IV_DIRECTOR_ENTITY_NAME <- "@Director"
+local difficulty = Convars.GetStr( "z_difficulty" ).tolower();
 
 function IV_Check_GameMode(gamemode)
 {
@@ -40,6 +41,7 @@ function IV_Check_GameMode(gamemode)
     {
         IV_FINALE_5_CHECKED_DELAY = IV_MAP_PRE_FINAL_DELAY;
         IV_IS_SIMPLE_FINALE = true;
+		difficulty = "normal";
     }
     else
     {
@@ -142,6 +144,22 @@ function AddTableToTable( dest, src )
 
 //-----------------------------------------------------------------------------
 
+IV_GAS_CANS_NEEDED_TO_END <- 7
+IV_GAS_CANS_ADVANCED <- IV_GAS_CANS_NEEDED_TO_END + 3
+
+IV_TEMPLATE_SCVNG_GENERATOR_SPAWN_NAME <- "template_scavenge_generator"
+
+function IV_Check_Hard_Greater_Scenario(diff)
+{
+	if(developer())
+	printl(difficulty);
+
+	if(diff == "hard" || diff == "impossible")
+	return true;
+
+	return false;
+}
+
 function OnBeginCustomFinaleStage( num, type )
 {
 	if ( developer() > 0 )
@@ -173,6 +191,16 @@ function OnBeginCustomFinaleStage( num, type )
 	if(type == CUSTOM)
 	{
 		EntFire(IV_DIRECTOR_ENTITY_NAME, "FireUser1", "", 0)
+
+		if(IV_Check_Hard_Greater_Scenario(difficulty))
+		{
+			EntFire(IV_TEMPLATE_SCVNG_GENERATOR_SPAWN_NAME, "AddOutput", "OnEntitySpawned " + IV_DIRECTOR_ENTITY_NAME +
+			":RunScriptCode:DirectorScript.MapScript.LocalScript.IV_Advance_Scavenge_Mode():0.1:-1", 0);
+
+			EntFire( "scavenge_display", "SetTotalItems", IV_GAS_CANS_ADVANCED );
+
+			IV_GAS_CANS_NEEDED_TO_END = IV_GAS_CANS_ADVANCED;
+		}
 	}
 
 	MapScript.DirectorOptions.clear()
@@ -206,7 +234,40 @@ function OnBeginCustomFinaleStage( num, type )
 	}
 }
 
-IV_GAS_CANS_NEEDED_TO_END <- 7
+function IV_Advance_Scavenge_Mode()
+{
+	local check_array = 3;
+	local spawn_witch = true;
+	local ent_gascan = null;
+
+	while (ent_gascan = Entities.FindByName(ent_gascan, "scavenge_gascan_spawn_hardmode"))
+	{
+		if(check_array == 0)
+		break;
+
+		if(developer())
+		printl(ent_gascan.GetName());
+
+		DoEntFire( "!self", "SpawnItem", "", 0, null, ent_gascan );
+		DoEntFire( "!self", "TurnGlowsOn", "", 0.1, null, ent_gascan );
+		check_array--;
+
+		if(spawn_witch)
+		{
+			spawn_witch = false;
+
+			local witch_spawner = Entities.FindByName(null, "witch_hardmode_spawner");
+
+			if(witch_spawner)
+			{
+				EntFire("witch_hardmode_spawner_spawn_fx", "Start", "", 0);
+				DoEntFire("!self", "SpawnZombie", "Witch", 0, null, witch_spawner);
+			}
+			else
+			printl("Failed to Spawn Scavenge Witch!!!");
+		}
+	}
+}
 
 IV_GAS_CANS_POUNDED <- 0
 
