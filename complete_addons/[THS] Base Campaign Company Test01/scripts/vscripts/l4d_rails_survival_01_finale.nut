@@ -149,6 +149,47 @@ IV_GAS_CANS_ADVANCED <- IV_GAS_CANS_NEEDED_TO_END + 3
 
 IV_TEMPLATE_SCVNG_GENERATOR_SPAWN_NAME <- "template_scavenge_generator"
 
+IV_EXTRA_SPAWN_POINTS_G01_NAME <-
+{
+	Extra_Spawn_Logic_Inited = false
+
+	Points_Names = "@ExtraFinalZTarget_G_01"
+	Spawn_Area_Name = "@ExtraFinalZTarget_G_01_Safe_Area"
+
+	Points = null
+	Area = null
+}
+
+function IV_Realise_Points_Table()
+{
+	local founded_points = [];
+
+	local last_point = null;
+	while (last_point = Entities.FindByName(last_point, IV_EXTRA_SPAWN_POINTS_G01_NAME.Points_Names))
+	{
+		if(developer())
+		printl("Checked point - " + last_point.GetName());
+
+		founded_points.append(last_point);
+	}
+
+	IV_EXTRA_SPAWN_POINTS_G01_NAME.Points <- founded_points;
+	IV_EXTRA_SPAWN_POINTS_G01_NAME.Area <- Entities.FindByName(null, IV_EXTRA_SPAWN_POINTS_G01_NAME.Spawn_Area_Name);
+
+	if(IV_EXTRA_SPAWN_POINTS_G01_NAME.Points != null && IV_EXTRA_SPAWN_POINTS_G01_NAME.Points[0] != null && IV_EXTRA_SPAWN_POINTS_G01_NAME.Area != null)
+	{
+		DoEntFire( "!self", "AddOutput", "OnEntireTeamStartTouch " + IV_DIRECTOR_ENTITY_NAME +
+		":RunScriptCode:DirectorScript.MapScript.LocalScript.IV_ADD_EXTRA_AREA_01_SURVIVOR():0:-1", 0, null, IV_EXTRA_SPAWN_POINTS_G01_NAME.Area );
+		DoEntFire( "!self", "AddOutput", "OnEntireTeamEndTouch " + IV_DIRECTOR_ENTITY_NAME +
+		":RunScriptCode:DirectorScript.MapScript.LocalScript.IV_REMOVE_EXTRA_AREA_01_SURVIVOR():0:-1", 0, null, IV_EXTRA_SPAWN_POINTS_G01_NAME.Area );
+		IV_EXTRA_SPAWN_POINTS_G01_NAME.Extra_Spawn_Logic_Inited = true;
+	}
+	else
+	printl("No Active Extra Spawn Points or Spawn Area Founded!!! Aborting...");
+}
+
+IV_Realise_Points_Table();
+
 function IV_Check_Hard_Greater_Scenario(diff)
 {
 	if(developer())
@@ -158,6 +199,75 @@ function IV_Check_Hard_Greater_Scenario(diff)
 	return true;
 
 	return false;
+}
+
+local IV_SURVIVORS_EXTRA_AREA_01_TOUCHED = 0
+
+function IV_ADD_EXTRA_AREA_01_SURVIVOR()
+{
+	IV_SURVIVORS_EXTRA_AREA_01_TOUCHED++;
+
+	if(developer())
+	printl("Added Survuvor in Extra Area01");
+}
+
+function IV_REMOVE_EXTRA_AREA_01_SURVIVOR()
+{
+	IV_SURVIVORS_EXTRA_AREA_01_TOUCHED--;
+
+	if(developer())
+	printl("Removed Survuvor in Extra Area01");
+}
+
+function IV_Check_Survivors_Extra_Area_01_State()
+{
+	if(IV_SURVIVORS_EXTRA_AREA_01_TOUCHED > 0)
+	return true;
+
+	return false;
+}
+
+function IV_Realise_More_Tanks_Scenario()
+{
+	if(!IV_EXTRA_SPAWN_POINTS_G01_NAME.Extra_Spawn_Logic_Inited)
+	return;
+
+	local tanks_spawner_array = []
+
+	foreach ( checked_point in IV_EXTRA_SPAWN_POINTS_G01_NAME.Points )
+	{
+		if(developer())
+		printl("Checked '" + checked_point.GetName() + "' Target");
+
+		local origin = checked_point.GetOrigin();
+		local angles = checked_point.GetAngles();
+
+		local kvs =
+		{
+			origin = origin.ToKVString()
+			angles = angles.ToKVString()
+			targetname = "@ExtraTankSpawner"
+		}
+
+		local spawner = SpawnEntityFromTable( "commentary_zombie_spawner", kvs );
+
+		if(developer())
+		printl("Spawned '" + spawner.GetName() + "' Extra Tank Spawn Position");
+
+		tanks_spawner_array.append(spawner);
+	}
+
+	if(!IV_Check_Survivors_Extra_Area_01_State())
+	{
+		local extra_tanks_count = 0;
+
+		foreach ( checked_spawner in tanks_spawner_array )
+		{
+			DoEntFire( "!self", "SpawnZombie", "Tank", 0, null, checked_spawner );
+			extra_tanks_count++;
+			printl("Spawned Tank On Extra Slot!!! Extra Tanks Count = " + extra_tanks_count + "");
+		}
+	}
 }
 
 function OnBeginCustomFinaleStage( num, type )
@@ -201,6 +311,11 @@ function OnBeginCustomFinaleStage( num, type )
 
 			IV_GAS_CANS_NEEDED_TO_END = IV_GAS_CANS_ADVANCED;
 		}
+	}
+
+	if(num == SharedOptions.A_CustomFinale_StageCount + 1 && IV_Check_Hard_Greater_Scenario(difficulty))
+	{
+		IV_Realise_More_Tanks_Scenario();
 	}
 
 	MapScript.DirectorOptions.clear()
