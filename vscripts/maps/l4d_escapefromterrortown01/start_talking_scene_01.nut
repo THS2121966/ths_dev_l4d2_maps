@@ -3,28 +3,28 @@
 
 printl("Loading Talking Manager for First Mission Map...");
 
-if(!IncludeScript("maps/l4d_escapefromterrortown01/IVScriptEngineBase/iv_players_manager.nut"))
+if(!IncludeScript("IVScriptEngineBase/iv_players_manager.nut"))
 {
     printl("Failed to Load Players Manager!!! Aborting Logic...");
     return;
 }
 
-IV_TALK_ROCHELLE <-
+IV_TALK_ROCHELLE_ZOEY <-
 [
     EntityGroup[0],
     EntityGroup[1]
 ]
-IV_TALK_ELLIS <-
+IV_TALK_ELLIS_LOUIS <-
 [
     EntityGroup[2],
     EntityGroup[3]
 ]
-IV_TALK_NICK <-
+IV_TALK_NICK_FRANCIS <-
 [
     EntityGroup[4],
     EntityGroup[5]
 ]
-IV_TALK_COACH <-
+IV_TALK_COACH_BILL <-
 [
     EntityGroup[6],
     EntityGroup[7]
@@ -32,10 +32,10 @@ IV_TALK_COACH <-
 
 IV_TALK_PERSONS <-
 [
-    IV_TALK_ROCHELLE,
-    IV_TALK_ELLIS,
-    IV_TALK_NICK,
-    IV_TALK_COACH
+    IV_TALK_ROCHELLE_ZOEY,
+    IV_TALK_ELLIS_LOUIS,
+    IV_TALK_NICK_FRANCIS,
+    IV_TALK_COACH_BILL
 ]
 IV_TALK_PERSONS_ACTIVE <-
 [
@@ -64,18 +64,33 @@ function IV_Talk_Specifed_Scene(sended_scene_ent)
 
 g_players_manager <- null;
 
-function IV_Start_Survivors_Talk()
+function IV_Start_Survivors_Talk(is_l4d2_survivors = true)
 {
-    g_players_manager <- IV_Players_Manager(true);
+    if(g_players_manager == null)
+    g_players_manager <- IV_Players_Manager(is_l4d2_survivors);
 
-    if(g_players_manager.IV_Find_Player_By_Name("!rochelle"))
-    IV_TALK_PERSONS_ACTIVE[0] = true;
-    if(g_players_manager.IV_Find_Player_By_Name("!ellis"))
-    IV_TALK_PERSONS_ACTIVE[1] = true;
-    if(g_players_manager.IV_Find_Player_By_Name("!nick"))
-    IV_TALK_PERSONS_ACTIVE[2] = true;
-    if(g_players_manager.IV_Find_Player_By_Name("!coach"))
-    IV_TALK_PERSONS_ACTIVE[3] = true;
+    if(is_l4d2_survivors)
+    {
+        if(g_players_manager.IV_Find_Player_By_Name("!rochelle"))
+        IV_TALK_PERSONS_ACTIVE[0] = true;
+        if(g_players_manager.IV_Find_Player_By_Name("!ellis"))
+        IV_TALK_PERSONS_ACTIVE[1] = true;
+        if(g_players_manager.IV_Find_Player_By_Name("!nick"))
+        IV_TALK_PERSONS_ACTIVE[2] = true;
+        if(g_players_manager.IV_Find_Player_By_Name("!coach"))
+        IV_TALK_PERSONS_ACTIVE[3] = true;
+    }
+    else
+    {
+        if(g_players_manager.IV_Find_Player_By_Name("!zoey"))
+        IV_TALK_PERSONS_ACTIVE[0] = true;
+        if(g_players_manager.IV_Find_Player_By_Name("!louis"))
+        IV_TALK_PERSONS_ACTIVE[1] = true;
+        if(g_players_manager.IV_Find_Player_By_Name("!francis"))
+        IV_TALK_PERSONS_ACTIVE[2] = true;
+        if(g_players_manager.IV_Find_Player_By_Name("!bill"))
+        IV_TALK_PERSONS_ACTIVE[3] = true;
+    }
 
     local players_count = 0;
     foreach (player_state in IV_TALK_PERSONS_ACTIVE)
@@ -96,13 +111,21 @@ function IV_Start_Survivors_Talk()
         local player_fist_talk = RandomInt(0, players_index_array.len() - 1);
         local player_second_talk = RandomInt(0, players_index_array.len() - 1);
 
-        EntFire(IV_TALK_PERSONS[player_fist_talk][0].GetName(), "AddOutput", "OnCompletion " + IV_TALK_PERSONS[player_second_talk][0].GetName() +
-        ":Start::0:-1", 0);
-        EntFire(IV_TALK_PERSONS[player_second_talk][0].GetName(), "AddOutput", "OnCompletion " + IV_TALK_PERSONS[player_fist_talk][1].GetName() +
-        ":Start::0:-1", 0);
+        if(player_second_talk == player_fist_talk)
+        {
+            if(player_second_talk == players_index_array.len() - 1)
+            player_second_talk = 0;
+            else
+            player_second_talk++;
+        }
 
-        printl("Playing Team Talk Scene Starting At '" + IV_TALK_PERSONS[player_fist_talk][0].GetName() + "'");
-        IV_Talk_Specifed_Scene(IV_TALK_PERSONS[player_fist_talk][0]);
+        EntFire(IV_TALK_PERSONS[players_index_array[player_fist_talk]][0].GetName(), "AddOutput", "OnCompletion " +
+        IV_TALK_PERSONS[players_index_array[player_second_talk]][0].GetName() + ":Start::0:-1", 0);
+        EntFire(IV_TALK_PERSONS[players_index_array[player_second_talk]][0].GetName(), "AddOutput", "OnCompletion " +
+        IV_TALK_PERSONS[players_index_array[player_fist_talk]][1].GetName() + ":Start::0:-1", 0);
+
+        printl("Playing Team Talk Scene Starting At '" + IV_TALK_PERSONS[players_index_array[player_fist_talk]][0].GetName() + "'");
+        IV_Talk_Specifed_Scene(IV_TALK_PERSONS[players_index_array[player_fist_talk]][0]);
     }
     else
     {
