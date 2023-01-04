@@ -3,6 +3,24 @@
 
 printl("==============Loaded Players Manager Logic==============");
 
+IV_DIFFICULTY_LEVELS <-
+[
+    "easy",
+    "normal",
+    "hard",
+    "impossible"
+]
+
+g_players_manager <- null;
+
+g_game_difficulty <- Convars.GetStr( "z_difficulty" ).tolower();
+g_gamemode_status <- Director.GetGameModeBase();
+
+if(g_gamemode_status == "versus")
+{
+    g_game_difficulty = IV_DIFFICULTY_LEVELS[1];
+}
+
 class IV_Players_Manager
 {
     constructor(l4d2_players = true)
