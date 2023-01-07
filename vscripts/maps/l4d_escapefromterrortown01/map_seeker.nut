@@ -20,10 +20,10 @@ function IV_Gameplay_Start_Scenario()
     if(temp_players_list.len() <= 2)
     g_game_difficulty = IV_DIFFICULTY_LEVELS[1];
 
-    /*if(g_game_difficulty == IV_DIFFICULTY_LEVELS[2] || g_game_difficulty == IV_DIFFICULTY_LEVELS[3])
+    if(g_gamemode_status == "versus")
     {
-        DoEntFire("!self", "EndScript", "" 1, null, IV_INFO_DIRECTOR_ENTITY);
-        DoEntFire("!self", "BeginScript", "c1_mall_ambient" 1.1, null, IV_INFO_DIRECTOR_ENTITY);
+        DoEntFire("!self", "EndScript", "" 8, null, IV_INFO_DIRECTOR_ENTITY);
+        DoEntFire("!self", "BeginScript", "l4d_escapefromterrortown01_ambient" 12, null, IV_INFO_DIRECTOR_ENTITY);
         EntFire("secred_door_infected_spawn_01_area", "FireUser1", "", 0);
-    }*/
+    }
 }
