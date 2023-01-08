@@ -60,6 +60,12 @@
 				"DisplayName" "Cannals 4 Escape Alpha Test Map 01."
 				"Image" "maps/c1m1_hotel"
 			}
+			"2"
+			{
+				"Map" "l4d_escapefromterrortown01"
+				"DisplayName" "Escape From Terror Town Alpha Map"
+				"Image" "maps/c1m1_hotel"
+			}
 		}
 
 		"versus"
@@ -68,6 +74,13 @@
 			{
 				"Map" "l4d_cannals_escape_test01"
 				"DisplayName" "[Versus] Cannals 4 Escape Alpha Test Map 01."
+				"Image" "maps/c1m1_hotel"
+				"VersusCompletionScore"	"250"
+			}
+			"2"
+			{
+				"Map" "l4d_escapefromterrortown01"
+				"DisplayName" "[Versus] Escape From Terror Town Alpha Map"
 				"Image" "maps/c1m1_hotel"
 				"VersusCompletionScore"	"250"
 			}
