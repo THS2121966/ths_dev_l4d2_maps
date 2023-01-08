@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9520"
-	"mapversion" "72"
+	"mapversion" "75"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -38,13 +38,13 @@ viewsettings
 	"bSnapToGrid" "1"
 	"bShowGrid" "1"
 	"bShowLogicalGrid" "0"
-	"nGridSpacing" "8"
+	"nGridSpacing" "2"
 	"bShow3DGrid" "0"
 }
 world
 {
 	"id" "1"
-	"mapversion" "72"
+	"mapversion" "75"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -4006,6 +4006,158 @@ world
 	}
 	solid
 	{
+		"id" "23297"
+		side
+		{
+			"id" "1360"
+			"plane" "(192 33 128) (192 36 128) (208 36 128)"
+			"material" "TOOLS/TOOLSNODRAW"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1359"
+			"plane" "(192 36 0) (192 33 0) (208 33 0)"
+			"material" "TOOLS/TOOLSNODRAW"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1358"
+			"plane" "(192 33 0) (192 36 0) (192 36 128)"
+			"material" "PLASTER/WALLPAPER02"
+			"uaxis" "[0 -1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "8"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1357"
+			"plane" "(208 36 0) (208 33 0) (208 33 128)"
+			"material" "DEV/DEV_MEASUREGENERIC01B"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1356"
+			"plane" "(192 36 0) (208 36 0) (208 36 128)"
+			"material" "BRICK/BRICKWALL019A"
+			"uaxis" "[-1 0 0 0] 0.15"
+			"vaxis" "[0 0 -1 0] 0.15"
+			"rotation" "0"
+			"lightmapscale" "8"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1355"
+			"plane" "(208 33 0) (192 33 0) (192 33 128)"
+			"material" "TOOLS/TOOLSNODRAW"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "0 134 227"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	solid
+	{
+		"id" "23976"
+		side
+		{
+			"id" "1409"
+			"plane" "(204 168 128) (206 168 128) (206 36 128)"
+			"material" "TOOLS/TOOLSBLOCKLIGHT"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1410"
+			"plane" "(204 36 0) (206 36 0) (206 168 0)"
+			"material" "TOOLS/TOOLSBLOCKLIGHT"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1411"
+			"plane" "(204 168 128) (204 36 128) (204 36 0)"
+			"material" "TOOLS/TOOLSBLOCKLIGHT"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1412"
+			"plane" "(206 168 0) (206 36 0) (206 36 128)"
+			"material" "TOOLS/TOOLSBLOCKLIGHT"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1413"
+			"plane" "(206 168 128) (204 168 128) (204 168 0)"
+			"material" "TOOLS/TOOLSBLOCKLIGHT"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1414"
+			"plane" "(206 36 0) (204 36 0) (204 36 128)"
+			"material" "TOOLS/TOOLSBLOCKLIGHT"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "0 166 179"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	solid
+	{
 		"id" "2962"
 		side
 		{
@@ -4390,158 +4542,6 @@ world
 			"color" "240 241 0"
 			"groupid" "2987"
 			"visgroupid" "15"
-			"visgroupshown" "1"
-			"visgroupautoshown" "1"
-		}
-	}
-	solid
-	{
-		"id" "23297"
-		side
-		{
-			"id" "1360"
-			"plane" "(192 33 128) (192 36 128) (208 36 128)"
-			"material" "TOOLS/TOOLSNODRAW"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 -1 0 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "1359"
-			"plane" "(192 36 0) (192 33 0) (208 33 0)"
-			"material" "TOOLS/TOOLSNODRAW"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 -1 0 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "1358"
-			"plane" "(192 33 0) (192 36 0) (192 36 128)"
-			"material" "PLASTER/WALLPAPER02"
-			"uaxis" "[0 -1 0 0] 0.25"
-			"vaxis" "[0 0 -1 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "8"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "1357"
-			"plane" "(208 36 0) (208 33 0) (208 33 128)"
-			"material" "DEV/DEV_MEASUREGENERIC01B"
-			"uaxis" "[0 1 0 0] 0.25"
-			"vaxis" "[0 0 -1 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "1356"
-			"plane" "(192 36 0) (208 36 0) (208 36 128)"
-			"material" "BRICK/BRICKWALL019A"
-			"uaxis" "[-1 0 0 0] 0.15"
-			"vaxis" "[0 0 -1 0] 0.15"
-			"rotation" "0"
-			"lightmapscale" "8"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "1355"
-			"plane" "(208 33 0) (192 33 0) (192 33 128)"
-			"material" "TOOLS/TOOLSNODRAW"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 0 -1 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		editor
-		{
-			"color" "0 134 227"
-			"visgroupshown" "1"
-			"visgroupautoshown" "1"
-		}
-	}
-	solid
-	{
-		"id" "23976"
-		side
-		{
-			"id" "1409"
-			"plane" "(204 168 128) (206 168 128) (206 36 128)"
-			"material" "TOOLS/TOOLSBLOCKLIGHT"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 -1 0 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "1410"
-			"plane" "(204 36 0) (206 36 0) (206 168 0)"
-			"material" "TOOLS/TOOLSBLOCKLIGHT"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 -1 0 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "1411"
-			"plane" "(204 168 128) (204 36 128) (204 36 0)"
-			"material" "TOOLS/TOOLSBLOCKLIGHT"
-			"uaxis" "[0 1 0 0] 0.25"
-			"vaxis" "[0 0 -1 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "1412"
-			"plane" "(206 168 0) (206 36 0) (206 36 128)"
-			"material" "TOOLS/TOOLSBLOCKLIGHT"
-			"uaxis" "[0 1 0 0] 0.25"
-			"vaxis" "[0 0 -1 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "1413"
-			"plane" "(206 168 128) (204 168 128) (204 168 0)"
-			"material" "TOOLS/TOOLSBLOCKLIGHT"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 0 -1 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "1414"
-			"plane" "(206 36 0) (204 36 0) (204 36 128)"
-			"material" "TOOLS/TOOLSBLOCKLIGHT"
-			"uaxis" "[1 0 0 0] 0.25"
-			"vaxis" "[0 0 -1 0] 0.25"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		editor
-		{
-			"color" "0 166 179"
 			"visgroupshown" "1"
 			"visgroupautoshown" "1"
 		}
@@ -6423,7 +6423,7 @@ entity
 	"classname" "info_player_start"
 	"angles" "0 225 0"
 	"spawnflags" "1"
-	"origin" "96 112 4"
+	"origin" "96 112 8"
 	editor
 	{
 		"color" "0 255 0"
@@ -8563,6 +8563,7 @@ entity
 		"OnTrigger" "start_hunter_dummy_01_track_path_1Kill0-1"
 		"OnTrigger" "start_hunter_dummy_01_look_areaKill0-1"
 		"OnTrigger" "start_hunter_dummy_01_lightKill0-1"
+		"OnTrigger" "start_hunter_dummy_01_talkRunScriptCodeIV_Start_Survivors_Talk()0.1-1"
 	}
 	"origin" "216 -64 80"
 	editor
@@ -8592,36 +8593,20 @@ entity
 entity
 {
 	"id" "13324"
-	"classname" "info_remarkable"
-	"contextsubject" "remark_MidnightRidersBus"
-	"origin" "184 0 68"
-	"targetname" "start_hunter_dummy_01_remark"
+	"classname" "logic_script"
+	"Group00" "start_hunter_dummy_01_talk_scene_rochelle"
+	"Group02" "start_hunter_dummy_01_talk_scene_ellis"
+	"Group04" "start_hunter_dummy_01_talk_scene_nick"
+	"Group06" "start_hunter_dummy_01_talk_scene_coach"
+	"targetname" "start_hunter_dummy_01_talk"
+	"vscripts" "maps/l4d_escapefromterrortown01/start_talking_scene_01"
+	"origin" "216 48 72"
 	editor
 	{
 		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[8000 10500]"
-	}
-}
-entity
-{
-	"id" "13348"
-	"classname" "point_template"
-	"spawnflags" "2"
-	"targetname" "temp_start_hunter_dummy_01_remark"
-	"Template01" "start_hunter_dummy_01_remark"
-	connections
-	{
-		"OnEntitySpawned" "start_hunter_dummy_01_remarkKill6.5-1"
-	}
-	"origin" "216 16 120"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 8500]"
 	}
 }
 entity
@@ -9218,6 +9203,7 @@ entity
 		"OnTrigger" "fd_startFade0-1"
 		"OnTrigger" "fd_cam_next_startFade6-1"
 		"OnTrigger" "relay_cam_st_versus_01Trigger0-1"
+		"OnTrigger" "light_weapons_help_01FireUser112-1"
 	}
 	"origin" "82 166 86"
 	editor
@@ -10529,6 +10515,7 @@ entity
 		"OnTrigger" "breakable_wall_01_nav_blockerUnblockNav0-1"
 		"OnTrigger" "breakable_wall_01SetHealth300-1"
 		"OnTrigger" "breakable_wall_01_nav_blocker_survivorsBlockNav0.1-1"
+		"OnTrigger" "start_hunter_dummy_01_talkKill0-1"
 	}
 	"origin" "216 -64 96"
 	editor
@@ -11527,6 +11514,338 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 4000]"
+	}
+}
+entity
+{
+	"id" "25007"
+	"classname" "logic_choreographed_scene"
+	"busyactor" "1"
+	"SceneFile" "scenes/gambler/dlc1_c6m2_midnightriders03.vcd"
+	"targetname" "start_hunter_dummy_01_talk_scene_nick"
+	"origin" "216 48 56"
+	editor
+	{
+		"color" "0 0 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "25023"
+	"classname" "logic_choreographed_scene"
+	"busyactor" "1"
+	"SceneFile" "scenes/coach/dlc1_c6m2_midnightriders03.vcd"
+	"targetname" "start_hunter_dummy_01_talk_scene_coach"
+	"origin" "216 64 56"
+	editor
+	{
+		"color" "0 0 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "25027"
+	"classname" "logic_choreographed_scene"
+	"busyactor" "1"
+	"SceneFile" "scenes/mechanic/dlc1_c6m2_midnightriders02.vcd"
+	"targetname" "start_hunter_dummy_01_talk_scene_ellis"
+	"origin" "216 80 56"
+	editor
+	{
+		"color" "0 0 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "25033"
+	"classname" "logic_choreographed_scene"
+	"busyactor" "1"
+	"SceneFile" "scenes/producer/dlc1_c6m2_ticketcounter01.vcd"
+	"targetname" "start_hunter_dummy_01_talk_scene_rochelle"
+	connections
+	{
+		"OnCompletion" "start_hunter_dummy_01_talk_scene_rochelle_02Start2-1"
+	}
+	"origin" "216 96 56"
+	editor
+	{
+		"color" "0 0 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "25305"
+	"classname" "logic_choreographed_scene"
+	"busyactor" "1"
+	"SceneFile" "scenes/producer/dlc1_c6m2_ticketcounter02.vcd"
+	"targetname" "start_hunter_dummy_01_talk_scene_rochelle_02"
+	"origin" "216 96 40"
+	editor
+	{
+		"color" "0 0 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "25333"
+	"classname" "weapon_ammo_spawn"
+	"angles" "0 30 0"
+	"count" "5"
+	"model" "models/props/terror/ammo_stack.mdl"
+	"skin" "0"
+	"solid" "6"
+	"spawnflags" "2"
+	"weaponskin" "-1"
+	"origin" "120 128 0"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "25352"
+	"classname" "weapon_spawn"
+	"angles" "0 345 -90"
+	"count" "5"
+	"solid" "6"
+	"spawnflags" "0"
+	"weapon_selection" "any_smg"
+	"weaponskin" "-1"
+	"origin" "128 152 2"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "25374"
+	"classname" "weapon_spawn"
+	"angles" "0 225 -90"
+	"count" "5"
+	"solid" "6"
+	"spawnflags" "0"
+	"weapon_selection" "tier1_shotgun"
+	"weaponskin" "-1"
+	"origin" "152 136 2"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "25394"
+	"classname" "weapon_first_aid_kit_spawn"
+	"angles" "90 195 0"
+	"solid" "6"
+	"spawnflags" "2"
+	"weaponskin" "-1"
+	"origin" "86 152 3"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "25412"
+	"classname" "weapon_first_aid_kit_spawn"
+	"angles" "90 180 0"
+	"solid" "6"
+	"spawnflags" "2"
+	"weaponskin" "-1"
+	"origin" "96 154 3"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "25418"
+	"classname" "weapon_first_aid_kit_spawn"
+	"angles" "90 180 0"
+	"solid" "6"
+	"spawnflags" "2"
+	"weaponskin" "-1"
+	"origin" "106 154 3"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "25420"
+	"classname" "weapon_first_aid_kit_spawn"
+	"angles" "90 165 0"
+	"solid" "6"
+	"spawnflags" "2"
+	"weaponskin" "-1"
+	"origin" "116 152 3"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "25456"
+	"classname" "weapon_item_spawn"
+	"angles" "0 45 0"
+	"item1" "0"
+	"item11" "1"
+	"item12" "1"
+	"item13" "1"
+	"item3" "1"
+	"item4" "1"
+	"item5" "1"
+	"spawnflags" "1"
+	"weaponskin" "-1"
+	"origin" "40 -168 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 2000]"
+	}
+}
+entity
+{
+	"id" "25472"
+	"classname" "weapon_item_spawn"
+	"angles" "0 38 0"
+	"item1" "0"
+	"item11" "1"
+	"item12" "1"
+	"item13" "1"
+	"item3" "1"
+	"item4" "1"
+	"item5" "1"
+	"spawnflags" "1"
+	"weaponskin" "-1"
+	"origin" "24 -168 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 2000]"
+	}
+}
+entity
+{
+	"id" "25474"
+	"classname" "weapon_item_spawn"
+	"angles" "0 50 0"
+	"item1" "0"
+	"item11" "1"
+	"item12" "1"
+	"item13" "1"
+	"item3" "1"
+	"item4" "1"
+	"item5" "1"
+	"spawnflags" "1"
+	"weaponskin" "-1"
+	"origin" "40 -152 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 2000]"
+	}
+}
+entity
+{
+	"id" "25476"
+	"classname" "weapon_item_spawn"
+	"angles" "0 55 0"
+	"item1" "0"
+	"item11" "1"
+	"item12" "1"
+	"item13" "1"
+	"item3" "1"
+	"item4" "1"
+	"item5" "1"
+	"spawnflags" "1"
+	"weaponskin" "-1"
+	"origin" "144 -168 8"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 2000]"
+	}
+}
+entity
+{
+	"id" "25512"
+	"classname" "light"
+	"_castentityshadow" "0"
+	"_constant_attn" "0"
+	"_fifty_percent_distance" "135"
+	"_light" "255 255 175 60"
+	"_lightHDR" "-1 -1 -1 1"
+	"_lightscaleHDR" ".75"
+	"_quadratic_attn" "1"
+	"_shadoworiginoffset" "0 0 0"
+	"_zero_percent_distance" "300"
+	"spawnflags" "1"
+	"style" "11"
+	"targetname" "light_weapons_help_01"
+	connections
+	{
+		"OnUser1" "!selfTurnOn0-1"
+		"OnUser1" "!selfFadeToPatterna5-1"
+	}
+	"origin" "120 128 9"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 2500]"
 	}
 }
 cameras

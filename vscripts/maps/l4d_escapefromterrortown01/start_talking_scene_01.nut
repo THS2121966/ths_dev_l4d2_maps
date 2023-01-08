@@ -9,25 +9,63 @@ if(!IncludeScript("IVScriptEngineBase/iv_players_manager.nut"))
     return;
 }
 
+Group1 <- null;
+Group3 <- null;
+Group5 <- null;
+Group7 <- null;
+
+try
+{
+    Group1 <- EntityGroup[1];
+}
+catch (exception)
+{
+    Group1 <- null;
+}
+try
+{
+    Group3 <- EntityGroup[3];
+}
+catch (exception)
+{
+    Group3 <- null;
+}
+try
+{
+    Group5 <- EntityGroup[5];
+}
+catch (exception)
+{
+    Group5 <- null;
+}
+try
+{
+    Group7 <- EntityGroup[7];
+}
+catch (exception)
+{
+    Group7 <- null;
+}
+
 IV_TALK_ROCHELLE_ZOEY <-
 [
     EntityGroup[0],
-    EntityGroup[1]
+    Group1
 ]
 IV_TALK_ELLIS_LOUIS <-
 [
     EntityGroup[2],
-    EntityGroup[3]
+    Group3
 ]
 IV_TALK_NICK_FRANCIS <-
 [
     EntityGroup[4],
-    EntityGroup[5]
+    Group5
 ]
 IV_TALK_COACH_BILL <-
 [
     EntityGroup[6],
-    EntityGroup[7]
+    Group7
 ]
 
 IV_TALK_PERSONS <-
@@ -37,6 +75,7 @@ IV_TALK_PERSONS <-
     IV_TALK_NICK_FRANCIS,
     IV_TALK_COACH_BILL
 ]
+
 IV_TALK_PERSONS_ACTIVE <-
 [
     false,
@@ -119,8 +158,10 @@ function IV_Start_Survivors_Talk(is_l4d2_survivors = true)
             player_second_talk++;
         }
 
+        if(IV_TALK_PERSONS[players_index_array[player_fist_talk]][1] != null)
         EntFire(IV_TALK_PERSONS[players_index_array[player_fist_talk]][0].GetName(), "AddOutput", "OnCompletion " +
         IV_TALK_PERSONS[players_index_array[player_second_talk]][0].GetName() + ":Start::0:-1", 0);
+        if(IV_TALK_PERSONS[players_index_array[player_fist_talk]][1] != null)
         EntFire(IV_TALK_PERSONS[players_index_array[player_second_talk]][0].GetName(), "AddOutput", "OnCompletion " +
         IV_TALK_PERSONS[players_index_array[player_fist_talk]][1].GetName() + ":Start::0:-1", 0);
 
