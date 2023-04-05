@@ -1,0 +1,18 @@
+"VipTarget"
+{
+	"base"		"coop"
+
+	"maxplayers"	"4"
+	"hasdifficulty"	"1"
+
+	"DisplayTitle"	"Vip Target Rescure"
+	"Description"	"Save and Rescure Vip Target to Checked Safe Zone!!!"
+	"Image"		"maps/any"
+	"Author"	"Ivan Suvorov and THS inc 2023"
+	
+	convar
+	{
+		precache_all_survivors 1
+		sb_l4d1_survivor_behavior 0
+	}
+}
