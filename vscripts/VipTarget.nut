@@ -1,6 +1,6 @@
 IncludeScript("VSLib.nut");
 
-IV_WANDERING_ZOMBIES <- 5;
+IV_WANDERING_ZOMBIES <- 1;
 
 if ( !IsModelPrecached( "models/survivors/survivor_namvet.mdl" ) )
 	PrecacheModel( "models/survivors/survivor_namvet.mdl" );
@@ -74,7 +74,7 @@ function ConvertVIPTarget( userid )
 	if ( (!player) || (!player.IsSurvivor()) )
 		return;
 
-	local tg_name = "Vip Target";
+	local tg_name = "VipTarget";
 
 	NetProps.SetPropInt( player, "m_iTeamNum", 2 );
 	NetProps.SetPropInt( player, "m_survivorCharacter", 9 );
@@ -123,11 +123,20 @@ function IV_Realise_Recure_Start()
 {
 	EntFire(IV_SAFE_ZONE_SCRIPT_NAME, "RunScriptCode", "IV_BEGIN_Rescure()");
 
+	local object_to_move_name = "vip_rescure_zone_01-vip_escape_area_mdl_01";
+	local command_move_object = Entities.FindByName(null, object_to_move_name);
+
+	if(command_move_object == null)
+	{
+		printl("Falied to Check Vip Target Move Area!!! Tell a Programmer!!!")
+		return;
+	}
+
 	commands <-
 	{
-		cmd = 1
-		pos = Entities.FindByName(null, "vip_escape_area_mdl_01").GetOrigin()
-		bot = IV_VIP_PLAYER
+		cmd = DirectorScript.BOT_CMD_MOVE
+		pos = command_move_object.GetOrigin()
+		//bot = IV_VIP_PLAYER
 	}
 
 	CommandABot(commands);
@@ -160,22 +169,22 @@ function OnGameEvent_player_spawn( params )
 
 MutationOptions <-
 {
-    CommonLimit = 80
- 	MegaMobSize = 50
+    CommonLimit = 30
+ 	MegaMobSize = 15
  	WanderingZombieDensityModifier = IV_WANDERING_ZOMBIES
- 	MaxSpecials  = 24
- 	TankLimit    = 8
- 	WitchLimit   = 8
-	BoomerLimit  = 12
- 	ChargerLimit = 3
- 	HunterLimit  = 5
-	JockeyLimit  = 3
-	SpitterLimit = 12
-	SmokerLimit  = 5
+ 	MaxSpecials  = 2
+ 	TankLimit    = 0
+ 	WitchLimit   = 0
+	BoomerLimit  = 1
+ 	ChargerLimit = 0
+ 	HunterLimit  = 2
+	JockeyLimit  = 0
+	SpitterLimit = 0
+	SmokerLimit  = 0
 }
 
 if(developer())
 foreach (index, parm in MutationOptions)
 {
-	printl("[" + (index + 1) + "] '" + MutationOptions[index] + "' = '" + parm + "'");
+	printl(index + " = " + parm);
 }
