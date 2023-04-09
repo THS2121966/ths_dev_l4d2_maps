@@ -32,6 +32,16 @@ DirectorOptions <-
 	//Special infected options
 	SpecialRespawnInterval = 15
 
+	MaxSpecials  = 2
+	TankLimit    = 0
+	WitchLimit   = 0
+   BoomerLimit  = 1
+	ChargerLimit = 0
+	HunterLimit  = 2
+   JockeyLimit  = 0
+   SpitterLimit = 0
+   SmokerLimit  = 0
+
 	// Valid spawn locations
 	PreferredMobDirection = SPAWN_FAR_AWAY_FROM_SURVIVORS
 	ZombieSpawnRange = 1500

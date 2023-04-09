@@ -18,11 +18,15 @@ function IV_Check_Vip_Target()
         return;
     }
 
-    if(IsTouching(IV_VIP_TARGET_HANDLE))
+    if(self.IsTouching(IV_VIP_TARGET_HANDLE))
     {
         EntFire(IV_SAFE_ZONE_SCRIPT_NAME, "RunScriptCode", "IV_END_Rescure()");
         IV_VIP_ENTERED = true;
+
+        DoEntFire("!self", "Kill", "", 0, null, IV_VIP_TARGET_HANDLE);
     }
+    else if(developer())
+    printl("Survivor Bot touching that trigger...");
 }
 
-Entity.ConnectOutput("OnStartTouch", "IV_Check_Vip_Target()");
+self.ConnectOutput("OnStartTouch", "IV_Check_Vip_Target");

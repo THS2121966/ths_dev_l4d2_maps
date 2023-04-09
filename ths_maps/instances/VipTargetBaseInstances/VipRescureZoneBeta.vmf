@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9520"
-	"mapversion" "6"
+	"mapversion" "8"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "6"
+	"mapversion" "8"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -31,17 +31,17 @@ world
 entity
 {
 	"id" "2"
-	"classname" "trigger_once"
-	"filtername" "filter_vip_target_name"
+	"classname" "trigger_multiple"
+	"allowghost" "0"
+	"allowincap" "0"
+	"entireteam" "0"
+	"filtername" "filter_vip_target_team"
 	"origin" "0 0 72"
-	"spawnflags" "11"
+	"spawnflags" "1"
 	"StartDisabled" "1"
 	"targetname" "vip_escape_area_01"
 	"vscripts" "viptargetbase/viptargettriggercheck"
-	connections
-	{
-		"OnTrigger" "relay_vip_accepted_01Trigger0-1"
-	}
+	"wait" "1"
 	solid
 	{
 		"id" "3"
@@ -261,10 +261,10 @@ entity
 entity
 {
 	"id" "29"
-	"classname" "filter_activator_name"
-	"filtername" "VipTarget"
+	"classname" "filter_activator_team"
+	"filterteam" "2"
 	"Negated" "Allow entities that match criteria"
-	"targetname" "filter_vip_target_name"
+	"targetname" "filter_vip_target_team"
 	"origin" "0 48 144"
 	editor
 	{

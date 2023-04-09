@@ -1,4 +1,15 @@
-IncludeScript("VSLib.nut");
+/* Ivan Suvorov and THS inc 2023 */
+/* IV Note: Main VipTarget Gamemode Script File */
+
+if(!IncludeScript("VSLib.nut"))
+{
+	for (index = 0; index < 3; index++)
+	{
+		printl("Falied to Load VSLib Logic!!! Please download that from Steam Workshop!!!");
+	}
+
+	return;
+}
 
 IV_WANDERING_ZOMBIES <- 1;
 
@@ -94,10 +105,10 @@ function ConvertVIPTarget( userid )
 
 	IV_VIP_PLAYER <- player;
 
-	printl("[IV Bot Creator] Added Vip Target Named - '" + tg_name + "'");
+	printl("[IV Bot Creator] Added Vip Target Named - '" + player.GetPlayerName() + "'");
 
 	if(IV_VIP_PLAYER != null)
-	IV_Realise_Recure_Start();
+	EntFire("worldspawn", "RunScriptCode", "g_ModeScript.IV_Realise_Recure_Start()", 3);
 }
 
 function IV_Create_Vip(dummy_ent_name)
@@ -136,7 +147,7 @@ function IV_Realise_Recure_Start()
 	{
 		cmd = DirectorScript.BOT_CMD_MOVE
 		pos = command_move_object.GetOrigin()
-		//bot = IV_VIP_PLAYER
+		bot = IV_VIP_PLAYER
 	}
 
 	CommandABot(commands);
@@ -167,7 +178,7 @@ function OnGameEvent_player_spawn( params )
 	}
 }
 
-MutationOptions <-
+/*MutationOptions <-
 {
     CommonLimit = 30
  	MegaMobSize = 15
@@ -181,10 +192,10 @@ MutationOptions <-
 	JockeyLimit  = 0
 	SpitterLimit = 0
 	SmokerLimit  = 0
-}
+}*/
 
-if(developer())
+/*if(developer())
 foreach (index, parm in MutationOptions)
 {
 	printl(index + " = " + parm);
-}
+}*/
