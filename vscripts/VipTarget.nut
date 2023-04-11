@@ -11,13 +11,20 @@ if(!IncludeScript("VSLib.nut"))
 	return;
 }
 
+IV_VIP_TARGET_NAME <- "VipTarget";
+
+IV_BOT_RESCURE_POINT <- null;
+
 IV_WANDERING_ZOMBIES <- 1;
+IV_VIP_WAS_DIFFERENT_BOT <- true;
 
 if ( !IsModelPrecached( "models/survivors/survivor_namvet.mdl" ) )
 	PrecacheModel( "models/survivors/survivor_namvet.mdl" );
 
-if ( Convars.GetFloat( "sb_l4d1_survivor_behavior" ) > 0 )
-	Convars.SetValue( "sb_l4d1_survivor_behavior", 0 );
+if(!IV_VIP_WAS_DIFFERENT_BOT)
+Convars.SetValue( "sb_l4d1_survivor_behavior", 0 );
+else
+Convars.SetValue( "sb_l4d1_survivor_behavior", 1 );
 
 IV_VIP_CHARACTER <- 4;
 IV_LAST_PLAYER_ID <- null;
@@ -85,9 +92,11 @@ function ConvertVIPTarget( userid )
 	if ( (!player) || (!player.IsSurvivor()) )
 		return;
 
-	local tg_name = "VipTarget";
+	local tg_name = IV_VIP_TARGET_NAME;
 
+	if(!IV_VIP_WAS_DIFFERENT_BOT)
 	NetProps.SetPropInt( player, "m_iTeamNum", 2 );
+
 	NetProps.SetPropInt( player, "m_survivorCharacter", 9 );
 	//player.SetModel( "models/survivors/survivor_ceda.mdl" );
 	//NetProps.SetPropString( player, "m_ModelName", "models/survivors/survivor_namvet.mdl" );
@@ -133,9 +142,11 @@ function IV_Create_Vip(dummy_ent_name)
 function IV_Realise_Recure_Start()
 {
 	EntFire(IV_SAFE_ZONE_SCRIPT_NAME, "RunScriptCode", "IV_BEGIN_Rescure()");
+}
 
-	local object_to_move_name = "vip_rescure_zone_01-vip_escape_area_mdl_01";
-	local command_move_object = Entities.FindByName(null, object_to_move_name);
+function IV_Rescure_Bot_Move_Event()
+{
+	local command_move_object = IV_BOT_RESCURE_POINT;
 
 	if(command_move_object == null)
 	{

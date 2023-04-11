@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9520"
-	"mapversion" "2"
+	"mapversion" "4"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "2"
+	"mapversion" "4"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -40,7 +40,7 @@ entity
 	"hint_icon_onscreen" "icon_alert"
 	"hint_instance_type" "2"
 	"hint_pulseoption" "2"
-	"hint_target" "vip_target_fall_dummy"
+	"hint_target" "vip_resure_area"
 	"targetname" "vip_target_fall_dummy_hint"
 	"origin" "24 -16 56"
 	editor
@@ -82,7 +82,6 @@ entity
 	"fademaxdist" "0"
 	"fademindist" "-1"
 	"fadescale" "1"
-	"glow" "vip_target_fall_dummy"
 	"locked_sound" "0"
 	"maxcpulevel" "0"
 	"maxgpulevel" "0"

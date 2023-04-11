@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9520"
-	"mapversion" "8"
+	"mapversion" "10"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "8"
+	"mapversion" "10"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -35,9 +35,8 @@ entity
 	"allowghost" "0"
 	"allowincap" "0"
 	"entireteam" "0"
-	"filtername" "filter_vip_target_team"
 	"origin" "0 0 72"
-	"spawnflags" "1"
+	"spawnflags" "3"
 	"StartDisabled" "1"
 	"targetname" "vip_escape_area_01"
 	"vscripts" "viptargetbase/viptargettriggercheck"
@@ -176,6 +175,7 @@ entity
 	"classname" "logic_script"
 	"Group00" "relay_vip_event_started_01"
 	"Group01" "relay_vip_accepted_01"
+	"Group02" "tg_bot_move_point"
 	"targetname" "@VipSafeZone"
 	"vscripts" "viptargetbase/viptargetrecurelogic"
 	"origin" "-48 -80 144"
@@ -256,22 +256,6 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[500 11000]"
-	}
-}
-entity
-{
-	"id" "29"
-	"classname" "filter_activator_team"
-	"filterteam" "2"
-	"Negated" "Allow entities that match criteria"
-	"targetname" "filter_vip_target_team"
-	"origin" "0 48 144"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 1000]"
 	}
 }
 entity
@@ -663,6 +647,22 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "458"
+	"classname" "info_target"
+	"angles" "0 0 0"
+	"spawnflags" "0"
+	"targetname" "tg_bot_move_point"
+	"origin" "0 0 28"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
 	}
 }
 cameras

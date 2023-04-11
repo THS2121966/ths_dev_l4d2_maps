@@ -13,6 +13,5 @@
 	convar
 	{
 		precache_all_survivors 1
-		sb_l4d1_survivor_behavior 0
 	}
 }

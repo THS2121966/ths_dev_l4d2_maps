@@ -1,5 +1,3 @@
-IV_SAFE_ZONE_SCRIPT_NAME <- "@VipSafeZone";
-
 IV_VIP_TARGET_HANDLE <- null;
 
 IV_VIP_ENTERED <- false;
@@ -20,10 +18,10 @@ function IV_Check_Vip_Target()
 
     if(self.IsTouching(IV_VIP_TARGET_HANDLE))
     {
-        EntFire(IV_SAFE_ZONE_SCRIPT_NAME, "RunScriptCode", "IV_END_Rescure()");
+        EntFire(g_ModeScript.IV_SAFE_ZONE_SCRIPT_NAME, "RunScriptCode", "IV_END_Rescure()");
         IV_VIP_ENTERED = true;
 
-        SendToServerConsole( "kick bill" );
+        SendToServerConsole("kick " + g_ModeScript.IV_VIP_TARGET_NAME);
     }
     else if(developer())
     printl("Survivor Bot touching that trigger...");
