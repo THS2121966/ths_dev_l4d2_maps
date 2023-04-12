@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9520"
-	"mapversion" "10"
+	"mapversion" "11"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "10"
+	"mapversion" "11"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -36,7 +36,7 @@ entity
 	"allowincap" "0"
 	"entireteam" "0"
 	"origin" "0 0 72"
-	"spawnflags" "3"
+	"spawnflags" "1"
 	"StartDisabled" "1"
 	"targetname" "vip_escape_area_01"
 	"vscripts" "viptargetbase/viptargettriggercheck"

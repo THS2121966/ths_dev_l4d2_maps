@@ -117,7 +117,26 @@ function ConvertVIPTarget( userid )
 	printl("[IV Bot Creator] Added Vip Target Named - '" + player.GetPlayerName() + "'");
 
 	if(IV_VIP_PLAYER != null)
-	EntFire("worldspawn", "RunScriptCode", "g_ModeScript.IV_Realise_Recure_Start()", 3);
+	{
+		EntFire("worldspawn", "RunScriptCode", "g_ModeScript.IV_Bot_Startup_Command()", 0.1);
+		EntFire("worldspawn", "RunScriptCode", "g_ModeScript.IV_Realise_Recure_Start()", 3);
+	}
+}
+
+function IV_Bot_Startup_Command()
+{
+	local first_player = Entity.GetAnyClosestSurvivor();
+
+	if(first_player == null)
+	return;
+
+	commands <-
+	{
+		cmd = DirectorScript.BOT_CMD_MOVE
+		pos = first_player.GetPosition()
+	}
+
+	CommandABot(commands);
 }
 
 function IV_Create_Vip(dummy_ent_name)

@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9520"
-	"mapversion" "4"
+	"mapversion" "5"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "4"
+	"mapversion" "5"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -95,7 +95,7 @@ entity
 	"spawnflags" "0"
 	"targetname" "vip_resure_area"
 	"use_string" "Standing Up VIP..."
-	"use_time" "5"
+	"use_time" "$VipTargetRecureTime"
 	connections
 	{
 		"OnPressed" "vip_target_fall_dummySetAnimationGetUpFrom_Incap0-1"
@@ -248,6 +248,7 @@ entity
 	"id" "84"
 	"classname" "func_instance_parms"
 	"parm1" "$VipDangerZoneTemplateName target_name_or_class"
+	"parm2" "$VipTargetRecureTime integer"
 	"origin" "32 -64 64"
 	editor
 	{
