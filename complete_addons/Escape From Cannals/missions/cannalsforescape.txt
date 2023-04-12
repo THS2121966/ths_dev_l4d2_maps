@@ -95,6 +95,16 @@
 				"Image" "maps/c1m1_hotel"
 			}
 		}
+
+		"VipTarget"
+		{
+			"1"
+			{
+				"Map" "ivdev_vip_target_test01"
+				"DisplayName" "Vip Target Gamemode Test Map"
+				"Image" "maps/c1m2_streets"
+			}
+		}
 	}
 }
 
