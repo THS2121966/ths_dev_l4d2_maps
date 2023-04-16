@@ -82,7 +82,14 @@
 				"Map" "l4d_escapefromterrortown01"
 				"DisplayName" "[Versus] Escape From Terror Town Alpha Map"
 				"Image" "maps/c1m1_hotel"
-				"VersusCompletionScore"	"250"
+				"VersusCompletionScore"	"500"
+			}
+			"3"
+			{
+				"Map" "ivdev_vip_target_test01"
+				"DisplayName" "[Versus] Vip Target Test Map"
+				"Image" "maps/c1m2_streets"
+				"VersusCompletionScore"	"150"
 			}
 		}
 		

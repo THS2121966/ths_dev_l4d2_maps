@@ -1,9 +1,9 @@
 /* Ivan Suvorov and THS inc 2023 */
 /* IV Note: Main VipTarget Gamemode Script File */
 
-if(!IncludeScript("VSLib.nut"))
+if(!IncludeScript("IV_Third_VSLib.nut"))
 {
-	for (index = 0; index < 3; index++)
+	for (local index = 0; index < 3; index++)
 	{
 		printl("Falied to Load VSLib Logic!!! Please download that from Steam Workshop!!!");
 	}
