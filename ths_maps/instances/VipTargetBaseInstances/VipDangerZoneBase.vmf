@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9520"
-	"mapversion" "5"
+	"mapversion" "6"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "5"
+	"mapversion" "6"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -215,6 +215,7 @@ entity
 	"Template01" "vip_target_fall_dummy"
 	"Template02" "vip_zombie_run_mark_01"
 	"Template03" "@VipDanger"
+	"Template04" "vip_resure_area"
 	connections
 	{
 		"OnEntitySpawned" "@VipDangerRunScriptCodeIV_Realise_Danger_Zone()0-1"
