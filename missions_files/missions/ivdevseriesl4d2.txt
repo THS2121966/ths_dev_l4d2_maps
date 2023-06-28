@@ -38,7 +38,7 @@
 	"Website"	"avatar2329@gmail.com"
 
 	// This name is used when referring to the campaign in the UI. 
-	"DisplayTitle"	"Train Station Alpha"
+	"DisplayTitle"	"IV Dev Maps Collection L4D2"
 	"Description"  	"WIP"
 
 	// Vmt shown behind the end credits when your campaign completes.
