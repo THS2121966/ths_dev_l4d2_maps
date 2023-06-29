@@ -114,5 +114,15 @@
 				}
 			}
 		}
+		
+		"survival"
+		{
+			"1"
+			{
+				"Map" "ivdev_metro01"
+				"DisplayName" "Metro Alpha Version [Survival]"
+				"Image" "VGUI/infected"
+			}
+		}
 	}
 }
