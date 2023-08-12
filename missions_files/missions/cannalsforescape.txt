@@ -84,13 +84,6 @@
 				"Image" "maps/c1m1_hotel"
 				"VersusCompletionScore"	"500"
 			}
-			"3"
-			{
-				"Map" "ivdev_vip_target_test01"
-				"DisplayName" "[Versus] Vip Target Test Map"
-				"Image" "maps/c1m2_streets"
-				"VersusCompletionScore"	"150"
-			}
 		}
 		
 		"survival"
@@ -100,16 +93,6 @@
 				"Map" "l4d_cannals_escape_test01"
 				"DisplayName" "[Survival] Cannals 4 Escape Alpha Test Map 01."
 				"Image" "maps/c1m1_hotel"
-			}
-		}
-
-		"VipTarget"
-		{
-			"1"
-			{
-				"Map" "ivdev_vip_target_test01"
-				"DisplayName" "Vip Target Gamemode Test Map"
-				"Image" "maps/c1m2_streets"
 			}
 		}
 	}
