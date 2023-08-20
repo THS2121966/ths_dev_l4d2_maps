@@ -1,0 +1,24 @@
+"AssaultMode" // Name of the game mode and also the name of the vscript that will automatically load when a game mode is started, either via console or GUI.
+{
+	"base"				"none" // Game mechanics are inherited from this mode. It can be coop/versus/survival/scavenge/realism or an other mutation. It can also be "none" for novel game modes.
+	"maxplayers"    		"8" // Set the number of players allowed. Allowed values are 1, 4 and 8.
+	"hasdifficulty"			"1" // Sets if difficulty is allowed and if it's displayed next to the mutation name in the lobby screen. (Optional/Partially inheritable)
+	"singlechapter"			"0" // Checks if there is only one level (Used in Survival/Scavenge). (Optional/Inheritable)
+	"playercontrolledzombies"	"1" // Allows/Disallows players to control infected. Setting it to 1 also changes the maximum number of specials to 4 and disables pills conversion.
+	"hasroundlimit"			"1" // Has rounds? (Optional/Inheritable)
+
+	// These settings control how the mode is displayed in the Mutations menu.
+	"DisplayTitle"			"Assault Gamemode"
+	"Description"			"Assault Gamemode like Unreal Tournament 2004."
+	"ShortDescription"		"Gamemode Like UE 2004."
+	"Author"			"THS"
+	"Image"				"vgui/nope" // Normally 512 x 256 pixels
+ 
+	// This is the part where cvars can be added to alter the game mode, this allows hidden cvars as well.
+	//convar 
+	//{ 
+		//pain_pills_decay_rate 0.27
+		//z_speed 500
+	//}
+}
+

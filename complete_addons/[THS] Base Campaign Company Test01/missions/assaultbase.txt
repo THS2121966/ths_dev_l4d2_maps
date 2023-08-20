@@ -1,0 +1,60 @@
+"mission"
+{
+	"Name"		"ASBase"
+	"Version"	"1"
+	"Author"	"THS"
+	"Website"	"https://vk.com/id504177837"
+
+	"DisplayTitle"	"Assault Base Campaign"
+	"Description"	"Assault Base Map Set for Gamemode Testing."
+	"Image"			"maps/c2"
+	"OuttroImage"	"vgui/outroTitle_DarkCarnival"
+
+	"x360ctx"	"4"
+
+	"meleeweapons"	"katana;fireaxe;crowbar;baseball_bat;knife"
+
+	// Loading poster data
+	"poster"
+	{
+		"posterImage"		        "LoadingScreen_DarkCarnival"
+		"posterImage_widescreen"	"LoadingScreen_DarkCarnival_widescreen"
+		
+		"fullscreen"		"1"
+		
+		"posterTitle"		"Assault Gamemode Base Maps"
+		"posterTitle_y"		"320"
+		
+		"posterTagline"		"Try to Survive!!!"
+		"posterTagline_y"	"380"
+		
+		"l4d2_names"				"1"
+		
+		"gambler_player_name_x"		"9999"
+		"gambler_player_name_y"		"9999"
+		
+		"producer_player_name_x"	"9999"		
+		"producer_player_name_y"	"9999"	
+		
+		"coach_player_name_x"		"9999"	
+		"coach_player_name_y"		"9999"	
+		
+		"mechanic_player_name_x"	"9999"
+		"mechanic_player_name_y"	"9999"
+		"character_order"		"producer;gambler;coach;mechanic"
+	}
+
+
+	"modes"
+	{
+		"AssaultMode"
+		{
+			"1"
+			{
+				"Map" "as_l4d_devtest_map_01"
+				"DisplayName" "Assault Test Map 01"
+				"Image" "maps/c2m1_highway"
+			}
+		}
+	}
+}
