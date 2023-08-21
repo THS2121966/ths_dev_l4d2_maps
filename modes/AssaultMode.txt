@@ -15,10 +15,9 @@
 	"Image"				"vgui/nope" // Normally 512 x 256 pixels
  
 	// This is the part where cvars can be added to alter the game mode, this allows hidden cvars as well.
-	//convar 
-	//{ 
-		//pain_pills_decay_rate 0.27
-		//z_speed 500
-	//}
+	convar 
+	{ 
+		vs_max_team_switches 8
+	}
 }
 

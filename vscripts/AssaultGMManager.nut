@@ -10,9 +10,10 @@ function IV_Map_Advance_Stage()
 IV_DIRECTOR_ENT_LINK <- EntityGroup[0];
 IV_TGFINALE_ENT_LINK <- EntityGroup[1];
 
-g_ModeScript.IV_SET_Director_Object(IV_DIRECTOR_ENT_LINK);
-g_ModeScript.IV_SET_TGFinale_Object(IV_TGFINALE_ENT_LINK);
-
+function IV_Map_Update_Assault_Task()
+{
+    g_ModeScript.IV_Update_Assault_Task();
+}
 
 function OnGameEvent_round_start_post_nav( params )
 {
