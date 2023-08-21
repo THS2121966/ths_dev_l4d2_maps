@@ -28,6 +28,29 @@ MutationState <-
     CurrentStage = -1
 }
 
+const TASK_HUD_NAME = "AssaultTasks";
+const TASK_HEADER = "Assault Task:";
+const TASK_DESCRIPTION_HEADER = "Desctiption:";
+
+function IV_Simple_Add_Task_HUD_Panel(panel_data)
+{
+	ModeHUD <-
+	{
+        Fields =
+        {
+			gamename = { slot = HUD_MID_TOP, name = TASK_HUD_NAME, dataval = panel_data }
+        }
+	}
+
+	// load the ModeHUD table
+	HUDSetLayout( ModeHUD )
+}
+
+function SetupModeHUD( )
+{
+    IV_Simple_Add_Task_HUD_Panel(TASK_HEADER + " None; " + TASK_DESCRIPTION_HEADER + " None");
+}
+
 function OnGameEvent_round_start_post_nav( params )
 {
     printl("Assault Gamemode Area Inited!!!");
@@ -73,6 +96,42 @@ function IV_SET_TGFinale_Object(tgfinale_object)
     printl("Sended TGFinale Object - '" + IV_TRIGGER_FINALE + "'");
 }
 
+IV_MAP_TASK_INDEX <- -1;
+IV_MAP_TASKS_LIST <- null;
+
+function IV_Update_Assault_Task()
+{
+    IV_MAP_TASK_INDEX++;
+    IV_Check_Assault_Task();
+}
+
+function IV_Check_Assault_Task()
+{
+    if(IV_MAP_TASKS_LIST == null || IV_MAP_TASKS_LIST[0] == null)
+    {
+        if(developer())
+        printl("Assault Task Hud Returned 'NULL' at Function - 'IV_Check_Assault_Task'");
+        return;
+    }
+
+    printl("Checked Assault Mode Task - '" + IV_MAP_TASKS_LIST[IV_MAP_TASK_INDEX][0] + "'");
+
+    IV_Simple_Add_Task_HUD_Panel(TASK_HEADER + " " + IV_MAP_TASKS_LIST[IV_MAP_TASK_INDEX][0] + "; " + TASK_DESCRIPTION_HEADER + " " + IV_MAP_TASKS_LIST[IV_MAP_TASK_INDEX][1]);
+}
+
+function IV_ADD_Tasks_List(tasks_table)
+{
+    IV_MAP_TASKS_LIST <- tasks_table;
+    IV_MAP_TASK_INDEX = 0;
+
+    foreach(idx, value in IV_MAP_TASKS_LIST)
+    {
+        printl("Checked Assault Mode Task - '" + value[0] + "'")
+    }
+
+    IV_Check_Assault_Task();
+}
+
 function GetNextStage()
 {
     if(SessionState.CurrentStage < 0)
@@ -97,7 +156,7 @@ function GetNextStage()
 
 function IV_Check_Round_Final()
 {
-    EntFire(IV_TRIGGER_FINALE, "FinaleEscapeFinished");
+    EntFire(IV_TRIGGER_FINALE, "Trigger");
 }
 
 function IV_Advance_Stage()
