@@ -16,5 +16,8 @@ local map_tasks_list =
     ]
 ]
 
-g_ModeScript.IV_ADD_Tasks_List(map_tasks_list);
+function OnGameEvent_round_start_post_nav( params )
+{
+    g_ModeScript.IV_ADD_Tasks_List(map_tasks_list);
+}
 

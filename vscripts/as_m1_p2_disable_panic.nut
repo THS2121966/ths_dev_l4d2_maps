@@ -20,7 +20,7 @@ DirectorOptions <-
 	HunterLimit = 2
 	ChargerLimit = 0
 	SpecialRespawnInterval = 20.0
-	ZombieSpawnRange = 1500
+	ZombieSpawnRange = 2300
 	NumReservedWanderers = 15
 }
 

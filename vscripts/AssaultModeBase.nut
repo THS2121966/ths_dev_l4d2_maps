@@ -23,6 +23,11 @@ MutationOptions <-
 		}
 		return 0
 	}
+
+    /* IV Note: AI Options */
+    cm_AggressiveSpecials = false
+    cm_AllowPillConversion = true
+    cm_MaxSpecials = 5
 }
 
 MutationState <-
@@ -30,7 +35,7 @@ MutationState <-
     CurrentStage = -1
 }
 
-IV_FINAL_MAP_STATE <- 1;
+IV_FINAL_MAP_STATE <- 0;
 
 function EndScriptedMode()
 {
@@ -171,12 +176,7 @@ function GetNextStage()
         SessionOptions.ScriptedStageValue = 3;
         break;
         case IV_STAGE_ESCAPE:
-        if(IV_TRIGGER_FINALE != null)
         SessionOptions.ScriptedStageType = STAGE_ESCAPE;
-        else
-        //SessionOptions.ScriptedStageType = STAGE_RESULTS;
-        SessionOptions.ScriptedStageType = STAGE_SETUP;
-        SessionOptions.ScriptedStageValue = 1;
         break;
         case IV_STAGE_FINALE_END:
         SessionOptions.ScriptedStageType = STAGE_RESULTS;
@@ -199,5 +199,11 @@ function IV_Advance_Stage()
     IV_Check_Round_Final();
     else
     SessionState.CurrentStage++;
+
+    if(IV_TRIGGER_FINALE != null)
+    return;
+
+    if(SessionState.CurrentStage == IV_STAGE_FINALE_END)
+    Director.ForceNextStage();
 }
 

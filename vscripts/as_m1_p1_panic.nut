@@ -23,8 +23,8 @@ DirectorOptions <-
         BoomerLimit = 1
         HunterLimit = 3
         ChargerLimit = 0
-	PreferredMobDirection = SPAWN_NO_PREFERENCE
-	ZombieSpawnRange = 2500
+	PreferredMobDirection = SPAWN_IN_FRONT_OF_SURVIVORS
+	ZombieSpawnRange = 2800
 }
 
 Director.ResetMobTimer()
