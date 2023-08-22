@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9520"
-	"mapversion" "54"
+	"mapversion" "55"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,6 +20,12 @@ visgroups
 		"visgroupid" "16"
 		"color" "153 254 247"
 	}
+	visgroup
+	{
+		"name" "ivdev_deprecated_f_ent"
+		"visgroupid" "17"
+		"color" "138 195 176"
+	}
 }
 viewsettings
 {
@@ -32,7 +38,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "54"
+	"mapversion" "55"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -7148,7 +7154,9 @@ entity
 		"OnBeginFade" "door_mission_endClose2-1"
 		"OnBeginFade" "door_mission_endSetSpeed500-1"
 		"OnBeginFade" "cam_end_house_mainEnable0-1"
-		"OnBeginFade" "finale_radioFinaleEscapeForceSurvivorPositions0-1"
+		"OnBeginFade" "__finale_radioFinaleEscapeForceSurvivorPositions0-1"
+		"OnBeginFade" "@DirectorStartIntro0-1"
+		"OnBeginFade" "@DirectorForceSurvivorPositions0-1"
 	}
 	"origin" "2160 -192 80"
 	editor
@@ -8292,23 +8300,27 @@ entity
 		"logicalpos" "[0 500]"
 	}
 }
-entity
+hidden
 {
-	"id" "7083"
-	"classname" "trigger_finale"
-	"angles" "0 180 0"
-	"model" "models/props/terror/hamradio.mdl"
-	"skin" "0"
-	"StartDisabled" "1"
-	"targetname" "finale_radio"
-	"VersusTravelCompletion" "0.2"
-	"origin" "2496 -448 16"
-	editor
+	entity
 	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 0]"
+		"id" "7083"
+		"classname" "trigger_finale"
+		"angles" "0 180 0"
+		"model" "models/props/terror/hamradio.mdl"
+		"skin" "0"
+		"StartDisabled" "1"
+		"targetname" "finale_radio"
+		"VersusTravelCompletion" "0.2"
+		"origin" "2496 -448 16"
+		editor
+		{
+			"color" "220 30 220"
+			"visgroupid" "17"
+			"visgroupshown" "0"
+			"visgroupautoshown" "1"
+			"logicalpos" "[0 0]"
+		}
 	}
 }
 entity
@@ -8991,24 +9003,28 @@ entity
 		"logicalpos" "[0 2000]"
 	}
 }
-entity
+hidden
 {
-	"id" "7646"
-	"classname" "logic_relay"
-	"spawnflags" "1"
-	"targetname" "relay_map_end"
-	connections
+	entity
 	{
-		"OnTrigger" "finale_radioFinaleEscapeFinished0-1"
-		"OnTrigger" "fd_map_endFade0-1"
-	}
-	"origin" "2168 -416 116"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 2500]"
+		"id" "7646"
+		"classname" "logic_relay"
+		"spawnflags" "1"
+		"targetname" "relay_map_end"
+		connections
+		{
+			"OnTrigger" "finale_radioFinaleEscapeFinished0-1"
+			"OnTrigger" "fd_map_endFade0-1"
+		}
+		"origin" "2168 -416 116"
+		editor
+		{
+			"color" "220 30 220"
+			"visgroupid" "17"
+			"visgroupshown" "0"
+			"visgroupautoshown" "1"
+			"logicalpos" "[0 2500]"
+		}
 	}
 }
 entity
