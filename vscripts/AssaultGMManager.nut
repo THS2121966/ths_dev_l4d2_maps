@@ -48,7 +48,7 @@ function OnGameEvent_round_start_post_nav(params)
         printl("Saving 'IV_MODE_DATA_SAVED' Table");
         SaveTable( data_saved_name, iv_mode_save_restore_parms );
     }
-
+    else
     IV_INTRO_SHOWED = iv_mode_save_restore_parms.intro_checked_once;
 
     if(IV_INTRO_SHOWED)

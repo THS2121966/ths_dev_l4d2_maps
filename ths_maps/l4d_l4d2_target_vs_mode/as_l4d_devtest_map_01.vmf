@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9520"
-	"mapversion" "69"
+	"mapversion" "70"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -32,13 +32,13 @@ viewsettings
 	"bSnapToGrid" "1"
 	"bShowGrid" "1"
 	"bShowLogicalGrid" "0"
-	"nGridSpacing" "16"
+	"nGridSpacing" "8"
 	"bShow3DGrid" "0"
 }
 world
 {
 	"id" "1"
-	"mapversion" "69"
+	"mapversion" "70"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -4967,7 +4967,7 @@ entity
 	"classname" "point_viewcontrol_survivor"
 	"angles" "0 0 0"
 	"fov" "72"
-	"fov_rate" "2"
+	"fov_rate" "0"
 	"spawnflags" "2"
 	"targetname" "cam_st_survivor"
 	"origin" "96 160 72"
@@ -4986,7 +4986,7 @@ entity
 	"classname" "point_viewcontrol_survivor"
 	"angles" "15 345 0"
 	"fov" "75"
-	"fov_rate" "1"
+	"fov_rate" "0"
 	"spawnflags" "3"
 	"targetname" "cam_st_survivor_01_nick"
 	"origin" "-149.86 277.702 160"
@@ -5005,7 +5005,7 @@ entity
 	"classname" "point_viewcontrol_survivor"
 	"angles" "15 345 0"
 	"fov" "75"
-	"fov_rate" "1"
+	"fov_rate" "0"
 	"spawnflags" "3"
 	"targetname" "cam_st_survivor_01_ellis"
 	"origin" "-148.825 281.565 160"
@@ -5024,7 +5024,7 @@ entity
 	"classname" "point_viewcontrol_survivor"
 	"angles" "15 345 0"
 	"fov" "75"
-	"fov_rate" "1"
+	"fov_rate" "0"
 	"spawnflags" "3"
 	"targetname" "cam_st_survivor_01_rochelle"
 	"origin" "-147.79 285.429 160"
@@ -5043,7 +5043,7 @@ entity
 	"classname" "point_viewcontrol_survivor"
 	"angles" "15 345 0"
 	"fov" "75"
-	"fov_rate" "1"
+	"fov_rate" "0"
 	"spawnflags" "3"
 	"targetname" "cam_st_survivor_01_coach"
 	"origin" "-146.754 289.293 160"
@@ -7308,6 +7308,7 @@ entity
 		"OnTrigger" "tg_hurt_door_endEnable8-1"
 		"OnTrigger" "as_gamemode_managerRunScriptCodeIV_Map_Advance_Stage()8-1"
 		"OnTrigger" "as_gamemode_managerRunScriptCodeIV_Map_Update_Assault_Task()5.5-1"
+		"OnTrigger" "@MAP_Relay_Alarm_ONTrigger8-1"
 	}
 	"origin" "1504 232 96"
 	editor
@@ -7881,9 +7882,9 @@ entity
 		"OnBeginFade" "door_mission_endClose2-1"
 		"OnBeginFade" "door_mission_endSetSpeed500-1"
 		"OnBeginFade" "cam_end_house_main_match_endEnable0-1"
-		"OnBeginFade" "__finale_radioFinaleEscapeForceSurvivorPositions0-1"
-		"OnBeginFade" "@DirectorStartIntro0-1"
-		"OnBeginFade" "@DirectorForceSurvivorPositions0-1"
+		"OnBeginFade" "finale_radioFinaleEscapeForceSurvivorPositions0-1"
+		"OnBeginFade" "__@DirectorStartIntro0-1"
+		"OnBeginFade" "__@DirectorForceSurvivorPositions0-1"
 	}
 	"origin" "2160 -192 80"
 	editor
@@ -8009,20 +8010,6 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 12000]"
-	}
-}
-entity
-{
-	"id" "4053"
-	"classname" "info_landmark"
-	"targetname" "land_mark_1_2"
-	"origin" "2344 -312 32"
-	editor
-	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 12500]"
 	}
 }
 entity
@@ -8326,6 +8313,7 @@ entity
 		"OnTrigger" "light_point_1_2_roadFadeToPatterna3-1"
 		"OnTrigger" "light_point_f_roadFadeToPatterna3-1"
 		"OnTrigger" "as_gamemode_managerRunScriptCodeIV_Map_Advance_Stage()3-1"
+		"OnTrigger" "@MAP_Relay_Alarm_OFFTrigger0-1"
 	}
 	"origin" "2168 -384 96"
 	editor
@@ -8972,27 +8960,23 @@ entity
 		"logicalpos" "[0 500]"
 	}
 }
-hidden
+entity
 {
-	entity
+	"id" "7083"
+	"classname" "trigger_finale"
+	"angles" "0 180 0"
+	"model" "models/props/terror/hamradio.mdl"
+	"skin" "0"
+	"StartDisabled" "1"
+	"targetname" "finale_radio"
+	"VersusTravelCompletion" "0.2"
+	"origin" "2496 -448 16"
+	editor
 	{
-		"id" "7083"
-		"classname" "trigger_finale"
-		"angles" "0 180 0"
-		"model" "models/props/terror/hamradio.mdl"
-		"skin" "0"
-		"StartDisabled" "1"
-		"targetname" "finale_radio"
-		"VersusTravelCompletion" "0.2"
-		"origin" "2496 -448 16"
-		editor
-		{
-			"color" "220 30 220"
-			"visgroupid" "17"
-			"visgroupshown" "0"
-			"visgroupautoshown" "1"
-			"logicalpos" "[0 0]"
-		}
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
 	}
 }
 entity
@@ -10077,6 +10061,121 @@ entity
 	"angles" "-15 270 0"
 	"pitch" "-15"
 	"origin" "2048 704 192"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "10467"
+	"classname" "trigger_hurt"
+	"damage" "9999"
+	"damagecap" "9999"
+	"damagemodel" "0"
+	"damagetype" "2"
+	"filtername" "filter_infected"
+	"nodmgforce" "0"
+	"origin" "2360 -312 16"
+	"spawnflags" "3"
+	"StartDisabled" "1"
+	"targetname" "tg_hurt_door_end"
+	"thinkalways" "0"
+	solid
+	{
+		"id" "10465"
+		side
+		{
+			"id" "1424"
+			"plane" "(2192 -144 24) (2528 -144 24) (2528 -480 24)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1423"
+			"plane" "(2192 -480 8) (2528 -480 8) (2528 -144 8)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1422"
+			"plane" "(2192 -144 24) (2192 -480 24) (2192 -480 8)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1421"
+			"plane" "(2528 -144 8) (2528 -480 8) (2528 -480 24)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1420"
+			"plane" "(2528 -144 24) (2192 -144 24) (2192 -144 8)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "1419"
+			"plane" "(2528 -480 8) (2192 -480 8) (2192 -480 24)"
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "220 30 220"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "10501"
+	"classname" "func_instance"
+	"angles" "0 0 0"
+	"file" "../instances/base_alarm_sign.vmf"
+	"targetname" "alarm_escape_point"
+	"origin" "2304 -144 120"
 	editor
 	{
 		"color" "220 30 220"

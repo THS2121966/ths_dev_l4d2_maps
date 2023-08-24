@@ -4,8 +4,6 @@ printl("Assault Gamemode Created by Ivan Suvorov and THS inc 2023");
 printl("Assault Gamemode Created by Ivan Suvorov and THS inc 2023");
 printl("Assault Gamemode Created by Ivan Suvorov and THS inc 2023");
 
-IV_FINAL_MAP_STATE <- 1;
-
 MutationOptions <-
 {
 	// Get default items for survivors
@@ -30,12 +28,12 @@ MutationOptions <-
 	{
     	if(developer())
     	{
-	        printl("Currient Final Result Index - " + g_ModeScript.IV_FINAL_MAP_STATE)
-	        printl("Currient Final Result Index - " + g_ModeScript.IV_FINAL_MAP_STATE)
-	        printl("Currient Final Result Index - " + g_ModeScript.IV_FINAL_MAP_STATE)
+	        printl("Currient Final Result Index - " + SessionState.FinalMapState)
+	        printl("Currient Final Result Index - " + SessionState.FinalMapState)
+	        printl("Currient Final Result Index - " + SessionState.FinalMapState)
 	    }
 
-	    return g_ModeScript.IV_FINAL_MAP_STATE;
+	    return SessionState.FinalMapState;
 	}
 
     /* IV Note: AI Options */
@@ -46,7 +44,8 @@ MutationOptions <-
 
 MutationState <-
 {
-    CurrentStage = -1
+    CurrentStage = -1,
+    FinalMapState = 1
 }
 
 const TASK_HUD_NAME = "AssaultTasks";
@@ -83,14 +82,36 @@ function IV_Simple_Add_Task_HUD_Panel(panel_data)
 
 function OnGameEvent_round_start_post_nav( params )
 {
+    if(developer())
+    {
+        printl("Currient Mutation Options:");
+        printl("=============================================================");
+        foreach (indx, val in MutationOptions )
+        {
+            printl("[" + (indx + 1) + "] " + val);
+        }
+        printl("=============================================================");
+
+        printl("Currient Director Options:");
+        printl("=============================================================");
+        foreach (indx, val in DirectorOptions )
+        {
+            printl("[" + (indx + 1) + "] " + val);
+        }
+        printl("=============================================================");
+    }
+
     printl("Assault Gamemode Area Inited!!!");
 }
 
 function OnGameEvent_player_spawn( params )
 {
-    local player = GetPlayerFromUserID( params["userid"] );
+    if(developer())
+    {
+        local player = GetPlayerFromUserID( params["userid"] );
 
-    printl("Spawned Assault Mode Player - " + player.GetName());
+        printl("Spawned Assault Mode Player - " + player.GetName());
+    }
 }
 
 IV_STAGE_MAIN_ACTION <- 0;
@@ -209,10 +230,21 @@ function IV_Advance_Stage()
     if(IV_TRIGGER_FINALE != null)
     return;
 
-    if(SessionState.CurrentStage == IV_STAGE_FINALE_END)
-    IV_FINAL_MAP_STATE = 0;
+    if((SessionState.CurrentStage + 1) == IV_STAGE_FINALE_END)
+    SessionState.FinalMapState = 0;
 
     if(SessionState.CurrentStage == IV_STAGE_PREPARE_END || SessionState.CurrentStage == IV_STAGE_ESCAPE)
     Director.ForceNextStage();
+
+    if(developer())
+    {
+        printl("Currient State Options:");
+        printl("=============================================================");
+        foreach (indx, val in SessionState )
+        {
+            printl("[" + (indx + 1) + "] " + val);
+        }
+        printl("=============================================================");
+    }
 }
 
