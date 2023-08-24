@@ -4,6 +4,8 @@ printl("Assault Gamemode Created by Ivan Suvorov and THS inc 2023");
 printl("Assault Gamemode Created by Ivan Suvorov and THS inc 2023");
 printl("Assault Gamemode Created by Ivan Suvorov and THS inc 2023");
 
+IV_FINAL_MAP_STATE <- 1;
+
 MutationOptions <-
 {
 	// Get default items for survivors
@@ -23,7 +25,19 @@ MutationOptions <-
 		}
 		return 0
 	}
+	
+	function EndScriptedMode()
+	{
+    	if(developer())
+    	{
+	        printl("Currient Final Result Index - " + IV_FINAL_MAP_STATE)
+	        printl("Currient Final Result Index - " + IV_FINAL_MAP_STATE)
+	        printl("Currient Final Result Index - " + IV_FINAL_MAP_STATE)
+	    }
 
+	    return IV_FINAL_MAP_STATE;
+	}
+	
     /* IV Note: AI Options */
     cm_AggressiveSpecials = false
     cm_AllowPillConversion = true
@@ -33,20 +47,6 @@ MutationOptions <-
 MutationState <-
 {
     CurrentStage = -1
-}
-
-IV_FINAL_MAP_STATE <- -1;
-
-function EndScriptedMode()
-{
-    if(developer())
-    {
-        printl("Currient Final Result Index - " + IV_FINAL_MAP_STATE)
-        printl("Currient Final Result Index - " + IV_FINAL_MAP_STATE)
-        printl("Currient Final Result Index - " + IV_FINAL_MAP_STATE)
-    }
-
-    return IV_FINAL_MAP_STATE;
 }
 
 const TASK_HUD_NAME = "AssaultTasks";
@@ -63,6 +63,7 @@ AssaultModeHUD <-
 
 function IV_Init_Task_HUD_Panel(panel_data)
 {
+	if(IV_MAP_TASK_INDEX < 0)
     AssaultModeHUD.Fields["taskname"].dataval = panel_data;
 
 	// load the AssaultModeHUD table
