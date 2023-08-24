@@ -4,12 +4,16 @@ printl("Assault Gamemode Created by Ivan Suvorov and THS inc 2023");
 printl("Assault Gamemode Created by Ivan Suvorov and THS inc 2023");
 printl("Assault Gamemode Created by Ivan Suvorov and THS inc 2023");
 
+IV_FINAL_MAP_STATE <- 1;
+
 MutationOptions <-
 {
 	// Get default items for survivors
 	DefaultItems =
 	[
-		"weapon_pistol_magnum"
+		"weapon_pistol_magnum",
+        "weapon_rifle",
+        "weapon_first_aid_kit"
 	]
 
 	function GetDefaultItem( idx )
@@ -21,6 +25,23 @@ MutationOptions <-
 		}
 		return 0
 	}
+
+	function EndScriptedMode()
+	{
+    	if(developer())
+    	{
+	        printl("Currient Final Result Index - " + g_ModeScript.IV_FINAL_MAP_STATE)
+	        printl("Currient Final Result Index - " + g_ModeScript.IV_FINAL_MAP_STATE)
+	        printl("Currient Final Result Index - " + g_ModeScript.IV_FINAL_MAP_STATE)
+	    }
+
+	    return g_ModeScript.IV_FINAL_MAP_STATE;
+	}
+
+    /* IV Note: AI Options */
+    cm_AggressiveSpecials = false
+    cm_AllowPillConversion = true
+    cm_MaxSpecials = 5
 }
 
 MutationState <-
@@ -32,23 +53,32 @@ const TASK_HUD_NAME = "AssaultTasks";
 const TASK_HEADER = "Assault Task:";
 const TASK_DESCRIPTION_HEADER = "Desctiption:";
 
-function IV_Simple_Add_Task_HUD_Panel(panel_data)
+AssaultModeHUD <-
 {
-	ModeHUD <-
-	{
-        Fields =
-        {
-			gamename = { slot = HUD_MID_TOP, name = TASK_HUD_NAME, dataval = panel_data }
-        }
-	}
+    Fields =
+    {
+        taskname = { slot = HUD_MID_TOP, name = TASK_HUD_NAME, dataval = "", flags = HUD_FLAG_ALIGN_LEFT }
+    }
+}
 
-	// load the ModeHUD table
-	HUDSetLayout( ModeHUD )
+function IV_Init_Task_HUD_Panel(panel_data)
+{
+	if(IV_MAP_TASK_INDEX < 0)
+    AssaultModeHUD.Fields["taskname"].dataval = panel_data;
+
+	// load the AssaultModeHUD table
+	HUDSetLayout( AssaultModeHUD );
+    HUDPlace(HUD_MID_TOP, 0.25, 0.04, 0.5, 0.1);
 }
 
 function SetupModeHUD( )
 {
-    IV_Simple_Add_Task_HUD_Panel(TASK_HEADER + " None; " + TASK_DESCRIPTION_HEADER + " None");
+    IV_Init_Task_HUD_Panel(TASK_HEADER + " None; " + TASK_DESCRIPTION_HEADER + " None");
+}
+
+function IV_Simple_Add_Task_HUD_Panel(panel_data)
+{
+    AssaultModeHUD.Fields["taskname"].dataval = panel_data;
 }
 
 function OnGameEvent_round_start_post_nav( params )
@@ -65,7 +95,8 @@ function OnGameEvent_player_spawn( params )
 
 IV_STAGE_MAIN_ACTION <- 0;
 IV_STAGE_ESCAPE <- 1;
-IV_STAGE_FINALE_END <- 2;
+IV_STAGE_PREPARE_END <- 2;
+IV_STAGE_FINALE_END <- 3;
 
 IV_DIRECTOR_MAIN <- null;
 IV_TRIGGER_FINALE <- null;
@@ -134,21 +165,26 @@ function IV_ADD_Tasks_List(tasks_table)
 
 function GetNextStage()
 {
-    if(SessionState.CurrentStage < 0)
+    if(SessionState.CurrentStage < 0 || (SessionOptions.ScriptedStageType == STAGE_SETUP && SessionState.CurrentStage == IV_STAGE_PREPARE_END))
     SessionState.CurrentStage++;
+
+    if(developer() && SessionState.CurrentStage == IV_STAGE_ESCAPE)
+    printl("Final Escape Stage...");
 
     if(developer())
     printl("Assault Mode Next Stage - " + SessionState.CurrentStage)
     switch ( SessionState.CurrentStage )
     {
         case IV_STAGE_MAIN_ACTION:
-        SessionOptions.ScriptedStageType = STAGE_SETUP;
-        SessionOptions.ScriptedStageValue = 3;
+        SessionOptions.ScriptedStageType = STAGE_NONE;
         break;
         case IV_STAGE_ESCAPE:
-        if(IV_TRIGGER_FINALE != null)
         SessionOptions.ScriptedStageType = STAGE_ESCAPE;
-        else
+        break;
+        case IV_STAGE_PREPARE_END:
+        SessionOptions.ScriptedStageType = STAGE_SETUP;
+        SessionOptions.ScriptedStageValue = 3;
+        case IV_STAGE_FINALE_END:
         SessionOptions.ScriptedStageType = STAGE_RESULTS;
         break;
     }
@@ -163,9 +199,20 @@ function IV_Advance_Stage()
 {
     printl("Used Advance State Funcrion!!!");
 
-    if((SessionState.CurrentStage + 1) != IV_STAGE_FINALE_END)
+    if((SessionState.CurrentStage + 1) != IV_STAGE_PREPARE_END)
     SessionState.CurrentStage++;
-    else
+    else if(IV_TRIGGER_FINALE != null)
     IV_Check_Round_Final();
+    else
+    SessionState.CurrentStage++;
+
+    if(IV_TRIGGER_FINALE != null)
+    return;
+
+    if(SessionState.CurrentStage == IV_STAGE_FINALE_END)
+    IV_FINAL_MAP_STATE = 0;
+
+    if(SessionState.CurrentStage == IV_STAGE_PREPARE_END || SessionState.CurrentStage == IV_STAGE_ESCAPE)
+    Director.ForceNextStage();
 }
 
