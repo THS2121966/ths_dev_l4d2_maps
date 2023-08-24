@@ -25,19 +25,19 @@ MutationOptions <-
 		}
 		return 0
 	}
-	
+
 	function EndScriptedMode()
 	{
     	if(developer())
     	{
-	        printl("Currient Final Result Index - " + IV_FINAL_MAP_STATE)
-	        printl("Currient Final Result Index - " + IV_FINAL_MAP_STATE)
-	        printl("Currient Final Result Index - " + IV_FINAL_MAP_STATE)
+	        printl("Currient Final Result Index - " + g_ModeScript.IV_FINAL_MAP_STATE)
+	        printl("Currient Final Result Index - " + g_ModeScript.IV_FINAL_MAP_STATE)
+	        printl("Currient Final Result Index - " + g_ModeScript.IV_FINAL_MAP_STATE)
 	    }
 
-	    return IV_FINAL_MAP_STATE;
+	    return g_ModeScript.IV_FINAL_MAP_STATE;
 	}
-	
+
     /* IV Note: AI Options */
     cm_AggressiveSpecials = false
     cm_AllowPillConversion = true
@@ -105,7 +105,7 @@ function IV_SET_Director_Object(director_object)
 {
     if(director_object == null)
     {
-        error("Sended 'NULL' Director Object!!!\t")
+        printl("Sended 'NULL' Director Object!!!")
         return;
     }
 
@@ -118,7 +118,7 @@ function IV_SET_TGFinale_Object(tgfinale_object)
 {
     if(tgfinale_object == null)
     {
-        error("Sended 'NULL' TGFinale Object!!!\t")
+        printl("Sended 'NULL' TGFinale Object!!!")
         return;
     }
 
@@ -141,7 +141,7 @@ function IV_Check_Assault_Task()
     if(IV_MAP_TASKS_LIST == null || IV_MAP_TASKS_LIST[0] == null)
     {
         if(developer())
-        error("Assault Task Hud Returned 'NULL' at Function - 'IV_Check_Assault_Task'\t");
+        printl("Assault Task Hud Returned 'NULL' at Function - 'IV_Check_Assault_Task'");
         return;
     }
 
@@ -170,9 +170,6 @@ function GetNextStage()
 
     if(developer() && SessionState.CurrentStage == IV_STAGE_ESCAPE)
     printl("Final Escape Stage...");
-
-    if(SessionState.CurrentStage == IV_STAGE_FINALE_END)
-    IV_FINAL_MAP_STATE = 0;
 
     if(developer())
     printl("Assault Mode Next Stage - " + SessionState.CurrentStage)
@@ -211,6 +208,9 @@ function IV_Advance_Stage()
 
     if(IV_TRIGGER_FINALE != null)
     return;
+
+    if(SessionState.CurrentStage == IV_STAGE_FINALE_END)
+    IV_FINAL_MAP_STATE = 0;
 
     if(SessionState.CurrentStage == IV_STAGE_PREPARE_END || SessionState.CurrentStage == IV_STAGE_ESCAPE)
     Director.ForceNextStage();

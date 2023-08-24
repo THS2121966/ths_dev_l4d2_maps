@@ -6,6 +6,6 @@ GamemodeCoreState <- IncludeScript("AssaultModeBase.nut")
 
 if(!GamemodeCoreState)
 {
-    error("Assault Gamemode Core Logic not Initialised!!! Aborting...\t");
+    printl("Assault Gamemode Core Logic not Initialised!!! Aborting...");
     return;
 }
