@@ -35,12 +35,16 @@ MutationState <-
     CurrentStage = -1
 }
 
-IV_FINAL_MAP_STATE <- 0;
+IV_FINAL_MAP_STATE <- -1;
 
 function EndScriptedMode()
 {
     if(developer())
-    printl("Currient Final Result Index - " + IV_FINAL_MAP_STATE)
+    {
+        printl("Currient Final Result Index - " + IV_FINAL_MAP_STATE)
+        printl("Currient Final Result Index - " + IV_FINAL_MAP_STATE)
+        printl("Currient Final Result Index - " + IV_FINAL_MAP_STATE)
+    }
 
     return IV_FINAL_MAP_STATE;
 }
@@ -63,6 +67,7 @@ function IV_Init_Task_HUD_Panel(panel_data)
 
 	// load the AssaultModeHUD table
 	HUDSetLayout( AssaultModeHUD );
+    HUDPlace(HUD_MID_TOP, 0.25, 0.04, 0.5, 0.1);
 }
 
 function SetupModeHUD( )
@@ -89,7 +94,8 @@ function OnGameEvent_player_spawn( params )
 
 IV_STAGE_MAIN_ACTION <- 0;
 IV_STAGE_ESCAPE <- 1;
-IV_STAGE_FINALE_END <- 2;
+IV_STAGE_PREPARE_END <- 2;
+IV_STAGE_FINALE_END <- 3;
 
 IV_DIRECTOR_MAIN <- null;
 IV_TRIGGER_FINALE <- null;
@@ -98,7 +104,7 @@ function IV_SET_Director_Object(director_object)
 {
     if(director_object == null)
     {
-        printl("Sended 'NULL' Director Object!!!")
+        error("Sended 'NULL' Director Object!!!\t")
         return;
     }
 
@@ -111,7 +117,7 @@ function IV_SET_TGFinale_Object(tgfinale_object)
 {
     if(tgfinale_object == null)
     {
-        printl("Sended 'NULL' TGFinale Object!!!")
+        error("Sended 'NULL' TGFinale Object!!!\t")
         return;
     }
 
@@ -134,7 +140,7 @@ function IV_Check_Assault_Task()
     if(IV_MAP_TASKS_LIST == null || IV_MAP_TASKS_LIST[0] == null)
     {
         if(developer())
-        printl("Assault Task Hud Returned 'NULL' at Function - 'IV_Check_Assault_Task'");
+        error("Assault Task Hud Returned 'NULL' at Function - 'IV_Check_Assault_Task'\t");
         return;
     }
 
@@ -158,7 +164,7 @@ function IV_ADD_Tasks_List(tasks_table)
 
 function GetNextStage()
 {
-    if(SessionState.CurrentStage < 0)
+    if(SessionState.CurrentStage < 0 || (SessionOptions.ScriptedStageType == STAGE_SETUP && SessionState.CurrentStage == IV_STAGE_PREPARE_END))
     SessionState.CurrentStage++;
 
     if(developer() && SessionState.CurrentStage == IV_STAGE_ESCAPE)
@@ -172,12 +178,14 @@ function GetNextStage()
     switch ( SessionState.CurrentStage )
     {
         case IV_STAGE_MAIN_ACTION:
-        SessionOptions.ScriptedStageType = STAGE_SETUP;
-        SessionOptions.ScriptedStageValue = 3;
+        SessionOptions.ScriptedStageType = STAGE_NONE;
         break;
         case IV_STAGE_ESCAPE:
         SessionOptions.ScriptedStageType = STAGE_ESCAPE;
         break;
+        case IV_STAGE_PREPARE_END:
+        SessionOptions.ScriptedStageType = STAGE_SETUP;
+        SessionOptions.ScriptedStageValue = 3;
         case IV_STAGE_FINALE_END:
         SessionOptions.ScriptedStageType = STAGE_RESULTS;
         break;
@@ -193,7 +201,7 @@ function IV_Advance_Stage()
 {
     printl("Used Advance State Funcrion!!!");
 
-    if((SessionState.CurrentStage + 1) != IV_STAGE_FINALE_END)
+    if((SessionState.CurrentStage + 1) != IV_STAGE_PREPARE_END)
     SessionState.CurrentStage++;
     else if(IV_TRIGGER_FINALE != null)
     IV_Check_Round_Final();
@@ -203,7 +211,7 @@ function IV_Advance_Stage()
     if(IV_TRIGGER_FINALE != null)
     return;
 
-    if(SessionState.CurrentStage == IV_STAGE_FINALE_END)
+    if(SessionState.CurrentStage == IV_STAGE_PREPARE_END || SessionState.CurrentStage == IV_STAGE_ESCAPE)
     Director.ForceNextStage();
 }
 

@@ -18,10 +18,30 @@ function IV_Map_Update_Assault_Task()
     g_ModeScript.IV_Update_Assault_Task();
 }
 
+local iv_mode_save_restore_parms =
+{
+    intro_checked_once = false,
+
+    data_restored = false
+}
+
 function OnGameEvent_round_start_post_nav( params )
 {
     g_ModeScript.IV_SET_Director_Object(IV_DIRECTOR_ENT_LINK);
     g_ModeScript.IV_SET_TGFinale_Object(IV_TGFINALE_ENT_LINK);
+
+    local data_saved_name = "IV_MODE_DATA_SAVED";
+
+    RestoreTable( data_saved_name, iv_mode_save_restore_parms );
+
+    if(!iv_mode_save_restore_parms.data_restored)
+    {
+        iv_mode_save_restore_parms.intro_checked_once = true;
+        iv_mode_save_restore_parms.data_restored = true;
+        SaveTable( data_saved_name, iv_mode_save_restore_parms );
+    }
+
+    IV_INTRO_SHOWED = iv_mode_save_restore_parms.intro_checked_once;
 
     if(IV_INTRO_SHOWED)
     EntFire(IV_RELAY_INTRO_SKIP_ENT_LINK.GetName(), "Trigger");
