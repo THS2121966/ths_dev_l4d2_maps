@@ -1,6 +1,6 @@
 "AssaultMode" // Name of the game mode and also the name of the vscript that will automatically load when a game mode is started, either via console or GUI.
 {
-	"base"				"none" // Game mechanics are inherited from this mode. It can be coop/versus/survival/scavenge/realism or an other mutation. It can also be "none" for novel game modes.
+	"base"				"AssaultMode" // Game mechanics are inherited from this mode. It can be coop/versus/survival/scavenge/realism or an other mutation. It can also be "none" for novel game modes.
 	"maxplayers"    		"8" // Set the number of players allowed. Allowed values are 1, 4 and 8.
 	"hasdifficulty"			"1" // Sets if difficulty is allowed and if it's displayed next to the mutation name in the lobby screen. (Optional/Partially inheritable)
 	"singlechapter"			"0" // Checks if there is only one level (Used in Survival/Scavenge). (Optional/Inheritable)

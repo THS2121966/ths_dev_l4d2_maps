@@ -45,7 +45,11 @@ MutationOptions <-
 MutationState <-
 {
     CurrentStage = -1,
-    FinalMapState = 1
+    FinalMapState = 1,
+
+    ExtraSurvivorsPrecached = false,
+    ExtraSurvivorsMode = false,
+    ExtraSurvivorsSpawned = false
 }
 
 const TASK_HUD_NAME = "AssaultTasks";
@@ -122,6 +126,8 @@ IV_STAGE_FINALE_END <- 3;
 IV_DIRECTOR_MAIN <- null;
 IV_TRIGGER_FINALE <- null;
 
+IV_HARDMODE_RELAY <- null;
+
 function IV_SET_Director_Object(director_object)
 {
     if(director_object == null)
@@ -146,6 +152,94 @@ function IV_SET_TGFinale_Object(tgfinale_object)
     IV_TRIGGER_FINALE <- tgfinale_object.GetName();
 
     printl("Sended TGFinale Object - '" + IV_TRIGGER_FINALE + "'");
+}
+
+function IV_SET_TGHARDMODE_Object(tghardmode_object)
+{
+    if(tghardmode_object == null)
+    {
+        printl("Sended 'NULL' TGHARDMODE Object!!!")
+        return;
+    }
+
+    IV_HARDMODE_RELAY <- tghardmode_object.GetName();
+
+    IV_Init_Extra_Survivors();
+
+    printl("Sended TGHARDMODE Object - '" + IV_HARDMODE_RELAY + "'");
+}
+
+function IV_Set_Extra_Survivor_Scenario(scenario_index)
+{
+    local index = scenario_index > 1 ? 1 : scenario_index < 0 ? 0 : scenario_index
+
+    Convars.SetValue("sb_l4d1_survivor_behavior", index);
+}
+
+function IV_Init_Extra_Survivors()
+{
+    IV_Precache_Extra_Survivors();
+
+    //Convars.SetValue("sb_l4d1_survivor_behavior", 1);
+
+    SessionState.ExtraSurvivorsMode = true;
+}
+
+/* L4D1 Survivors Models Name */
+const IV_SURVIVOR_L4D1_BILL_MODEL = "models/survivors/survivor_namvet.mdl";
+const IV_SURVIVOR_L4D1_LOUIS_MODEL = "models/survivors/survivor_manager.mdl";
+const IV_SURVIVOR_L4D1_ZOEY_MODEL = "models/survivors/survivor_teenangst.mdl";
+const IV_SURVIVOR_L4D1_FRANCIS_MODEL = "models/survivors/survivor_biker.mdl";
+
+/* L4D2 Survivors Models Name */
+const IV_SURVIVOR_L4D2_NICK_MODEL = "models/survivors/survivor_gambler.mdl";
+const IV_SURVIVOR_L4D2_COACH_MODEL = "models/survivors/survivor_coach.mdl";
+const IV_SURVIVOR_L4D2_ROCHELLE_MODEL = "models/survivors/survivor_producer.mdl";
+const IV_SURVIVOR_L4D2_ELLIS_MODEL = "models/survivors/survivor_mechanic.mdl";
+
+function IV_Precache_Extra_Survivors()
+{
+    local four_survivors_result =
+    [
+        false,
+        false,
+        false,
+        false
+    ]
+
+    if(Director.GetSurvivorSet() == 1)
+    {
+        four_survivors_result[0] = IV_Precache_And_Check_Result(IV_SURVIVOR_L4D2_NICK_MODEL);
+        four_survivors_result[1] = IV_Precache_And_Check_Result(IV_SURVIVOR_L4D2_COACH_MODEL);
+        four_survivors_result[2] = IV_Precache_And_Check_Result(IV_SURVIVOR_L4D2_ROCHELLE_MODEL);
+        four_survivors_result[3] = IV_Precache_And_Check_Result(IV_SURVIVOR_L4D2_ELLIS_MODEL);
+    }
+    else
+    {
+        four_survivors_result[0] = IV_Precache_And_Check_Result(IV_SURVIVOR_L4D1_BILL_MODEL);
+        four_survivors_result[1] = IV_Precache_And_Check_Result(IV_SURVIVOR_L4D1_LOUIS_MODEL);
+        four_survivors_result[2] = IV_Precache_And_Check_Result(IV_SURVIVOR_L4D1_ZOEY_MODEL);
+        four_survivors_result[3] = IV_Precache_And_Check_Result(IV_SURVIVOR_L4D1_FRANCIS_MODEL);
+    }
+
+    SessionState.ExtraSurvivorsPrecached = four_survivors_result[0] && four_survivors_result[1] && four_survivors_result[2] && four_survivors_result[3];
+}
+
+function IV_Precache_And_Check_Result(model_name)
+{
+    local result = false;
+
+    if(!IsModelPrecached(model_name))
+    result = PrecacheModel(model_name);
+    else
+    result = true;
+
+    if(!result)
+    printl("Model is NOT Precached!!! Tell a Programmer!!! Model Name - '" + model_name + "'")
+    else if(developer())
+    printl("Model - '" + model_name + "' Precache state is 'TRUE'");
+
+    return result;
 }
 
 IV_MAP_TASK_INDEX <- -1;
