@@ -105,18 +105,163 @@ function OnGameEvent_round_start_post_nav( params )
         printl("=============================================================");
     }
 
+    if(developer())
+    {
+        IV_Init_Developer_ConVars();
+    }
+
     printl("Assault Gamemode Area Inited!!!");
+}
+
+function IV_Init_Developer_ConVars()
+{
+    Convars.SetValue("sb_all_bot_game", 1);
+    Convars.SetValue("allow_all_bot_survivor_team", 1);
+}
+
+const TARGET_EXTRA_NAME = "@targetextrahelper"
+const TARGET_EXTRA_SPAWN_PREFIX = "spawn"
+const TARGET_EXTRA_EXIT_PREFIX = "exit"
+
+local l_extra_exit_point_move =
+{
+    L4D1 =
+    {
+        BILL = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + "bill"
+        ZOEY = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + "zoey"
+        LOUIS = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + "louis"
+        FRANCIS = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + "francis"
+    }
+    L4D2 =
+    {
+        NICK = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + "nick"
+        COACH = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + "coach"
+        ROCHELLE = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + "rochelle"
+        ELLIS = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + "ellis"
+    }
+}
+
+function IV_Check_Extra_Name(player)
+{
+    if(Director.GetSurvivorSet() == 1)
+    {
+        if(IsPlayerABot(player) && player.IsSurvivor() && (player.GetPlayerName().tolower() == "nick" || player.GetPlayerName().tolower() == "coach"
+        || player.GetPlayerName().tolower() == "rochelle" || player.GetPlayerName().tolower() == "ellis"))
+        return true;
+    }
+    else
+    {
+        if(IsPlayerABot(player) && player.IsSurvivor() && (player.GetPlayerName().tolower() == "bill" || player.GetPlayerName().tolower() == "zoey"
+        || player.GetPlayerName().tolower() == "louis" || player.GetPlayerName().tolower() == "francis"))
+        return true;
+    }
+
+    return false;
+}
+
+function IV_ExtraBot_Move_Command(checked_bot, vec_move)
+{
+    if(!IsPlayerABot(checked_bot))
+    {
+        printl("This player - '" + checked_bot.GetPlayerName() + "' is NOT a BOT!!! Aborting...");
+        return;
+    }
+
+    local commands =
+    {
+        bot = checked_bot,
+        cmd = DirectorScript.BOT_CMD_MOVE,
+        pos = vec_move
+    }
+
+    CommandABot( commands );
+}
+
+const IV_EXTRA_SURVIVOR_NAME_DEFAULT = "Assault Extra Survivor";
+
+local l_extra_survivors_last_index = 0;
+local l_extra_survivors_array =
+[
+    null,
+    null,
+    null,
+    null
+]
+
+function IV_Init_ExtraBot_Spawn_Scenario(player)
+{
+    local glowColor = 65280;
+    if ( player.IsOnThirdStrike() )
+        glowColor = 255;
+
+    //SetFakeClientConVarValue( player, "name", IV_EXTRA_SURVIVOR_NAME_DEFAULT + " " + player.GetPlayerName() );
+    NetProps.SetPropInt( player, "m_Glow.m_glowColorOverride", glowColor );
+    NetProps.SetPropInt( player, "m_Glow.m_iGlowType", 3 );
+
+    if(l_extra_survivors_last_index < 4)
+    {
+        l_extra_survivors_array[l_extra_survivors_last_index] = player;
+        l_extra_survivors_last_index++;
+    }
+    else
+    {
+        printl("Failed to Precache Extra Survivor!!! Max Slots Used!!!");
+        printl("Failed to Precache Extra Survivor!!! Max Slots Used!!!");
+        printl("Failed to Precache Extra Survivor!!! Max Slots Used!!!");
+    }
+
+    local tg_name = TARGET_EXTRA_NAME + TARGET_EXTRA_SPAWN_PREFIX + player.GetPlayerName().tolower();
+    local target_to_move = Entities.FindByName(null, tg_name);
+    if(target_to_move == null)
+    {
+        printl("Target Spawn Move Check Returned 'NULL'!!! Checked Target Name - '" + tg_name + "'");
+        return;
+    }
+
+    IV_ExtraBot_Move_Command(player, target_to_move.GetOrigin());
+}
+
+function IV_ExtraBot_Scenario_Escape()
+{
+    foreach (indx, value in l_extra_survivors_array)
+    {
+        if(value != null)
+        {
+            if(developer())
+            printl("Moving bot - '" + value.GetPlayerName() + "' to Final Point...");
+
+            local tg_name = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + value.GetPlayerName().tolower();
+            local target_to_move = Entities.FindByName(null, tg_name);
+            if(target_to_move == null)
+            {
+                printl("Target Exit Move Check Returned 'NULL'!!! Checked Target Name - '" + tg_name + "'");
+                return;
+            }
+
+            IV_ExtraBot_Move_Command(value, target_to_move.GetOrigin());
+        }
+    }
 }
 
 function OnGameEvent_player_spawn( params )
 {
+    local player = GetPlayerFromUserID( params["userid"] );
+
+    if(SessionState.ExtraSurvivorsSpawned)
+    {
+        if(IV_Check_Extra_Name(player))
+        {
+            IV_Init_ExtraBot_Spawn_Scenario(player);
+        }
+    }
+
     if(developer())
     {
-        local player = GetPlayerFromUserID( params["userid"] );
-
-        printl("Spawned Assault Mode Player - " + player.GetName());
+        printl("Spawned Assault Mode Player - " + player.GetPlayerName());
     }
 }
+
+
 
 IV_STAGE_MAIN_ACTION <- 0;
 IV_STAGE_ESCAPE <- 1;
@@ -285,6 +430,11 @@ function GetNextStage()
 
     if(developer() && SessionState.CurrentStage == IV_STAGE_ESCAPE)
     printl("Final Escape Stage...");
+
+    if(SessionState.CurrentStage == IV_STAGE_ESCAPE)
+    {
+        IV_ExtraBot_Scenario_Escape();
+    }
 
     if(developer())
     printl("Assault Mode Next Stage - " + SessionState.CurrentStage)

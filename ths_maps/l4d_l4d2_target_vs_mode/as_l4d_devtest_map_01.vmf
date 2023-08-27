@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9520"
-	"mapversion" "73"
+	"mapversion" "74"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -38,7 +38,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "73"
+	"mapversion" "74"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -7075,7 +7075,7 @@ entity
 		"OnTrigger" "light_p1_p2_buttonTurnOn6-1"
 		"OnTrigger" "@DirectorEndScript3.5-1"
 		"OnTrigger" "@DirectorBeginScriptas_m1_p1_panic3.6-1"
-		"OnTrigger" "as_gamemode_managerRunScriptCodeIV_Spawn_Extra_Survivor(0)3.6-1"
+		"OnTrigger" "as_gamemode_managerRunScriptCodeIV_Spawn_Extra_Survivor(0, 0)3.6-1"
 	}
 	"origin" "456 240 96"
 	editor
@@ -8004,6 +8004,7 @@ entity
 	"Template02" "survivor_spawn_finale_rochelle"
 	"Template03" "survivor_spawn_finale_nick"
 	"Template04" "survivor_spawn_finale_coach"
+	"Template05" "survivor_spawn_finale_extra_bill"
 	"origin" "2360 -312 96"
 	editor
 	{
@@ -10385,9 +10386,8 @@ entity
 entity
 {
 	"id" "11142"
-	"classname" "weapon_grenade_launcher_spawn"
+	"classname" "weapon_grenade_launcher"
 	"angles" "-10.6453 346.552 16.781"
-	"count" "1"
 	"solid" "6"
 	"spawnflags" "2"
 	"targetname" "bill_death_gun_01"
@@ -10427,7 +10427,6 @@ entity
 	{
 		"OnTrigger" "spawner_hardmode_billSpawnSurvivor0-1"
 		"OnTrigger" "bill_death_modelKill0-1"
-		"OnTrigger" "bill_model_precacheKill0-1"
 	}
 	"origin" "1568 -344 224"
 	editor
@@ -10440,30 +10439,52 @@ entity
 }
 entity
 {
-	"id" "11557"
-	"classname" "prop_dynamic"
-	"angles" "0 0 0"
-	"disableshadows" "1"
-	"fademindist" "-1"
-	"fadescale" "1"
-	"glowbackfacemult" "1.0"
-	"glowcolor" "0 0 0"
-	"MaxAnimTime" "10"
-	"MinAnimTime" "5"
+	"id" "11987"
+	"classname" "info_survivor_position"
+	"angles" "0 180 0"
 	"model" "models/survivors/survivor_namvet.mdl"
-	"renderamt" "255"
-	"rendercolor" "255 255 255"
-	"rendermode" "10"
+	"Order" "1"
 	"skin" "0"
-	"solid" "6"
-	"targetname" "bill_model_precache"
-	"origin" "1600 -384 168"
+	"SurvivorIntroSequence" "c5m1_intro_coach"
+	"SurvivorName" "bill"
+	"targetname" "survivor_spawn_finale_extra_bill"
+	"origin" "2280 -328 16"
+	editor
+	{
+		"color" "255 100 100"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "12069"
+	"classname" "info_target"
+	"angles" "0 180 0"
+	"targetname" "@TargetExtraHelperExitBill"
+	"origin" "2112 -192 16"
 	editor
 	{
 		"color" "220 30 220"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
-		"logicalpos" "[0 4500]"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "12089"
+	"classname" "info_target"
+	"angles" "0 225 0"
+	"targetname" "@TargetExtraHelperSpawnBill"
+	"origin" "1232 160 16"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
 	}
 }
 cameras

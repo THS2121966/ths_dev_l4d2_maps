@@ -20,6 +20,14 @@ function IV_Map_Update_Assault_Task()
     g_ModeScript.IV_Update_Assault_Task();
 }
 
+local iv_mode_save_restore_parms_default =
+{
+    intro_checked_once = false,
+    spawned_extra_survivor = false,
+
+    data_restored = false
+};
+
 local iv_mode_save_restore_parms =
 {
     intro_checked_once = false,
@@ -139,12 +147,8 @@ function OnShutdown()
 {
     if ( SessionState.ShutdownReason != SCRIPT_SHUTDOWN_ROUND_RESTART )
     {
-        iv_mode_save_restore_parms.intro_checked_once = false;
-        iv_mode_save_restore_parms.data_restored = false;
-        iv_mode_save_restore_parms.spawned_extra_survivor = false;
-
         printl("Saving 'IV_MODE_DATA_SAVED' Table");
-        SaveTable( data_saved_name, iv_mode_save_restore_parms );
+        SaveTable( data_saved_name, iv_mode_save_restore_parms_default );
     }
 }
 
