@@ -123,24 +123,6 @@ const TARGET_EXTRA_NAME = "@targetextrahelper"
 const TARGET_EXTRA_SPAWN_PREFIX = "spawn"
 const TARGET_EXTRA_EXIT_PREFIX = "exit"
 
-local l_extra_exit_point_move =
-{
-    L4D1 =
-    {
-        BILL = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + "bill"
-        ZOEY = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + "zoey"
-        LOUIS = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + "louis"
-        FRANCIS = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + "francis"
-    }
-    L4D2 =
-    {
-        NICK = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + "nick"
-        COACH = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + "coach"
-        ROCHELLE = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + "rochelle"
-        ELLIS = TARGET_EXTRA_NAME + TARGET_EXTRA_EXIT_PREFIX + "ellis"
-    }
-}
-
 function IV_Check_Extra_Name(player)
 {
     if(Director.GetSurvivorSet() == 1)
@@ -260,8 +242,6 @@ function OnGameEvent_player_spawn( params )
         printl("Spawned Assault Mode Player - " + player.GetPlayerName());
     }
 }
-
-
 
 IV_STAGE_MAIN_ACTION <- 0;
 IV_STAGE_ESCAPE <- 1;
