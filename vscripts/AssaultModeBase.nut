@@ -119,6 +119,75 @@ function IV_Init_Developer_ConVars()
     Convars.SetValue("allow_all_bot_survivor_team", 1);
 }
 
+function Update()
+{
+    IV_Extra_Survivors_Update();
+}
+
+local l_last_active_infected_fictims = null;
+
+function IV_Extra_Survivors_Update()
+{
+    if(!SessionState.ExtraSurvivorsSpawned)
+    return;
+
+    IV_Debug_Check_ExtraBot_Victims();
+
+    if(developer())
+    printl("Updated Extra Survivor Tasks!!!");
+}
+
+function IV_Debug_Check_ExtraBot_Victims()
+{
+    if(l_last_active_infected_fictims != null)
+    {
+        foreach (value in l_last_active_infected_fictims)
+        {
+            NetProps.SetPropInt( value, "m_Glow.m_iGlowType", 0 );
+        }
+    }
+
+    l_last_active_infected_fictims = null;
+
+    local checked_infected = null;
+    while (checked_infected = Entities.FindByClassname(checked_infected, "infected"))
+    {
+        foreach (s_value in l_extra_survivors_array)
+        {
+            if(s_value == null)
+            continue;
+
+            local orig_define = checked_infected.GetOrigin() - s_value.GetOrigin();
+
+            if(orig_define.x <= 512)
+            {
+                if(l_last_active_infected_fictims == null)
+                l_last_active_infected_fictims =
+                [
+                    checked_infected
+                ]
+                else
+                l_last_active_infected_fictims.append(checked_infected);
+            }
+        }
+    }
+
+    if(l_last_active_infected_fictims == null)
+    {
+        if(developer())
+        printl("No Active Infected Bots Founded!!! Aborting Debug Victim Process...");
+        return;
+    }
+
+    foreach (value in l_last_active_infected_fictims)
+    {
+        local glowColor = 65280;
+
+        NetProps.SetPropInt( value, "m_Glow.m_glowColorOverride", glowColor );
+        NetProps.SetPropInt( value, "m_Glow.m_iGlowType", 3 );
+    }
+}
+
 const TARGET_EXTRA_NAME = "@targetextrahelper"
 const TARGET_EXTRA_SPAWN_PREFIX = "spawn"
 const TARGET_EXTRA_EXIT_PREFIX = "exit"
@@ -162,7 +231,7 @@ function IV_ExtraBot_Move_Command(checked_bot, vec_move)
 const IV_EXTRA_SURVIVOR_NAME_DEFAULT = "Assault Extra Survivor";
 
 local l_extra_survivors_last_index = 0;
-local l_extra_survivors_array =
+l_extra_survivors_array <-
 [
     null,
     null,
@@ -470,5 +539,42 @@ function IV_Advance_Stage()
         }
         printl("=============================================================");
     }
+}
+
+IV_SHUTDOWN_FUNCS_TABLE <- null;
+
+function IV_Add_Shutdown_Func(sended_func)
+{
+    if(IV_SHUTDOWN_FUNCS_TABLE == null)
+    {
+        IV_SHUTDOWN_FUNCS_TABLE <-
+        [
+            sended_func
+        ]
+        return;
+    }
+
+    IV_SHUTDOWN_FUNCS_TABLE.append(sended_func);
+
+    if(developer())
+    printl("Added Shutdown Addive Func - '" + sended_func + "'");
+}
+
+function OnShutdown()
+{
+    if(IV_SHUTDOWN_FUNCS_TABLE == null)
+    return;
+
+    foreach (value in IV_SHUTDOWN_FUNCS_TABLE)
+    {
+        if(value != null)
+        {
+            if(developer())
+            printl("Checked Addive Shutdown Func - '" + value + "'");
+            value();
+        }
+    }
+
+    printl("Checked Assault Mode Shutdown Event!!!");
 }
 

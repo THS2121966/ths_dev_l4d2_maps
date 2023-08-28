@@ -100,6 +100,8 @@ function OnGameEvent_round_start_post_nav(params)
     else
     printl("Intro Show State = 'TRUE'");
 
+    g_ModeScript.IV_Add_Shutdown_Func(OnShutdown);
+
     printl("Assault Gamemode Manager Parms Inited!!!");
     printl("Assault Gamemode Manager Parms Inited!!!");
     printl("Assault Gamemode Manager Parms Inited!!!");
@@ -145,10 +147,16 @@ function IV_Spawn_Extra_Survivor(scenario_index, hardmode_check = 1)
 
 function OnShutdown()
 {
-    if ( SessionState.ShutdownReason != SCRIPT_SHUTDOWN_ROUND_RESTART )
+    if(developer())
+    printl("Assault GM Manager Shutdown Reason - '" + SessionState.ShutdownReason + "'");
+
+    if ( SessionState.ShutdownReason != SCRIPT_SHUTDOWN_ROUND_RESTART && SessionState.ShutdownReason != SCRIPT_SHUTDOWN_TEAM_SWAP )
     {
         printl("Saving 'IV_MODE_DATA_SAVED' Table");
+        local data_saved_name = "IV_MODE_DATA_SAVED";
         SaveTable( data_saved_name, iv_mode_save_restore_parms_default );
     }
+
+    printl("Used 'OnShutdown()' Function in GMManager!!!");
 }
 
