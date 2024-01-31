@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9520"
-	"mapversion" "144"
+	"mapversion" "145"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "144"
+	"mapversion" "145"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -39,7 +39,7 @@ entity
 	"overlaycolor" "0 0 0"
 	"overlaymaterial" "sprites/light_glow02_add_noz"
 	"overlaysize" "-1"
-	"pitch" "-52"
+	"pitch" "-68"
 	"rendercolor" "219 153 100"
 	"size" "32"
 	"use_angles" "1"
@@ -63,7 +63,7 @@ entity
 	"_lightHDR" "-1 -1 -1 1"
 	"_lightscaleHDR" ".7"
 	"angles" "0 162 0"
-	"pitch" "-52"
+	"pitch" "-68"
 	"SunSpreadAngle" "1"
 	"origin" "-48 -20 0"
 	editor

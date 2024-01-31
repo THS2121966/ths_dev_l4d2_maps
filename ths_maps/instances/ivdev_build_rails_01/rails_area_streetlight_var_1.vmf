@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9520"
-	"mapversion" "1"
+	"mapversion" "2"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,13 +20,13 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "1"
+	"mapversion" "2"
 	"classname" "worldspawn"
-	"skyname" "sky_l4d_rural02_hdr"
-	"maxpropscreenwidth" "-1"
-	"detailvbsp" "detail.vbsp"
 	"detailmaterial" "detail/detailsprites"
+	"detailvbsp" "detail.vbsp"
+	"maxpropscreenwidth" "-1"
 	"musicpostfix" "Waterfront"
+	"skyname" "sky_l4d_rural02_hdr"
 }
 entity
 {
@@ -90,12 +90,12 @@ entity
 	"maxgpulevel" "0"
 	"mincpulevel" "0"
 	"mingpulevel" "0"
-	"model" "sprites/glow09.vmt"
-	"renderamt" "180"
+	"model" "sprites/light_glow02.vmt"
+	"renderamt" "210"
 	"rendercolor" "255 255 223"
 	"renderfx" "0"
 	"rendermode" "9"
-	"scale" ".55"
+	"scale" ".75"
 	"spawnflags" "1"
 	"origin" "0 -48 43"
 	editor
