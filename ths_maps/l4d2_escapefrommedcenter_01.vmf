@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9520"
-	"mapversion" "8"
+	"mapversion" "9"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "8"
+	"mapversion" "9"
 	"classname" "worldspawn"
 	"musicpostfix" "Milltown"
 	"newunit" "1"
@@ -17992,8 +17992,9 @@ entity
 {
 	"id" "902"
 	"classname" "func_instance"
-	"angles" "-0 0 0"
-	"file" "../../../games/steam/steamapps/common/left 4 dead 2/sdk_content/mapsrc/instance/c4m1_environment_ents.vmf"
+	"angles" "0 0 0"
+	"file" "instances/l4d2_escapefrommedcenter_series/l4d2_escapefrommedcenter_day_env.vmf"
+	"fixup_style" "2"
 	"origin" "-1152 1152 144"
 	editor
 	{
