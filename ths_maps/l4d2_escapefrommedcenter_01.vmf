@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9520"
-	"mapversion" "5"
+	"mapversion" "6"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,13 +20,16 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "5"
+	"mapversion" "6"
 	"classname" "worldspawn"
-	"skyname" "sky_l4d_rural02_hdr"
+	"musicpostfix" "Milltown"
+	"newunit" "1"
+	"skyname" "sky_l4d_c4m1_hdr"
+	"startmusictype" "0"
+	"timeofday" "2"
 	"maxpropscreenwidth" "-1"
 	"detailvbsp" "detail.vbsp"
 	"detailmaterial" "detail/detailsprites"
-	"musicpostfix" "Waterfront"
 	solid
 	{
 		"id" "2"
