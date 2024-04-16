@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "9520"
-	"mapversion" "6"
+	"mapversion" "8"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "6"
+	"mapversion" "8"
 	"classname" "worldspawn"
 	"musicpostfix" "Milltown"
 	"newunit" "1"
@@ -17986,6 +17986,21 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[2000 9500]"
+	}
+}
+entity
+{
+	"id" "902"
+	"classname" "func_instance"
+	"angles" "-0 0 0"
+	"file" "../../../games/steam/steamapps/common/left 4 dead 2/sdk_content/mapsrc/instance/c4m1_environment_ents.vmf"
+	"origin" "-1152 1152 144"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[2000 13000]"
 	}
 }
 cameras
