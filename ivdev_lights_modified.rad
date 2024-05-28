@@ -161,6 +161,7 @@ forcetextureshadow props_foliage/Urban_Wall_Basket01.mdl
 forcetextureshadow props_foliage/Urban_Wall_Basket02.mdl
 
 forcetextureshadow props_urban/fence_gate002_256.mdl
+forcetextureshadow props_wasteland/exterior_fence001b.mdl
 forcetextureshadow props_wasteland/exterior_fence002d.mdl
 forcetextureshadow props_wasteland/exterior_fence002c.mdl
 forcetextureshadow props_wasteland/exterior_fence003a.mdl
