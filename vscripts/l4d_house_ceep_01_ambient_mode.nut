@@ -5,6 +5,9 @@ Msg("[Ivan Suvorov] Initiating House Ambient Scenario!!!\n");
 
 DirectorOptions <-
 {
+	ProhibitBosses = false
+	CommonLimit = 12
+
 	AlwaysAllowWanderers = true
 	MobSpawnMinTime = 60
 	MobSpawnMaxTime = 90
