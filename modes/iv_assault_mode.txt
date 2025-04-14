@@ -1,0 +1,21 @@
+"iv_assault_mode"
+{
+	"base"				"none"
+	"maxplayers"    		"8"
+	"hasdifficulty"			"0"
+	"singlechapter"			"0"
+	"playercontrolledzombies"	"1"
+	"hasroundlimit"			"1"
+
+	"DisplayTitle"			"Left 4 Dead Assault"
+	"Description"			"Assault GameMode Like a Unreal Tournament 2004!!! But with Zombies!!!"
+	"ShortDescription"		"Zombies vs Players in Assault Mode!!!"
+	"Author"			"Ivan Suvorov"
+	"Image"				"vgui/iv_assault_gamemode_image"
+
+	//IV Note: Main L4D ConVars Changes for This GameMode!!!
+	convar
+	{
+		z_speed 500
+	}
+}
