@@ -1,6 +1,6 @@
 "iv_assault_mode"
 {
-	"base"				"none"
+	"base"				"versus"
 	"maxplayers"    		"8"
 	"hasdifficulty"			"0"
 	"singlechapter"			"0"

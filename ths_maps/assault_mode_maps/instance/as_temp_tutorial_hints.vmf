@@ -1,0 +1,260 @@
+versioninfo
+{
+	"editorversion" "400"
+	"editorbuild" "8869"
+	"mapversion" "1"
+	"formatversion" "100"
+	"prefab" "0"
+}
+visgroups
+{
+}
+viewsettings
+{
+	"bSnapToGrid" "1"
+	"bShowGrid" "1"
+	"bShowLogicalGrid" "0"
+	"nGridSpacing" "8"
+}
+palette_plus
+{
+	"color0" "255 255 255"
+	"color1" "255 255 255"
+	"color2" "255 255 255"
+	"color3" "255 255 255"
+	"color4" "255 255 255"
+	"color5" "255 255 255"
+	"color6" "255 255 255"
+	"color7" "255 255 255"
+	"color8" "255 255 255"
+	"color9" "255 255 255"
+	"color10" "255 255 255"
+	"color11" "255 255 255"
+	"color12" "255 255 255"
+	"color13" "255 255 255"
+	"color14" "255 255 255"
+	"color15" "255 255 255"
+}
+colorcorrection_plus
+{
+	"name0" ""
+	"weight0" "1"
+	"name1" ""
+	"weight1" "1"
+	"name2" ""
+	"weight2" "1"
+	"name3" ""
+	"weight3" "1"
+}
+light_plus
+{
+	"samples_sun" "6"
+	"samples_ambient" "40"
+	"samples_vis" "256"
+	"texlight" ""
+	"incremental_delay" "0"
+	"bake_dist" "1024"
+	"radius_scale" "1"
+	"brightness_scale" "1"
+	"ao_scale" "0"
+	"bounced" "1"
+	"incremental" "1"
+	"supersample" "0"
+	"bleed_hack" "1"
+	"soften_cosine" "0"
+	"debug" "0"
+	"cubemap" "1"
+}
+postprocess_plus
+{
+	"enable" "1"
+	"copied_from_controller" "0"
+	"bloom_scale" "1"
+	"bloom_exponent" "2.5"
+	"bloom_saturation" "1"
+	"auto_exposure_min" "0.1"
+	"auto_exposure_max" "8"
+	"tonemap_percent_target" "45"
+	"tonemap_percent_bright_pixels" "1"
+	"tonemap_min_avg_luminance" "3"
+	"tonemap_rate" "1"
+	"vignette_enable" "0"
+	"vignette_start" "1"
+	"vignette_end" "2"
+	"vignette_blur" "0"
+}
+bgimages_plus
+{
+}
+world
+{
+	"id" "1"
+	"mapversion" "1"
+	"classname" "worldspawn"
+	"detailmaterial" "detail/detailsprites"
+	"detailvbsp" "detail.vbsp"
+	"maxpropscreenwidth" "-1"
+	"musicpostfix" "Waterfront"
+	"skyname" "sky_l4d_rural02_hdr"
+}
+entity
+{
+	"id" "2"
+	"classname" "env_instructor_hint"
+	"hint_allow_nodraw_target" "1"
+	"hint_auto_start" "0"
+	"hint_caption" "Welcome to Assault Mode!!!"
+	"hint_color" "0 255 30"
+	"hint_forcecaption" "1"
+	"hint_icon_offscreen" "icon_tip"
+	"hint_icon_onscreen" "icon_info"
+	"hint_instance_type" "2"
+	"hint_target" "$Tutorial_Message_Target"
+	"hint_timeout" "2"
+	"targetname" "as_turorial_hint_1"
+	"origin" "-24 0 16"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "8"
+	"classname" "env_instructor_hint"
+	"hint_allow_nodraw_target" "1"
+	"hint_auto_start" "0"
+	"hint_caption" "Survivors Team can Complete cheked rules on Currient map and will Survive!!!"
+	"hint_color" "255 162 0"
+	"hint_forcecaption" "1"
+	"hint_icon_offscreen" "icon_tip"
+	"hint_icon_onscreen" "icon_info"
+	"hint_instance_type" "2"
+	"hint_target" "$Tutorial_Message_Target"
+	"hint_timeout" "6"
+	"targetname" "as_turorial_hint_2"
+	"origin" "-8 0 16"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "12"
+	"classname" "env_instructor_hint"
+	"hint_allow_nodraw_target" "1"
+	"hint_auto_start" "0"
+	"hint_caption" "Infected Team can Stop Survivors Team for Win!!!"
+	"hint_color" "255 0 0"
+	"hint_forcecaption" "1"
+	"hint_icon_offscreen" "icon_tip"
+	"hint_icon_onscreen" "icon_alert"
+	"hint_instance_type" "2"
+	"hint_target" "$Tutorial_Message_Target"
+	"hint_timeout" "5"
+	"targetname" "as_turorial_hint_3"
+	"origin" "8 0 16"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "16"
+	"classname" "env_instructor_hint"
+	"hint_allow_nodraw_target" "1"
+	"hint_auto_start" "0"
+	"hint_caption" "Enjoy!!!"
+	"hint_color" "0 255 30"
+	"hint_forcecaption" "1"
+	"hint_icon_offscreen" "icon_tip"
+	"hint_icon_onscreen" "icon_info"
+	"hint_instance_type" "2"
+	"hint_target" "$Tutorial_Message_Target"
+	"hint_timeout" "3"
+	"targetname" "as_turorial_hint_4"
+	"origin" "24 0 16"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "30"
+	"classname" "logic_relay"
+	"spawnflags" "1"
+	"targetname" "@Assault_Tutorial_Start"
+	connections
+	{
+		"OnTrigger" "as_turorial_hint_1ShowHint0-1"
+		"OnTrigger" "as_turorial_hint_2ShowHint2-1"
+		"OnTrigger" "as_turorial_hint_3ShowHint8-1"
+		"OnTrigger" "as_turorial_hint_4ShowHint13-1"
+		"OnTrigger" "@Assault_Tutorial_EndTrigger16.3-1"
+	}
+	"origin" "-8 0 32"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "37"
+	"classname" "logic_relay"
+	"spawnflags" "1"
+	"targetname" "@Assault_Tutorial_End"
+	connections
+	{
+		"OnTrigger" "$script_managerRunScriptCodeRealise_Tutorial_End()0-1"
+	}
+	"origin" "8 0 32"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "43"
+	"classname" "func_instance_parms"
+	"parm1" "$Tutorial_Message_Target target_name_or_class"
+	"parm2" "$script_manager target_name_or_class"
+	"origin" "-24 0 32"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+cameras
+{
+	"activecamera" "-1"
+}
+cordons
+{
+	"active" "0"
+}
