@@ -34,7 +34,8 @@ DirectorOptions <-
 
 	DefaultItems =
 	[
-		"weapon_pistol_magnum"
+		"weapon_pistol_magnum",
+		"weapon_pain_pills"
 	]
 
 	function ConvertWeaponSpawn( classname )
@@ -173,6 +174,8 @@ function IV_Realise_AS_Manager(sended_ent)
 
 	if(g_as_manager == null)
 	printl("Sended Assault Mode Manager is NULL!!!");
+	else
+	printl("Assault Manager is Linked Sucessfull!!! '" + g_as_manager + "'");
 }
 
 function IV_Realise_Assault_Mode_Post_Map()
