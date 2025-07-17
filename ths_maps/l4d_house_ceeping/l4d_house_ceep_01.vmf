@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8869"
-	"mapversion" "90"
+	"mapversion" "91"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -107,7 +107,7 @@ bgimages_plus
 world
 {
 	"id" "1"
-	"mapversion" "90"
+	"mapversion" "91"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -88488,7 +88488,7 @@ entity
 	"classname" "func_elevator"
 	"acceleration" "60"
 	"blockdamage" "0"
-	"bottom" "84 1120 48"
+	"bottom" "84 1120 0"
 	"disablereceiveshadows" "0"
 	"disableX360" "0"
 	"fademaxdist" "0"
@@ -88498,7 +88498,7 @@ entity
 	"maxgpulevel" "0"
 	"mincpulevel" "0"
 	"mingpulevel" "0"
-	"origin" "84 1120 48"
+	"origin" "84 1120 0"
 	"renderamt" "255"
 	"rendercolor" "255 255 255"
 	"renderfx" "0"
@@ -88507,7 +88507,7 @@ entity
 	"startsound" "Objects.generator_start"
 	"stopsound" "boxcar_door_stop1"
 	"targetname" "elev_1_main"
-	"top" "84 1120 1840"
+	"top" "84 1120 1792"
 	solid
 	{
 		"id" "9955"
@@ -89584,7 +89584,7 @@ entity
 	"classname" "info_elevator_floor"
 	"angles" "0 0 0"
 	"targetname" "elev_1_top"
-	"origin" "84 1120 1840"
+	"origin" "84 1120 1792"
 	editor
 	{
 		"color" "220 30 220"
@@ -89603,7 +89603,7 @@ entity
 	{
 		"OnReachedFloor" "elev_1_brush_z_hurtDisable0-1"
 	}
-	"origin" "84 1120 48"
+	"origin" "84 1120 0"
 	editor
 	{
 		"color" "220 30 220"
@@ -89623,7 +89623,7 @@ entity
 		"OnReachedFloor" "relay_elev_01_doors_lvl_3_openTrigger3-1"
 		"OnReachedFloor" "elev_1_brush_z_hurtDisable0-1"
 	}
-	"origin" "84 1120 496"
+	"origin" "84 1120 448"
 	editor
 	{
 		"color" "220 30 220"
