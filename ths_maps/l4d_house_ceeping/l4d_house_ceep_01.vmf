@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8869"
-	"mapversion" "131"
+	"mapversion" "133"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -32,7 +32,7 @@ viewsettings
 	"bSnapToGrid" "1"
 	"bShowGrid" "1"
 	"bShowLogicalGrid" "0"
-	"nGridSpacing" "2"
+	"nGridSpacing" "8"
 }
 palette_plus
 {
@@ -107,7 +107,7 @@ bgimages_plus
 world
 {
 	"id" "1"
-	"mapversion" "131"
+	"mapversion" "133"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -90222,7 +90222,6 @@ entity
 	connections
 	{
 		"OnTrigger" "relay_cinematic_coop_startTrigger0-1"
-		"OnTrigger" "@DirectorBeginScriptl4d_house_ceep_01_ambient_mode0-1"
 	}
 	"origin" "704 -80 80"
 	editor
@@ -94251,7 +94250,7 @@ entity
 				"v" "-18 1127 101"
 			}
 			"material" "SIGNS/ELEVATOR_NUMBERS"
-			"uaxis" "[-0 -1 -0 -48] 0.25"
+			"uaxis" "[-0 -1 -0 -49] 0.25"
 			"vaxis" "[0 0 -1 -14] 0.2"
 			"rotation" "0"
 			"lightmapscale" "16"
@@ -94563,6 +94562,7 @@ entity
 		"OnTrigger" "s_lvl_1_hunter_horror_agression_01PlaySound0-1"
 		"OnTrigger" "elevator_main_buttonsLock0.1-1"
 		"OnTrigger" "dev_relay_elev_button_power_on_01Trigger6-1"
+		"OnTrigger" "elev_1_main_survivors_detectorDisable0.1-1"
 	}
 	"origin" "-24 1040 80"
 	editor
@@ -94611,7 +94611,7 @@ entity
 		"OnTrigger" "elev_1_door_*Open0.2-1"
 		"OnTrigger" "lvl_1_elev_enter_nav_blockerUnblockNav0-1"
 		"OnTrigger" "lvl_1_elev_1_door_clipDisable0-1"
-		"OnTrigger" "elevator_main_buttonsUnlock0-1"
+		"OnTrigger" "elev_1_main_survivors_detectorEnable0-1"
 	}
 	"origin" "-24 1096 112"
 	editor
@@ -94635,6 +94635,7 @@ entity
 		"OnTrigger" "lvl_1_elev_enter_nav_blockerBlockNav0-1"
 		"OnTrigger" "lvl_1_elev_1_door_clipEnable0.2-1"
 		"OnTrigger" "elevator_main_buttonsLock0-1"
+		"OnTrigger" "elev_1_main_survivors_detectorDisable0-1"
 	}
 	"origin" "-24 1080 112"
 	editor
@@ -94683,6 +94684,7 @@ entity
 		"OnTrigger" "elevator_hall_light_g_1_spriteHideSprite0-1"
 		"OnTrigger" "st_room_lamp_01Skin10-1"
 		"OnTrigger" "elevator_main_buttonsLock0-1"
+		"OnTrigger" "elev_1_main_survivors_detectorDisable0-1"
 	}
 	"origin" "-24 1144 136"
 	editor
@@ -95818,7 +95820,7 @@ entity
 		"OnTrigger" "elevator_hall_light_g_1FadeToPatternz0-1"
 		"OnTrigger" "elevator_hall_light_g_1_spriteShowSprite0-1"
 		"OnTrigger" "st_room_lamp_01Skin00-1"
-		"OnTrigger" "elevator_main_buttonsUnlock0-1"
+		"OnTrigger" "elev_1_main_survivors_detectorEnable0-1"
 	}
 	"origin" "-24 1128 136"
 	editor
@@ -98666,6 +98668,7 @@ entity
 		"OnTrigger" "lvl_3_elev_enter_nav_blockerBlockNav0-1"
 		"OnTrigger" "lvl_3_elev_1_door_clipEnable0.2-1"
 		"OnTrigger" "elevator_main_buttonsLock0-1"
+		"OnTrigger" "elev_1_main_survivors_detectorDisable0-1"
 	}
 	"origin" "-24 1080 568"
 	editor
@@ -98688,7 +98691,7 @@ entity
 		"OnTrigger" "elev_1_door_*Open0.2-1"
 		"OnTrigger" "lvl_3_elev_enter_nav_blockerUnblockNav0-1"
 		"OnTrigger" "lvl_3_elev_1_door_clipDisable0-1"
-		"OnTrigger" "elevator_main_buttonsUnlock0-1"
+		"OnTrigger" "elev_1_main_survivors_detectorEnable0-1"
 	}
 	"origin" "-24 1096 568"
 	editor
@@ -107928,7 +107931,7 @@ entity
 		"OnTrigger" "elev_1_door_*Open0.2-1"
 		"OnTrigger" "lvl_9_elev_enter_nav_blockerUnblockNav0-1"
 		"OnTrigger" "lvl_9_elev_1_door_clipDisable0-1"
-		"OnTrigger" "elevator_main_buttonsUnlock0-1"
+		"OnTrigger" "elev_1_main_survivors_detectorEnable0-1"
 	}
 	"origin" "-24 1096 1912"
 	editor
@@ -107952,6 +107955,7 @@ entity
 		"OnTrigger" "lvl_9_elev_enter_nav_blockerBlockNav0-1"
 		"OnTrigger" "lvl_9_elev_1_door_clipEnable0.2-1"
 		"OnTrigger" "elevator_main_buttonsLock0-1"
+		"OnTrigger" "elev_1_main_survivors_detectorDisable0-1"
 	}
 	"origin" "-24 1080 1912"
 	editor
@@ -108013,7 +108017,6 @@ entity
 	connections
 	{
 		"OnTrigger" "relay_elevator_move_to_lvl_3Trigger0-1"
-		"OnTrigger" "relay_elev_01_access_move_to_lvl_9Enable0-1"
 	}
 	"origin" "66 1064 56"
 	editor
@@ -108062,6 +108065,151 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "36478"
+	"classname" "trigger_multiple"
+	"allowghost" "0"
+	"allowincap" "0"
+	"entireteam" "2"
+	"filtername" "filter_team_survivor"
+	"origin" "84 1120 48"
+	"parentname" "elev_1_main"
+	"spawnflags" "1"
+	"StartDisabled" "1"
+	"targetname" "elev_1_main_survivors_detector"
+	"wait" "1"
+	connections
+	{
+		"OnEntireTeamStartTouch" "elevator_main_buttonsUnlock0-1"
+		"OnEntireTeamEndTouch" "elevator_main_buttonsLock0-1"
+	}
+	solid
+	{
+		"id" "36476"
+		side
+		{
+			"id" "11817"
+			"plane" "(8 1184 96) (160 1184 96) (160 1056 96)"
+			vertices_plus
+			{
+				"v" "8 1184 96"
+				"v" "160 1184 96"
+				"v" "160 1056 96"
+				"v" "8 1056 96"
+			}
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "11816"
+			"plane" "(8 1056 0) (160 1056 0) (160 1184 0)"
+			vertices_plus
+			{
+				"v" "8 1056 0"
+				"v" "160 1056 0"
+				"v" "160 1184 0"
+				"v" "8 1184 0"
+			}
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "11815"
+			"plane" "(8 1184 96) (8 1056 96) (8 1056 0)"
+			vertices_plus
+			{
+				"v" "8 1184 96"
+				"v" "8 1056 96"
+				"v" "8 1056 0"
+				"v" "8 1184 0"
+			}
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "11814"
+			"plane" "(160 1184 0) (160 1056 0) (160 1056 96)"
+			vertices_plus
+			{
+				"v" "160 1184 0"
+				"v" "160 1056 0"
+				"v" "160 1056 96"
+				"v" "160 1184 96"
+			}
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "11813"
+			"plane" "(160 1184 96) (8 1184 96) (8 1184 0)"
+			vertices_plus
+			{
+				"v" "160 1184 96"
+				"v" "8 1184 96"
+				"v" "8 1184 0"
+				"v" "160 1184 0"
+			}
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "11812"
+			"plane" "(160 1056 0) (8 1056 0) (8 1056 96)"
+			vertices_plus
+			{
+				"v" "160 1056 0"
+				"v" "8 1056 0"
+				"v" "8 1056 96"
+				"v" "160 1056 96"
+			}
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "220 30 220"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
 	}
 }
 cameras
