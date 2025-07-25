@@ -6,12 +6,12 @@ Msg("[Ivan Suvorov] Initiating House Ambient Scenario!!!\n");
 DirectorOptions <-
 {
 	ProhibitBosses = false
-	CommonLimit = 12
+	CommonLimit = 15
 
 	AlwaysAllowWanderers = true
 	MobSpawnMinTime = 60
 	MobSpawnMaxTime = 90
-	MobMinSize = 10
+	MobMinSize = 15
 	MobMaxSize = 20
 	MobMaxPending = 20
 	SustainPeakMinTime = 5
@@ -20,14 +20,14 @@ DirectorOptions <-
 	RelaxMinInterval = 15
 	RelaxMaxInterval = 30
 	RelaxMaxFlowTravel = 2000
-	SmokerLimit = 1
-	HunterLimit = 2
+	SmokerLimit = 0
+	HunterLimit = 0
 	ChargerLimit = 0
 	JockeyLimit = 0
 	SpitterLimit = 0
+	BoomerLimit = 0
 	TankLimit = 0
 	WitchLimit = 3
-	SpecialRespawnInterval = 45.0
 	ZombieSpawnRange = 2000
 	NumReservedWanderers = 10
 }
