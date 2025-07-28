@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8869"
-	"mapversion" "172"
+	"mapversion" "174"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -107,7 +107,7 @@ bgimages_plus
 world
 {
 	"id" "1"
-	"mapversion" "172"
+	"mapversion" "174"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -104370,6 +104370,7 @@ entity
 	connections
 	{
 		"OnTrigger" "relay_cinematic_coop_startTrigger0-1"
+		"OnTrigger" "@DirectorBeginScriptl4d_house_ceep_01_ambient_mode_vs_mode0-1"
 	}
 	"origin" "704 -80 80"
 	editor
@@ -104390,6 +104391,8 @@ entity
 	{
 		"OnCoop" "relay_versus_gameplay_startDisable0-1"
 		"OnVersus" "relay_coop_gameplay_startDisable0-1"
+		"OnCoop" "relay_underfloor_generator_gascans_spawnTrigger0-1"
+		"OnVersus" "relay_underfloor_generator_gascans_spawnTrigger0-1"
 	}
 	"origin" "704 -64 104"
 	editor
@@ -108709,7 +108712,7 @@ entity
 		"OnTrigger" "s_lvl_1_hunter_hide_agression_01_timerDisable0-1"
 		"OnTrigger" "s_lvl_1_hunter_horror_agression_01PlaySound0-1"
 		"OnTrigger" "elevator_main_buttonsLock0.1-1"
-		"OnTrigger" "dev_relay_elev_button_power_on_01Trigger6-1"
+		"OnTrigger" "relay_scv_mode_startTrigger6-1"
 		"OnTrigger" "elev_1_main_survivors_detectorDisable0.1-1"
 	}
 	"origin" "-24 1040 80"
@@ -133661,7 +133664,7 @@ entity
 	"skin" "2"
 	"solid" "6"
 	"spawnflags" "2"
-	"targetname" "underfloor_generator_gascan_g_1"
+	"targetname" "underfloor_generator_gascan_m_01"
 	"weaponskin" "-1"
 	"origin" "153 1177 15"
 	editor
@@ -133681,7 +133684,7 @@ entity
 	"skin" "2"
 	"solid" "6"
 	"spawnflags" "2"
-	"targetname" "underfloor_generator_gascan_g_1"
+	"targetname" "underfloor_generator_gascan_m_01"
 	"weaponskin" "-1"
 	"origin" "1804 685 -129"
 	editor
@@ -133941,6 +133944,319 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 10000]"
+	}
+}
+entity
+{
+	"id" "66067"
+	"classname" "point_template"
+	"spawnflags" "2"
+	"targetname" "temp_underfloor_generator_gascan_g_1"
+	"Template01" "underfloor_generator_gascan_g_1"
+	"origin" "1504 1696 38"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "66116"
+	"classname" "point_template"
+	"spawnflags" "2"
+	"targetname" "temp_underfloor_generator_gascan_g_2"
+	"Template01" "underfloor_generator_gascan_g_2"
+	"origin" "1304 429 37.7193"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "66134"
+	"classname" "weapon_scavenge_item_spawn"
+	"angles" "0 0 0"
+	"glowstate" "0"
+	"skin" "2"
+	"solid" "6"
+	"spawnflags" "2"
+	"targetname" "underfloor_generator_gascan_g_2"
+	"weaponskin" "-1"
+	"origin" "1306 430 10.7193"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 7000]"
+	}
+}
+entity
+{
+	"id" "66136"
+	"classname" "weapon_scavenge_item_spawn"
+	"angles" "0 0 0"
+	"glowstate" "0"
+	"skin" "2"
+	"solid" "6"
+	"spawnflags" "2"
+	"targetname" "underfloor_generator_gascan_g_2"
+	"weaponskin" "-1"
+	"origin" "1300 424 10.7193"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 7000]"
+	}
+}
+entity
+{
+	"id" "66138"
+	"classname" "weapon_scavenge_item_spawn"
+	"angles" "0 0 0"
+	"glowstate" "0"
+	"skin" "2"
+	"solid" "6"
+	"spawnflags" "2"
+	"targetname" "underfloor_generator_gascan_g_2"
+	"weaponskin" "-1"
+	"origin" "1300 440 10.7193"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 7000]"
+	}
+}
+entity
+{
+	"id" "66156"
+	"classname" "point_template"
+	"spawnflags" "2"
+	"targetname" "temp_underfloor_generator_gascan_g_3"
+	"Template01" "underfloor_generator_gascan_g_3"
+	"origin" "523 1892 37.7193"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "66174"
+	"classname" "weapon_scavenge_item_spawn"
+	"angles" "0 90 0"
+	"glowstate" "0"
+	"skin" "2"
+	"solid" "6"
+	"spawnflags" "2"
+	"targetname" "underfloor_generator_gascan_g_3"
+	"weaponskin" "-1"
+	"origin" "527 1900 10.7193"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 7000]"
+	}
+}
+entity
+{
+	"id" "66176"
+	"classname" "weapon_scavenge_item_spawn"
+	"angles" "0 90 0"
+	"glowstate" "0"
+	"skin" "2"
+	"solid" "6"
+	"spawnflags" "2"
+	"targetname" "underfloor_generator_gascan_g_3"
+	"weaponskin" "-1"
+	"origin" "527 1893 10.7193"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 7000]"
+	}
+}
+entity
+{
+	"id" "66178"
+	"classname" "weapon_scavenge_item_spawn"
+	"angles" "0 90 0"
+	"glowstate" "0"
+	"skin" "2"
+	"solid" "6"
+	"spawnflags" "2"
+	"targetname" "underfloor_generator_gascan_g_3"
+	"weaponskin" "-1"
+	"origin" "512 1900 10.7193"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 7000]"
+	}
+}
+entity
+{
+	"id" "66193"
+	"classname" "logic_case"
+	"Case01" "1"
+	"Case02" "2"
+	"Case03" "3"
+	"targetname" "case_underfloor_generator_gascan_g_rnd"
+	connections
+	{
+		"OnCase01" "temp_underfloor_generator_gascan_g_1ForceSpawn0-1"
+		"OnCase02" "temp_underfloor_generator_gascan_g_2ForceSpawn0-1"
+		"OnCase03" "temp_underfloor_generator_gascan_g_3ForceSpawn0-1"
+	}
+	"origin" "1504 1712 38"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "66201"
+	"classname" "logic_auto"
+	"spawnflags" "1"
+	connections
+	{
+		"OnMapSpawn" "underfloor_generator_gascan_g_1TurnGlowsOff0-1"
+		"OnMapSpawn" "underfloor_generator_gascan_g_2TurnGlowsOff0-1"
+		"OnMapSpawn" "underfloor_generator_gascan_g_3TurnGlowsOff0-1"
+	}
+	"origin" "1504 1712 54"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "66208"
+	"classname" "logic_relay"
+	"spawnflags" "1"
+	"targetname" "relay_underfloor_generator_gascans_spawn"
+	connections
+	{
+		"OnTrigger" "case_underfloor_generator_gascan_g_rndPickRandom0-1"
+	}
+	"origin" "704 -48 104"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "66228"
+	"classname" "game_scavenge_progress_display"
+	"Max" "5"
+	"targetname" "scv_mode_display"
+	"origin" "1424 688 -160"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 2000]"
+	}
+}
+entity
+{
+	"id" "66235"
+	"classname" "logic_relay"
+	"spawnflags" "1"
+	"targetname" "relay_scv_mode_start"
+	connections
+	{
+		"OnTrigger" "underfloor_generator_nozzle_modelStartGlowing0-1"
+		"OnTrigger" "underfloor_generator_use_targetActivate0-1"
+		"OnTrigger" "event_scavenge_pourGenerateGameEvent1-1"
+		"OnTrigger" "scv_mode_displayTurnOn0-1"
+		"OnTrigger" "underfloor_generator_gascan_g_1TurnGlowsOn1-1"
+		"OnTrigger" "underfloor_generator_gascan_g_2TurnGlowsOn1-1"
+		"OnTrigger" "underfloor_generator_gascan_g_3TurnGlowsOn1-1"
+	}
+	"origin" "1424 688 -144"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 2500]"
+	}
+}
+entity
+{
+	"id" "66238"
+	"classname" "logic_relay"
+	"spawnflags" "1"
+	"targetname" "relay_scv_mode_end"
+	connections
+	{
+		"OnTrigger" "dev_relay_elev_button_power_on_01Trigger3-1"
+		"OnTrigger" "underfloor_generator_gascan_g_3TurnGlowsOff0-1"
+		"OnTrigger" "underfloor_generator_gascan_g_2TurnGlowsOff0-1"
+		"OnTrigger" "underfloor_generator_gascan_g_1TurnGlowsOff0-1"
+		"OnTrigger" "scv_mode_displayTurnOff1-1"
+		"OnTrigger" "underfloor_generator_use_targetDeactivate0-1"
+		"OnTrigger" "underfloor_generator_nozzle_modelStopGlowing0-1"
+	}
+	"origin" "1408 688 -144"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 2500]"
+	}
+}
+entity
+{
+	"id" "66251"
+	"classname" "logic_auto"
+	"spawnflags" "1"
+	connections
+	{
+		"OnMapSpawn" "underfloor_generator_use_targetDeactivate0-1"
+	}
+	"origin" "1424 752 -216"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 3000]"
 	}
 }
 cameras
