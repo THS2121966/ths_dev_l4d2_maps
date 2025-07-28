@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8869"
-	"mapversion" "166"
+	"mapversion" "167"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -107,7 +107,7 @@ bgimages_plus
 world
 {
 	"id" "1"
-	"mapversion" "166"
+	"mapversion" "167"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -131673,10 +131673,10 @@ entity
 	{
 		"OnTrigger" "@DirectorForceSurvivorPositions0-1"
 		"OnTrigger" "@DirectorStartIntro0-1"
-		"OnTrigger" "elev_1_main_survivor_pos_louisSetViewControlelev_1_main_survivor_cam_10-1"
-		"OnTrigger" "elev_1_main_survivor_pos_francisSetViewControlelev_1_main_survivor_cam_20-1"
-		"OnTrigger" "elev_1_main_survivor_pos_billSetViewControlelev_1_main_survivor_cam_30-1"
-		"OnTrigger" "elev_1_main_survivor_pos_zoeySetViewControlelev_1_main_survivor_cam_40-1"
+		"OnTrigger" "elev_1_main_survivor_pos_louisSetViewControlelev_1_main_survivor_cam_10.1-1"
+		"OnTrigger" "elev_1_main_survivor_pos_francisSetViewControlelev_1_main_survivor_cam_20.1-1"
+		"OnTrigger" "elev_1_main_survivor_pos_billSetViewControlelev_1_main_survivor_cam_30.1-1"
+		"OnTrigger" "elev_1_main_survivor_pos_zoeySetViewControlelev_1_main_survivor_cam_40.1-1"
 	}
 	"origin" "80 1208 464"
 	editor
