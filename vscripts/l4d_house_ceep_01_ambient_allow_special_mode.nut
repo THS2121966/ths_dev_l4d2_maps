@@ -1,4 +1,4 @@
-/*Maded by Ivan Suvorov in 2024*/
+/*Maded by Ivan Suvorov in 2025*/
 /*Director Script. Special Infected Spawn Settings.*/
 
 Msg("[Ivan Suvorov] Initiating House Ambient Special Infected Spawn Scenario!!!\n");

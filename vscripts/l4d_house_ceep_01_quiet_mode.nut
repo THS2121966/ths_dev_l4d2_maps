@@ -1,4 +1,4 @@
-/*Maded by Ivan Suvorov in 2024*/
+/*Maded by Ivan Suvorov in 2025*/
 /*Director Script. First Map Start Quiet Mode.*/
 
 Msg("[Ivan Suvorov] Quieting director...\n");

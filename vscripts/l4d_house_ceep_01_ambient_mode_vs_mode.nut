@@ -1,12 +1,12 @@
 /*Maded by Ivan Suvorov in 2025*/
 /*Director Script. First Map Start Ambient Mode.*/
 
-Msg("[Ivan Suvorov] Initiating House Ambient Scenario!!!\n");
+Msg("[Ivan Suvorov] Initiating House Ambient (Versus Mode) Scenario!!!\n");
 
 DirectorOptions <-
 {
 	ProhibitBosses = false
-	CommonLimit = 15
+	CommonLimit = 18
 
 	AlwaysAllowWanderers = true
 	MobSpawnMinTime = 60
@@ -25,11 +25,9 @@ DirectorOptions <-
 	ChargerLimit = 0
 	JockeyLimit = 0
 	SpitterLimit = 0
-	BoomerLimit = 0
+	BoomerLimit = 1
 	TankLimit = 0
 	WitchLimit = 3
 	ZombieSpawnRange = 2000
 	NumReservedWanderers = 10
 }
-
-Director.ResetMobTimer()
