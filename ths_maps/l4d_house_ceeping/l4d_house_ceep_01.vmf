@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8869"
-	"mapversion" "182"
+	"mapversion" "183"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -107,7 +107,7 @@ bgimages_plus
 world
 {
 	"id" "1"
-	"mapversion" "182"
+	"mapversion" "183"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -134667,8 +134667,9 @@ entity
 		"OnTrigger" "scv_mode_displayTurnOff1-1"
 		"OnTrigger" "underfloor_generator_use_targetDeactivate0-1"
 		"OnTrigger" "underfloor_generator_nozzle_modelStopGlowing0-1"
-		"OnTrigger" "@DirectorBeginScriptl4d_house_ceep_01_ambient_mode1-1"
+		"OnTrigger" "@DirectorBeginScriptl4d_house_ceep_01_ambient_mode1.01-1"
 		"OnTrigger" "underfloor_generator_gascan_m_01TurnGlowsOff0-1"
+		"OnTrigger" "@DirectorEndScript1-1"
 	}
 	"origin" "1408 688 -144"
 	editor
