@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8869"
-	"mapversion" "184"
+	"mapversion" "185"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -107,7 +107,7 @@ bgimages_plus
 world
 {
 	"id" "1"
-	"mapversion" "184"
+	"mapversion" "185"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -103531,6 +103531,50 @@ entity
 }
 entity
 {
+	"id" "81450"
+	"classname" "prop_dynamic_override"
+	"angles" "0 210 0"
+	"body" "0"
+	"disablereceiveshadows" "0"
+	"disableshadows" "1"
+	"ExplodeDamage" "0"
+	"ExplodeRadius" "0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"glowbackfacemult" "1.0"
+	"glowcolor" "0 0 0"
+	"glowrange" "0"
+	"glowrangemin" "0"
+	"glowstate" "0"
+	"health" "0"
+	"LagCompensate" "0"
+	"MaxAnimTime" "10"
+	"MinAnimTime" "5"
+	"model" "models/props_lighting/lampbedside01.mdl"
+	"PerformanceMode" "0"
+	"pressuredelay" "0"
+	"RandomAnimation" "0"
+	"renderamt" "255"
+	"rendercolor" "255 255 255"
+	"renderfx" "0"
+	"rendermode" "0"
+	"SetBodyGroup" "0"
+	"skin" "0"
+	"solid" "6"
+	"spawnflags" "0"
+	"updatechildren" "0"
+	"origin" "-29 1297 484"
+	editor
+	{
+		"color" "204 237 0"
+		"groupid" "85235"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 3000]"
+	}
+}
+entity
+{
 	"id" "5440"
 	"classname" "light_spot"
 	"_castentityshadow" "1"
@@ -135309,14 +135353,14 @@ entity
 	"id" "81375"
 	"classname" "light"
 	"_castentityshadow" "0"
-	"_constant_attn" "15"
-	"_fifty_percent_distance" "32"
-	"_light" "75 230 78 30"
+	"_constant_attn" "0"
+	"_fifty_percent_distance" "64"
+	"_light" "75 230 78 60"
 	"_lightHDR" "-1 -1 -1 1"
 	"_lightscaleHDR" ".72"
 	"_quadratic_attn" "1"
 	"_shadoworiginoffset" "0 0 0"
-	"_zero_percent_distance" "45"
+	"_zero_percent_distance" "96"
 	"spawnflags" "0"
 	"style" "1"
 	"origin" "1364 664 -176"
@@ -135504,46 +135548,38 @@ entity
 }
 entity
 {
-	"id" "81450"
-	"classname" "prop_dynamic_override"
-	"angles" "0 210 0"
-	"body" "0"
-	"disablereceiveshadows" "0"
-	"disableshadows" "1"
-	"ExplodeDamage" "0"
-	"ExplodeRadius" "0"
-	"fademindist" "-1"
-	"fadescale" "1"
-	"glowbackfacemult" "1.0"
-	"glowcolor" "0 0 0"
-	"glowrange" "0"
-	"glowrangemin" "0"
-	"glowstate" "0"
-	"health" "0"
-	"LagCompensate" "0"
-	"MaxAnimTime" "10"
-	"MinAnimTime" "5"
-	"model" "models/props_lighting/lampbedside01.mdl"
-	"PerformanceMode" "0"
-	"pressuredelay" "0"
-	"RandomAnimation" "0"
-	"renderamt" "255"
-	"rendercolor" "255 255 255"
-	"renderfx" "0"
-	"rendermode" "0"
-	"SetBodyGroup" "0"
-	"skin" "0"
+	"id" "89002"
+	"classname" "weapon_chainsaw_spawn"
+	"angles" "0 90 0"
+	"count" "1"
 	"solid" "6"
 	"spawnflags" "0"
-	"updatechildren" "0"
-	"origin" "-29 1297 484"
+	"weaponskin" "-1"
+	"origin" "1823 836 -188"
 	editor
 	{
-		"color" "204 237 0"
-		"groupid" "85235"
+		"color" "0 0 200"
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
-		"logicalpos" "[0 3000]"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "89012"
+	"classname" "weapon_hunting_rifle_spawn"
+	"angles" "0 0 0"
+	"count" "1"
+	"solid" "6"
+	"spawnflags" "0"
+	"weaponskin" "-1"
+	"origin" "576 1902 2"
+	editor
+	{
+		"color" "0 0 200"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
 	}
 }
 cameras
