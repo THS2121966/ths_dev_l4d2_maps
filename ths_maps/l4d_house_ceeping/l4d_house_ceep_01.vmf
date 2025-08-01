@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8869"
-	"mapversion" "185"
+	"mapversion" "188"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -32,7 +32,7 @@ viewsettings
 	"bSnapToGrid" "1"
 	"bShowGrid" "1"
 	"bShowLogicalGrid" "0"
-	"nGridSpacing" "1"
+	"nGridSpacing" "4"
 }
 palette_plus
 {
@@ -107,7 +107,7 @@ bgimages_plus
 world
 {
 	"id" "1"
-	"mapversion" "185"
+	"mapversion" "188"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -69245,6 +69245,184 @@ world
 			"visgroupautoshown" "1"
 		}
 	}
+	solid
+	{
+		"id" "93197"
+		side
+		{
+			"id" "13928"
+			"plane" "(400 -412 16) (424 -336 16) (448 -336 16)"
+			vertices_plus
+			{
+				"v" "400 -412 16"
+				"v" "424 -336 16"
+				"v" "448 -336 16"
+				"v" "716 -408 16"
+				"v" "720 -472 16"
+				"v" "688 -516 16"
+				"v" "400 -436 16"
+			}
+			"material" "TOOLS/TOOLSBLOCKLIGHT"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "13927"
+			"plane" "(400 -436 0) (688 -516 0) (720 -472 0)"
+			vertices_plus
+			{
+				"v" "400 -436 0"
+				"v" "688 -516 0"
+				"v" "720 -472 0"
+				"v" "716 -408 0"
+				"v" "448 -336 0"
+				"v" "424 -336 0"
+				"v" "400 -412 0"
+			}
+			"material" "TOOLS/TOOLSBLOCKLIGHT"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "13926"
+			"plane" "(400 -412 0) (400 -412 16) (400 -436 16)"
+			vertices_plus
+			{
+				"v" "400 -412 0"
+				"v" "400 -412 16"
+				"v" "400 -436 16"
+				"v" "400 -436 0"
+			}
+			"material" "TOOLS/TOOLSBLOCKLIGHT"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "13925"
+			"plane" "(720 -472 0) (720 -472 16) (716 -408 16)"
+			vertices_plus
+			{
+				"v" "720 -472 0"
+				"v" "720 -472 16"
+				"v" "716 -408 16"
+				"v" "716 -408 0"
+			}
+			"material" "TOOLS/TOOLSBLOCKLIGHT"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "13924"
+			"plane" "(448 -336 0) (448 -336 16) (424 -336 16)"
+			vertices_plus
+			{
+				"v" "448 -336 0"
+				"v" "448 -336 16"
+				"v" "424 -336 16"
+				"v" "424 -336 0"
+			}
+			"material" "TOOLS/TOOLSBLOCKLIGHT"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "13923"
+			"plane" "(400 -436 0) (400 -436 16) (688 -516 16)"
+			vertices_plus
+			{
+				"v" "400 -436 0"
+				"v" "400 -436 16"
+				"v" "688 -516 16"
+				"v" "688 -516 0"
+			}
+			"material" "TOOLS/TOOLSBLOCKLIGHT"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "13922"
+			"plane" "(424 -336 0) (424 -336 16) (400 -412 16)"
+			vertices_plus
+			{
+				"v" "424 -336 0"
+				"v" "424 -336 16"
+				"v" "400 -412 16"
+				"v" "400 -412 0"
+			}
+			"material" "TOOLS/TOOLSBLOCKLIGHT"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "13921"
+			"plane" "(716 -408 0) (716 -408 16) (448 -336 16)"
+			vertices_plus
+			{
+				"v" "716 -408 0"
+				"v" "716 -408 16"
+				"v" "448 -336 16"
+				"v" "448 -336 0"
+			}
+			"material" "TOOLS/TOOLSBLOCKLIGHT"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "13920"
+			"plane" "(688 -516 0) (688 -516 16) (720 -472 16)"
+			vertices_plus
+			{
+				"v" "688 -516 0"
+				"v" "688 -516 16"
+				"v" "720 -472 16"
+				"v" "720 -472 0"
+			}
+			"material" "TOOLS/TOOLSBLOCKLIGHT"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "0 106 215"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
 	group
 	{
 		"id" "6309"
@@ -105279,7 +105457,7 @@ entity
 	"targetname" "chor_intro_survivors_talk_01"
 	connections
 	{
-		"OnTrigger1" "@DirectorFireConceptToAnyintroCrashCourse0-1"
+		"OnTrigger1" "st_intro_scene_dialog_francisStart0-1"
 	}
 	"origin" "704 -160 76"
 	editor
@@ -134551,7 +134729,7 @@ entity
 	"targetname" "underfloor_generator_use_target"
 	connections
 	{
-		"OnUseFinished" "oratorSpeakResponseConceptCrashFinaleGenerator2Press WhoDidIt:!Activator01"
+		"OnUseFinished" "oratorSpeakResponseConceptCrashFinaleGenerator2Press WhoDidIt:!Activator0-1"
 	}
 	editor
 	{
@@ -134894,6 +135072,7 @@ entity
 		"OnTrigger" "underfloor_generator_gascan_m_01TurnGlowsOn1-1"
 		"OnTrigger" "@DirectorBeginScriptl4d_house_ceep_01_scv_mode0.01-1"
 		"OnTrigger" "@DirectorEndScript0-1"
+		"OnTrigger" "underfloor_generator_low_gas_lightTurnOn0-1"
 	}
 	"origin" "1424 688 -144"
 	editor
@@ -134922,6 +135101,8 @@ entity
 		"OnTrigger" "@DirectorBeginScriptl4d_house_ceep_01_ambient_mode1.01-1"
 		"OnTrigger" "underfloor_generator_gascan_m_01TurnGlowsOff0-1"
 		"OnTrigger" "@DirectorEndScript1-1"
+		"OnTrigger" "underfloor_generator_low_gas_lightFadeToPatternz0-1"
+		"OnTrigger" "underfloor_generator_low_gas_lightTurnOff1-1"
 	}
 	"origin" "1408 688 -144"
 	editor
@@ -135580,6 +135761,172 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "92772"
+	"classname" "light"
+	"_castentityshadow" "0"
+	"_light" "255 0 0 30"
+	"_lightHDR" "-1 -1 -1 1"
+	"_lightscaleHDR" ".68"
+	"_quadratic_attn" "1"
+	"_shadoworiginoffset" "0 0 0"
+	"spawnflags" "1"
+	"style" "11"
+	"targetname" "underfloor_generator_low_gas_light"
+	"origin" "1447 756 -215"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 0]"
+	}
+}
+entity
+{
+	"id" "92784"
+	"classname" "logic_scene_list_manager"
+	"scene0" "st_intro_scene_dialog_francis"
+	"scene1" "st_intro_scene_dialog_zoey"
+	"scene2" "st_intro_scene_dialog_louis"
+	"scene3" "st_intro_scene_dialog_bill"
+	"targetname" "st_intro_scene_manager"
+	"origin" "568 -96 114"
+	editor
+	{
+		"color" "0 0 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "92790"
+	"classname" "logic_choreographed_scene"
+	"busyactor" "1"
+	"SceneFile" "scenes/namvet/moveon05.vcd"
+	"targetname" "st_intro_scene_dialog_bill"
+	"origin" "568 -128 98"
+	editor
+	{
+		"color" "0 0 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "92797"
+	"classname" "logic_choreographed_scene"
+	"busyactor" "1"
+	"SceneFile" "scenes/teengirl/dlczombietruck01.vcd"
+	"targetname" "st_intro_scene_dialog_zoey"
+	connections
+	{
+		"OnCompletion" "st_intro_scene_dialog_louisStart0-1"
+	}
+	"origin" "568 -112 98"
+	editor
+	{
+		"color" "0 0 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "92801"
+	"classname" "logic_choreographed_scene"
+	"busyactor" "1"
+	"SceneFile" "scenes/biker/dlc2pilotcomment01.vcd"
+	"targetname" "st_intro_scene_dialog_francis"
+	connections
+	{
+		"OnCompletion" "st_intro_scene_dialog_zoeyStart0-1"
+	}
+	"origin" "568 -96 98"
+	editor
+	{
+		"color" "0 0 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "92805"
+	"classname" "logic_choreographed_scene"
+	"busyactor" "1"
+	"SceneFile" "scenes/manager/dlc2alley01.vcd"
+	"targetname" "st_intro_scene_dialog_louis"
+	connections
+	{
+		"OnCompletion" "st_intro_scene_dialog_billStart0-1"
+	}
+	"origin" "568 -80 98"
+	editor
+	{
+		"color" "0 0 255"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "92818"
+	"classname" "prop_static"
+	"angles" "0 60 0"
+	"fademindist" "-1"
+	"fadescale" "1"
+	"model" "models/deadbodies/cemetary/pose_b.mdl"
+	"renderamt" "255"
+	"rendercolor" "255 255 255"
+	"skin" "0"
+	"solid" "6"
+	"origin" "616 -392 0"
+	editor
+	{
+		"color" "255 255 0"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1500]"
+	}
+}
+entity
+{
+	"id" "92826"
+	"classname" "info_overlay"
+	"angles" "0 345 0"
+	"BasisNormal" "0 0 1"
+	"BasisOrigin" "632 -344 0"
+	"BasisU" "0.965926 -0.258819 0"
+	"BasisV" "0.258819 0.965926 0"
+	"EndU" "1"
+	"EndV" "0"
+	"fademindist" "-1"
+	"material" "decals/bloodstain_003b"
+	"sides" "7630"
+	"StartU" "0"
+	"StartV" "1"
+	"uv0" "-32 -64 0"
+	"uv1" "-32 64 0"
+	"uv2" "32 64 0"
+	"uv3" "32 -64 0"
+	"origin" "632 -344 0"
+	editor
+	{
+		"color" "80 150 225"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 2000]"
 	}
 }
 cameras
