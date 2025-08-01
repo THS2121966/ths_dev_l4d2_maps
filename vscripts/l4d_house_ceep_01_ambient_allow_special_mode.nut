@@ -12,4 +12,6 @@ DirectorOptions <-
 	SpitterLimit = 0
 	BoomerLimit = 1
 	SpecialRespawnInterval = 45.0
+
+	PreferredMobDirection = SPAWN_BEHIND_SURVIVORS
 }

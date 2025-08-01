@@ -14,6 +14,7 @@ DirectorOptions <-
 	MobMinSize = 15
 	MobMaxSize = 20
 	MobMaxPending = 20
+	MusicDynamicMobSpawnSize = 12
 	SustainPeakMinTime = 5
 	SustainPeakMaxTime = 8
 	IntensityRelaxThreshold = 0.95
@@ -29,6 +30,7 @@ DirectorOptions <-
 	TankLimit = 0
 	WitchLimit = 3
 	ZombieSpawnRange = 2000
+	PreferredMobDirection = SPAWN_IN_FRONT_OF_SURVIVORS
 	NumReservedWanderers = 10
 }
 
