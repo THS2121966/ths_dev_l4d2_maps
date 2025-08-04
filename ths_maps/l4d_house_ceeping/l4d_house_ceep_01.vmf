@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "8869"
-	"mapversion" "205"
+	"mapversion" "206"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -32,7 +32,7 @@ viewsettings
 	"bSnapToGrid" "1"
 	"bShowGrid" "1"
 	"bShowLogicalGrid" "0"
-	"nGridSpacing" "2"
+	"nGridSpacing" "8"
 }
 palette_plus
 {
@@ -107,7 +107,7 @@ bgimages_plus
 world
 {
 	"id" "1"
-	"mapversion" "205"
+	"mapversion" "206"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -71247,6 +71247,16 @@ world
 			"visgroupautoshown" "1"
 		}
 	}
+	group
+	{
+		"id" "120553"
+		editor
+		{
+			"color" "216 157 0"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
 }
 entity
 {
@@ -110971,6 +110981,7 @@ entity
 		"OnTrigger" "relay_scv_mode_startTrigger6-1"
 		"OnTrigger" "elev_1_main_survivors_detectorDisable0.1-1"
 		"OnTrigger" "fog_volume_underfloor_area_01Enable5-1"
+		"OnTrigger" "elev_1_mirror_reflect_areaEnable0-1"
 	}
 	"origin" "-24 1040 80"
 	editor
@@ -115730,7 +115741,7 @@ entity
 	"solidbsp" "0"
 	"Solidity" "2"
 	"spawnflags" "2"
-	"StartDisabled" "0"
+	"StartDisabled" "1"
 	"targetname" "elev_1_mirror"
 	"vrad_brush_cast_shadows" "0"
 	solid
@@ -137769,7 +137780,7 @@ entity
 		"OnTrigger" "helicopter_animatedSetAnimationlanding0-1"
 		"OnTrigger" "helicopter_animatedSetAnimationlanded19.67-1"
 		"OnTrigger" "escape_radioFinaleEscapeVehicleReadyForSurvivors19.5-1"
-		"OnTrigger" "helicopter_platform_brushEnable16-1"
+		"OnTrigger" "temp_helicopter_platform_brushForceSpawn16-1"
 		"OnTrigger" "chopper_trigger_continueEnable19.5-1"
 		"OnTrigger" "helicopter_wink_relayTrigger0.25-1"
 		"OnTrigger" "helicopter_sound_loopPlaySound0.5-1"
@@ -137911,7 +137922,7 @@ entity
 	"renderfx" "0"
 	"rendermode" "10"
 	"solidbsp" "0"
-	"Solidity" "0"
+	"Solidity" "2"
 	"spawnflags" "2"
 	"StartDisabled" "1"
 	"targetname" "helicopter_platform_brush"
@@ -139111,7 +139122,7 @@ entity
 		}
 		editor
 		{
-			"color" "0 180 0"
+			"color" "220 30 220"
 			"visgroupshown" "1"
 			"visgroupautoshown" "1"
 		}
@@ -139311,7 +139322,7 @@ entity
 		"OnTrigger" "helicopter_animatedSetAnimationtakeoff0-1"
 		"OnTrigger" "escape_radioFinaleEscapeFinished24-1"
 		"OnTrigger" "helicopter_sound_loopStopSound30-1"
-		"OnTrigger" "helicopter_platform_brushDisable0-1"
+		"OnTrigger" "helicopter_platform_brushKill0-1"
 		"OnTrigger" "helicopter_trigger_hurtEnable0-1"
 		"OnTrigger" "helicopter_trigger_hurtDisable2-1"
 		"OnTrigger" "gameinstructor_disableGenerateGameEvent0-1"
@@ -139404,6 +139415,7 @@ entity
 		"OnTrigger" "fade_outro_1Fade0-1"
 		"OnTrigger" "finale_cam_mainEnable0.3-1"
 		"OnTrigger" "helicopter_takeoff_relayTrigger0.3-1"
+		"OnTrigger" "finale_cam_mainSetParentAttachmentMaintainOffsetpilot_point0.2-1"
 	}
 	"origin" "-136 -32 2004"
 	editor
@@ -140151,7 +140163,7 @@ entity
 	"model" "models/props/terror/ammo_stack.mdl"
 	"skin" "0"
 	"solid" "6"
-	"spawnflags" "0"
+	"spawnflags" "2"
 	"weaponskin" "-1"
 	"origin" "-220 696 2035"
 	editor
@@ -140164,80 +140176,13 @@ entity
 }
 entity
 {
-	"id" "116535"
-	"classname" "weapon_first_aid_kit_spawn"
-	"angles" "90 270 0"
-	"solid" "6"
-	"spawnflags" "0"
-	"weaponskin" "-1"
-	"origin" "-218 728 2003"
-	editor
-	{
-		"color" "0 0 200"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 5000]"
-	}
-}
-entity
-{
-	"id" "116543"
-	"classname" "weapon_first_aid_kit_spawn"
-	"angles" "90 270 0"
-	"solid" "6"
-	"spawnflags" "0"
-	"weaponskin" "-1"
-	"origin" "-218 737 2003"
-	editor
-	{
-		"color" "0 0 200"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 5000]"
-	}
-}
-entity
-{
-	"id" "116545"
-	"classname" "weapon_first_aid_kit_spawn"
-	"angles" "90 270 0"
-	"solid" "6"
-	"spawnflags" "0"
-	"weaponskin" "-1"
-	"origin" "-218 755 2003"
-	editor
-	{
-		"color" "0 0 200"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 5000]"
-	}
-}
-entity
-{
-	"id" "116547"
-	"classname" "weapon_first_aid_kit_spawn"
-	"angles" "90 270 0"
-	"solid" "6"
-	"spawnflags" "0"
-	"weaponskin" "-1"
-	"origin" "-218 746 2003"
-	editor
-	{
-		"color" "0 0 200"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 5000]"
-	}
-}
-entity
-{
 	"id" "116561"
 	"classname" "point_viewcontrol_multiplayer"
 	"angles" "0 330 0"
 	"fov" "62"
 	"fov_rate" "0"
 	"interp_time" "1.0"
+	"parentname" "helicopter_animated"
 	"spawnflags" "3"
 	"target_entity" "helicopter_animated"
 	"targetname" "finale_cam_main"
@@ -140522,6 +140467,238 @@ entity
 		"visgroupshown" "1"
 		"visgroupautoshown" "1"
 		"logicalpos" "[0 7500]"
+	}
+}
+entity
+{
+	"id" "120466"
+	"classname" "trigger_multiple"
+	"allowghost" "0"
+	"allowincap" "0"
+	"entireteam" "0"
+	"origin" "-40 1120 48"
+	"parentname" "elev_1_main"
+	"spawnflags" "1"
+	"StartDisabled" "1"
+	"targetname" "elev_1_mirror_reflect_area"
+	"wait" "1"
+	connections
+	{
+		"OnStartTouch" "elev_1_mirrorEnable0-1"
+		"OnEndTouchAll" "elev_1_mirrorDisable0-1"
+	}
+	solid
+	{
+		"id" "120464"
+		side
+		{
+			"id" "14338"
+			"plane" "(-240 1184 96) (160 1184 96) (160 1056 96)"
+			vertices_plus
+			{
+				"v" "-240 1184 96"
+				"v" "160 1184 96"
+				"v" "160 1056 96"
+				"v" "-240 1056 96"
+			}
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "14337"
+			"plane" "(-240 1056 0) (160 1056 0) (160 1184 0)"
+			vertices_plus
+			{
+				"v" "-240 1056 0"
+				"v" "160 1056 0"
+				"v" "160 1184 0"
+				"v" "-240 1184 0"
+			}
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 -1 0 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "14336"
+			"plane" "(-240 1184 96) (-240 1056 96) (-240 1056 0)"
+			vertices_plus
+			{
+				"v" "-240 1184 96"
+				"v" "-240 1056 96"
+				"v" "-240 1056 0"
+				"v" "-240 1184 0"
+			}
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "14335"
+			"plane" "(160 1184 0) (160 1056 0) (160 1056 96)"
+			vertices_plus
+			{
+				"v" "160 1184 0"
+				"v" "160 1056 0"
+				"v" "160 1056 96"
+				"v" "160 1184 96"
+			}
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[0 1 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "14334"
+			"plane" "(160 1184 96) (-240 1184 96) (-240 1184 0)"
+			vertices_plus
+			{
+				"v" "160 1184 96"
+				"v" "-240 1184 96"
+				"v" "-240 1184 0"
+				"v" "160 1184 0"
+			}
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		side
+		{
+			"id" "14333"
+			"plane" "(160 1056 0) (-240 1056 0) (-240 1056 96)"
+			vertices_plus
+			{
+				"v" "160 1056 0"
+				"v" "-240 1056 0"
+				"v" "-240 1056 96"
+				"v" "160 1056 96"
+			}
+			"material" "TOOLS/TOOLSTRIGGER"
+			"uaxis" "[1 0 0 0] 0.25"
+			"vaxis" "[0 0 -1 0] 0.25"
+			"rotation" "0"
+			"lightmapscale" "16"
+			"smoothing_groups" "0"
+		}
+		editor
+		{
+			"color" "220 30 220"
+			"visgroupshown" "1"
+			"visgroupautoshown" "1"
+		}
+	}
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
+	}
+}
+entity
+{
+	"id" "120479"
+	"classname" "point_template"
+	"spawnflags" "2"
+	"targetname" "temp_helicopter_platform_brush"
+	"Template01" "helicopter_platform_brush"
+	"origin" "-48 -32 2176"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 1000]"
+	}
+}
+entity
+{
+	"id" "116535"
+	"classname" "weapon_first_aid_kit_spawn"
+	"angles" "90 270 0"
+	"solid" "6"
+	"spawnflags" "2"
+	"weaponskin" "-1"
+	"origin" "-218 728 2003"
+	editor
+	{
+		"color" "216 157 0"
+		"groupid" "120553"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 5000]"
+	}
+}
+entity
+{
+	"id" "116543"
+	"classname" "weapon_first_aid_kit_spawn"
+	"angles" "90 270 0"
+	"solid" "6"
+	"spawnflags" "2"
+	"weaponskin" "-1"
+	"origin" "-218 737 2003"
+	editor
+	{
+		"color" "216 157 0"
+		"groupid" "120553"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 5000]"
+	}
+}
+entity
+{
+	"id" "116547"
+	"classname" "weapon_first_aid_kit_spawn"
+	"angles" "90 270 0"
+	"solid" "6"
+	"spawnflags" "2"
+	"weaponskin" "-1"
+	"origin" "-218 746 2003"
+	editor
+	{
+		"color" "216 157 0"
+		"groupid" "120553"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 5000]"
+	}
+}
+entity
+{
+	"id" "116545"
+	"classname" "weapon_first_aid_kit_spawn"
+	"angles" "90 270 0"
+	"solid" "6"
+	"spawnflags" "2"
+	"weaponskin" "-1"
+	"origin" "-218 755 2003"
+	editor
+	{
+		"color" "216 157 0"
+		"groupid" "120553"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 5000]"
 	}
 }
 cameras
