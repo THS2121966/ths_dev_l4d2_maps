@@ -166,3 +166,5 @@ forcetextureshadow props_wasteland/exterior_fence002d.mdl
 forcetextureshadow props_wasteland/exterior_fence002c.mdl
 forcetextureshadow props_wasteland/exterior_fence003a.mdl
 forcetextureshadow props_wasteland/exterior_fence003b.mdl
+forcetextureshadow props_foliage/tree_pine04_tallcluster.mdl
+forcetextureshadow props_foliage/treescaled.mdl
